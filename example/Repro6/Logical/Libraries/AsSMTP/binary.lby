@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="This library contains FBKs for sending email over an SMTP (Simple Mail Transfer Protocol) server." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>AsSMTP.fun</File>
+    <File>AsSMTP.typ</File>
+    <File>AsSMTP.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

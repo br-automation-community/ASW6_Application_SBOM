@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="The AsMbTCPS library is used to read or write the buffer of modbusTCPSlave driver." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>AsMbTCPS.fun</File>
+    <File>AsMbTCPS.typ</File>
+    <File>AsMbTCPS.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

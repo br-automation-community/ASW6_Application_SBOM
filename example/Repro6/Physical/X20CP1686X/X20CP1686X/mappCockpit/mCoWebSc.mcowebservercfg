@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="6.0"?>
+<Configuration>
+  <Element ID="mCoWebServerCfg" Type="mcowebservercfg">
+    <Selector ID="HTTP_Server" Value="0" />
+    <Selector ID="HTTPS_Server" Value="1">
+      <Property ID="Port" Value="8192" />
+      <Property ID="SSLConfiguration" />
+    </Selector>
+    <Group ID="DocumentRoot">
+      <Property ID="TransferGroup" Value="mappCockpit" />
+      <Property ID="FilePath" />
+    </Group>
+    <Group ID="cxcoOpcUaSettings">
+      <Selector ID="cxcoSecurityPolicy" Value="BestAvailable" />
+      <Selector ID="cxcoMessageSecurityMode" Value="BestAvailable" />
+      <Property ID="cxcoSSLConfiguration" />
+    </Group>
+  </Element>
+</Configuration>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="The AsPPP library is used to start and stop PPP devices." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>AsPPP.fun</File>
+    <File>AsPPP.typ</File>
+    <File>AsPPP.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

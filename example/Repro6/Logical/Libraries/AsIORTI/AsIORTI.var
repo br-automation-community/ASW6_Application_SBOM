@@ -1,0 +1,8 @@
+VAR CONSTANT
+	IORTI_SIM_MODE_DEFAULT : UDINT := 16#00000001; (* Default simulation mode *)
+	IORTI_SIM_ERR_UNKNOWN_MODE : UDINT := 37910; (* unknown simulation mode selected *)
+	IORTI_SIM_ERR_OUT_OF_MEMORY : UDINT := 37911; (* out of memory error *)
+	IORTI_SIM_ERR_INVALID_DPNR : UDINT := 37912; (* invalid datapoint number *)
+	IORTI_SIM_ERR_PAR_SIMUL_VALUE : UDINT := 37913; (* simulation values for parameters with the same DpNr are not equal *)
+	IORTI_SIM_ERR_VAR_SIMUL_VALUE : UDINT := 37914; (* simulation values for variables with the same DpNr are not equal *)
+END_VAR

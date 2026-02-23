@@ -1,0 +1,7 @@
+VAR CONSTANT
+	fxCLOCK_ERR_INVALID_CLOCK_ID	: DINT := -1070582897;	(*Error: The ClockID is not valid.*)
+	fxCLOCK_ERR_INVALID_CONFIG	: DINT := -1070582898;	(*Error: No configuration found.*)
+	fxCLOCK_ERR_CLOCK_ERROR		: DINT := -1070582899;	(*Error: Internal clock error.*)
+	fxCLOCK_ERR_CLOCK_ID_UNSUPPORTED :DINT := -1070582900;	(*Error: The function block is unsupported with this clock id.*)
+
+END_VAR

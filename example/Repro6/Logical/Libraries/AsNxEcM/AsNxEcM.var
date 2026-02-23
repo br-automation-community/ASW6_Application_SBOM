@@ -1,0 +1,17 @@
+
+VAR CONSTANT
+	nxecmERR_INVALID_DEVICE         : DINT := -1070582460; (* Device does not exist or does not support EtherCAT *)
+	nxecmERR_DATA_BUFFER            : DINT := -1070582459; (* Data buffer or buffer size is invalid *)
+	nxecmERR_SLAVE_STATE_WRONG      : DINT := -1070582458; (* Current slave state does not allow COE access *)
+	nxecmERR_SLAVE_ADDRESS_INVALID  : DINT := -1070582457; (* Invalid slave station address *)
+	nxecmERR_SLAVE_HW_ERROR         : DINT := -1070582456; (* Access failed due to hardware error *)
+	nxecmERR_TIMEOUT                : DINT := -1070582455; (* Communication timeout between master and slave station *)
+	nxecmERR_OBJECT_COMPLETE_ACCESS : DINT := -1070582454; (* The object or device does not support complete access *)
+	nxecmERR_OBJECT_DOES_NOT_EXIST  : DINT := -1070582453; (* The object (index and/or subindex) does not exist in the object dictionary *)
+	nxecmERR_OBJECT_IS_WRITE_ONLY   : DINT := -1070582452; (* Attempt to read a write-only object *)
+	nxecmERR_OBJECT_IS_READ_ONLY    : DINT := -1070582451; (* Attempt to write a read-only object *)
+	nxecmERR_INVALID_LENGTH         : DINT := -1070582450; (* Length of service parameter does not match *)
+	nxecmERR_VALUE_OUT_OF_RANGE     : DINT := -1070582449; (* The written value is out of range *)
+	nxecmERR_ACCESS_GENERAL         : DINT := -1070582448; (* General error during communication with the slave *)
+	nxecmERR_INTERNAL               : DINT := -1070582447; (* Error in the EtherCAT master driver *)
+END_VAR

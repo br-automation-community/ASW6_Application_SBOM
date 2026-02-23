@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library Version="1.4.0" SubType="Binary" Description="DNP3 communication protocol library" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>CpDnp3.typ</File>
+    <File>CpDnp3.fun</File>
+    <File>Errors.tmx</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="brsystem" />
+    <Dependency ObjectName="AsTCP" />
+    <Dependency ObjectName="AsUDP" />
+    <Dependency ObjectName="AsETH" />
+    <Dependency ObjectName="sys_lib" />
+    <Dependency ObjectName="AsARCfg" />
+    <Dependency ObjectName="astime" />
+    <Dependency ObjectName="FileIO" />
+    <Dependency ObjectName="dvframe" />
+    <Dependency ObjectName="ArSsl" />
+  </Dependencies>
+</Library>

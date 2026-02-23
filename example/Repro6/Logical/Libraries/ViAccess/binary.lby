@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library Version="6.4.0" SubType="binary" Description="mappVision module: ViAccess" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>ViAccess.fun</File>
+    <File>ViAccess.var</File>
+    <File>ViAccess.typ</File>
+    <File>ViAccess2p5DBlob.typ</File>
+    <File>ViAccessAnomalyDetection.typ</File>
+    <File>ViAccessBlob.typ</File>
+    <File>ViAccessClassification.typ</File>
+    <File>ViAccessClutterMatching.typ</File>
+    <File>ViAccessCodeReader.typ</File>
+    <File>ViAccessDeepOCR.typ</File>
+    <File>ViAccessImageAcquisition.typ</File>
+    <File>ViAccessMatching.typ</File>
+    <File>ViAccessMeasurement.typ</File>
+    <File>ViAccessObjectDetection.typ</File>
+    <File>ViAccessOCR.typ</File>
+    <File>ViAccessPixelCounter.typ</File>
+    <File>ViAccessSimpleMatching.typ</File>
+    <File>ViAccessSubPixelBlob.typ</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="ViBase" />
+  </Dependencies>
+</Library>

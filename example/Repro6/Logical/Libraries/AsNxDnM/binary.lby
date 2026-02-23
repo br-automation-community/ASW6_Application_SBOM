@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="The AsNxDnM library handles access to netX Devicenet Master." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>AsNxDnM.fun</File>
+    <File>AsNxDnM.typ</File>
+    <File>AsNxDnM.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

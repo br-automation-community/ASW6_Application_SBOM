@@ -1,0 +1,1578 @@
+{
+    "specVersion":  "1.5",
+    "metadata":  [
+
+                 ],
+    "version":  1,
+    "components":  [
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "mappMotion",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "mappServices",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "OpcUaCs",
+                           "version":  "6.5.0",
+                           "type":  "library"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "mappView",
+                           "version":  "6.5.0",
+                           "type":  "library"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "mappCockpit",
+                           "version":  "6.5.0",
+                           "type":  "library"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "OpcUaFx",
+                           "version":  "6.5.0",
+                           "type":  "library"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "mappSafety",
+                           "version":  "6.4.1",
+                           "type":  "library"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "mappControl",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "mappVision",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "mappConnect",
+                           "version":  "6.1.0",
+                           "type":  "library"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "mapp6D",
+                           "version":  "3.5.0",
+                           "type":  "library"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "0AC808.9-1",
+                           "version":  "1.0.0.0",
+                           "type":  "hardware"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "X20AO4622",
+                           "version":  "1.5.0.0",
+                           "type":  "hardware"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "X20BB80",
+                           "version":  "1.1.0.0",
+                           "type":  "hardware"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "X20BC0083",
+                           "version":  "2.17.0.0",
+                           "type":  "hardware"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "X20BM11",
+                           "version":  "1.1.0.0",
+                           "type":  "hardware"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "X20BM11",
+                           "version":  "1.1.0.0",
+                           "type":  "hardware"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "X20BM11",
+                           "version":  "1.1.0.0",
+                           "type":  "hardware"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "X20BM11",
+                           "version":  "1.1.0.0",
+                           "type":  "hardware"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "X20CP1686X",
+                           "version":  "1.9.0.0",
+                           "type":  "hardware"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "X20DI9371",
+                           "version":  "1.6.1.0",
+                           "type":  "hardware"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "X20DO9321",
+                           "version":  "1.2.2.0",
+                           "type":  "hardware"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "X20TB12",
+                           "version":  "1.0.0.0",
+                           "type":  "hardware"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "X20TB12",
+                           "version":  "1.0.0.0",
+                           "type":  "hardware"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "X20TB12",
+                           "version":  "1.0.0.0",
+                           "type":  "hardware"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "X20TB12",
+                           "version":  "1.0.0.0",
+                           "type":  "hardware"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "X20AI4622",
+                           "version":  "1.6.0.0",
+                           "type":  "hardware"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "X20BB82",
+                           "version":  "1.2.0.0",
+                           "type":  "hardware"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "X20BC1083",
+                           "version":  "2.17.0.0",
+                           "type":  "hardware"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "X20PS9400",
+                           "version":  "1.9.0.0",
+                           "type":  "hardware"
+                       },
+                       {
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "licenses":  {
+                                            "license":  {
+                                                            "id":  "ABB_BR_Original",
+                                                            "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                        }
+                                        },
+                           "name":  "X20TB12",
+                           "version":  "1.0.0.0",
+                           "type":  "hardware"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:operator:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "operator",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:runtime:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "runtime",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsIecCon:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsIecCon",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MTSystem:6.0.0:*:*:*:*:*:*:*",
+                           "name":  "MTSystem",
+                           "version":  "6.0.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:brsystem:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "brsystem",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MTTypes:6.0.0:*:*:*:*:*:*:*",
+                           "name":  "MTTypes",
+                           "version":  "6.0.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:McBase:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "McBase",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpBase:6.5.0:*:*:*:*:*:*:*",
+                           "name":  "MpBase",
+                           "version":  "6.5.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:CoTrace:6.5.0:*:*:*:*:*:*:*",
+                           "name":  "CoTrace",
+                           "version":  "6.5.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsZip:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsZip",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:FileIO:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "FileIO",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:SfDomain:6.4.1:*:*:*:*:*:*:*",
+                           "name":  "SfDomain",
+                           "version":  "6.4.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MyCalc:1.0.1:*:*:*:*:*:*:*",
+                           "name":  "MyCalc",
+                           "version":  "1.0.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpTraffic:3.5.0:*:*:*:*:*:*:*",
+                           "name":  "MpTraffic",
+                           "version":  "3.5.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:McAcp6D:3.5.0:*:*:*:*:*:*:*",
+                           "name":  "McAcp6D",
+                           "version":  "3.5.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ViBase:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "ViBase",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsARCfg:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsARCfg",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:powerlnk:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "powerlnk",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsEPL:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsEPL",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsIO:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsIO",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsTCP:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsTCP",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:astime:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "astime",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:sys_lib:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "sys_lib",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:DataObj:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "DataObj",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ArSsl:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ArSsl",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ArCan:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ArCan",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ArCert:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ArCert",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ArEco:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ArEco",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ArEthBond:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ArEthBond",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ArEventLog:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ArEventLog",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ArFirewall:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ArFirewall",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ArIscEvent:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ArIscEvent",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ArIscShm:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ArIscShm",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ArMcs:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ArMcs",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ArObjDict:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ArObjDict",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ArPnDevice:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ArPnDevice",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ArPnIm:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ArPnIm",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ArProject:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ArProject",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ArRtdl:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ArRtdl",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ArSafeUDP:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ArSafeUDP",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ArScreen:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ArScreen",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ArSrm:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ArSrm",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ArStorage:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ArStorage",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ArTextSys:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ArTextSys",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ArUnitConv:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ArUnitConv",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ArUnitText:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ArUnitText",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ArUser:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ArUser",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsANSL:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsANSL",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsArProf:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsArProf",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsArSdm:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsArSdm",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsBrMath:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsBrMath",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsBrStr:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsBrStr",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsBrWStr:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsBrWStr",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsCANopen:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsCANopen",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsCont:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsCont",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsETH:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsETH",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsEthIP:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsEthIP",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsFifo:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsFifo",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsFltGen:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsFltGen",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsGuard:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsGuard",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsHart:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsHart",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsHost:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsHost",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsHttp:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsHttp",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsHW:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsHW",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsICMP:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsICMP",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsIOAcc:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsIOAcc",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsIODiag:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsIODiag",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsIOLink:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsIOLink",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsIOMMan:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsIOMMan",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsIORTI:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsIORTI",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsIoTime:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsIoTime",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsIoTrc:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsIoTrc",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsIOVib:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsIOVib",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsL2DP:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsL2DP",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsMbTCP:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsMbTCP",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsMbTCPS:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsMbTCPS",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ASMcDcs:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ASMcDcs",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsMem:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsMem",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsNxAsiM:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsNxAsiM",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsNxCoM:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsNxCoM",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsNxCoS:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsNxCoS",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsNxDnM:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsNxDnM",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsNxDnS:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsNxDnS",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsNxDpM:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsNxDpM",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsNxDpS:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsNxDpS",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsNxEcM:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsNxEcM",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsNxEcS:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsNxEcS",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsNxEipA:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsNxEipA",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsNxEipS:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsNxEipS",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsNxPnM:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsNxPnM",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsNxPnS:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsNxPnS",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsOpcUac:6.5.0:*:*:*:*:*:*:*",
+                           "name":  "AsOpcUac",
+                           "version":  "6.5.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsOpcUas:6.5.0:*:*:*:*:*:*:*",
+                           "name":  "AsOpcUas",
+                           "version":  "6.5.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsPciStr:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsPciStr",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsPPP:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsPPP",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsRed:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsRed",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsRfbExt:6.0.0:*:*:*:*:*:*:*",
+                           "name":  "AsRfbExt",
+                           "version":  "6.0.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsRtCont:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsRtCont",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsSem:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsSem",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsSMTP:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsSMTP",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsSnmp:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsSnmp",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsUDP:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsUDP",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsUPS:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsUPS",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:dvframe:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "dvframe",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsUSB:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsUSB",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsWeigh:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsWeigh",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:standard:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "standard",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:AsXml:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "AsXml",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:CAN_Lib:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "CAN_Lib",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:Cp61850:2.0.6:*:*:*:*:*:*:*",
+                           "name":  "Cp61850",
+                           "version":  "2.0.6",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:CpDnp3:1.4.0:*:*:*:*:*:*:*",
+                           "name":  "CpDnp3",
+                           "version":  "1.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:CpIsobus:1.1.1:*:*:*:*:*:*:*",
+                           "name":  "CpIsobus",
+                           "version":  "1.1.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:CpLin:1.1.1:*:*:*:*:*:*:*",
+                           "name":  "CpLin",
+                           "version":  "1.1.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:DRV_3964:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "DRV_3964",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:DRV_mbus:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "DRV_mbus",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:DRV_mn:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "DRV_mn",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:DRVABDF1:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "DRVABDF1",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ETHERNET:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ETHERNET",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ETHSOCK:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "ETHSOCK",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:FxClock:6.5.0:*:*:*:*:*:*:*",
+                           "name":  "FxClock",
+                           "version":  "6.5.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:FxDevMgr:6.5.0:*:*:*:*:*:*:*",
+                           "name":  "FxDevMgr",
+                           "version":  "6.5.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:FxNetMgr:6.5.0:*:*:*:*:*:*:*",
+                           "name":  "FxNetMgr",
+                           "version":  "6.5.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:FxPubSub:6.5.0:*:*:*:*:*:*:*",
+                           "name":  "FxPubSub",
+                           "version":  "6.5.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:FxSystem:6.5.0:*:*:*:*:*:*:*",
+                           "name":  "FxSystem",
+                           "version":  "6.5.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:LoopConR:6.0.0:*:*:*:*:*:*:*",
+                           "name":  "LoopConR",
+                           "version":  "6.0.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:McAcpAx:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "McAcpAx",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:McAxis:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "McAxis",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:McAcpPar:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "McAcpPar",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:McAcpTrak:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "McAcpTrak",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:McAxGroup:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "McAxGroup",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:McDS402Ax:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "McDS402Ax",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:McPathGen:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "McPathGen",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:McProgInt:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "McProgInt",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:McPureVAx:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "McPureVAx",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:McStpAx:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "McStpAx",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:McTrkPath:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "McTrkPath",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpAlarmX:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "MpAlarmX",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpAudit:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "MpAudit",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpAxis:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "MpAxis",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpBackup:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "MpBackup",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpClamp:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MpClamp",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MTBasics:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MTBasics",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpCnc:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "MpCnc",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpCodeBox:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "MpCodeBox",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpCom:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "MpCom",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpCorePull:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MpCorePull",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpData:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "MpData",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpDatabase:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "MpDatabase",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpEjector:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MpEjector",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpFile:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "MpFile",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpHalfNut:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MpHalfNut",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpHydAxis:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MpHydAxis",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpHydPump:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MpHydPump",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpInject:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MpInject",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpInjUnit:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MpInjUnit",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpIO:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "MpIO",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpJ1939:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "MpJ1939",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpMHeight:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MpMHeight",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpPackML:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "MpPackML",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpPick:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "MpPick",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpPump:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MpPump",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MTLookUp:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MTLookUp",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpRecipe:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "MpRecipe",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpRegMark:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MpRegMark",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpReport:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "MpReport",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpRobotics:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "MpRobotics",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpSafeGate:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MpSafeGate",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpScale:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MpScale",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpSequence:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "MpSequence",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpServer:6.5.0:*:*:*:*:*:*:*",
+                           "name":  "MpServer",
+                           "version":  "6.5.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpSkyline:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "MpSkyline",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpTemp:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MpTemp",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpTension:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MpTension",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpTieBar:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MpTieBar",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpTool:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "MpTool",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MpUserX:6.5.1:*:*:*:*:*:*:*",
+                           "name":  "MpUserX",
+                           "version":  "6.5.1",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MTAdvanced:6.0.0:*:*:*:*:*:*:*",
+                           "name":  "MTAdvanced",
+                           "version":  "6.0.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MTData:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MTData",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MTFilter:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MTFilter",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MTGntCrane:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MTGntCrane",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MTIdentify:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MTIdentify",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MTLinAlg:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MTLinAlg",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MTProfile:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MTProfile",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:MTSkew:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "MTSkew",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:vclib:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "vclib",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:VcScrSht:6.0.0:*:*:*:*:*:*:*",
+                           "name":  "VcScrSht",
+                           "version":  "6.0.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:visapi:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "visapi",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:ViAccess:6.4.0:*:*:*:*:*:*:*",
+                           "name":  "ViAccess",
+                           "version":  "6.4.0",
+                           "type":  "library"
+                       },
+                       {
+                           "cpe":  "cpe:2.3:a:br_automation:vncserv:TO BE CHECKED:*:*:*:*:*:*:*",
+                           "name":  "vncserv",
+                           "version":  "TO BE CHECKED",
+                           "type":  "library"
+                       }
+                   ],
+    "bomFormat":  "CycloneDX"
+}

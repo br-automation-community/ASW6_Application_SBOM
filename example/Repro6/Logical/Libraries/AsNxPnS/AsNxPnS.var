@@ -1,0 +1,38 @@
+                                                                      
+VAR CONSTANT
+	nxpnsERR_INVALID_DEVICE				: UINT	:= 35320;		(*error invalid device*)
+	nxpnsERR_SEND_MESSAGE				: UINT	:= 35321;		(*error send message*)
+	nxpnsERR_TIMEOUT					: UINT	:= 35322;		(*error timeout*)
+	nxpnsERR_PROFINET_STACK				: UINT	:= 35323;		(*error receive message*)
+	nxpnsERR_PARAMETER					: UINT	:= 35324;		(*error invalid parameter*)
+	
+	nxpnsMOD_PLUG_CORRECT_MOD			: UINT	:= 16#0000;		(*plug correct module*)
+	nxpnsMOD_PLUG_SUBSTITUTE_MOD		: UINT	:= 16#0001;		(*plug substitute module*)
+	
+	nxpnsALARM_DATALEN_MAX				: UDINT	:= 1024;		(*max alarm data length*)
+	
+	nxpnsCERR_SHORT_CIRCUIT				: UINT	:= 16#0001;		(*channel error type short circuit*)
+	nxpnsCERR_UNDERVOLTAGE				: UINT	:= 16#0002;		(*channel error type undervoltaqe*)
+	nxpnsCERR_OVERVOLTAGE				: UINT	:= 16#0003;		(*channel error type overvoltage*)
+	nxpnsCERR_OVERLOAD					: UINT	:= 16#0004;		(*channel error type overload*)
+	nxpnsCERR_OVERTEMPERATURE			: UINT	:= 16#0005;		(*channel error type overtemperature*)
+	nxpnsCERR_LINE_BREAK				: UINT	:= 16#0006;		(*channel error type line break*)
+	nxpnsCERR_UPPER_LIM_VAL_EXCEEDED	: UINT	:= 16#0007;		(*channel error type upper limit value exceededd*)
+	nxpnsCERR_LOWER_LIM_VAL_EXCEEDED	: UINT	:= 16#0008;		(*channel error type lower limit value exceededd*)
+	nxpnsCERR_ERROR						: UINT	:= 16#0009;		(*channel error type error*)
+	nxpnsCERR_SIMULATION_ACTIVE			: UINT	:= 16#000A;		(*channel error type simulation active*)
+	nxpnsCERR_DATA_TRANS_IMPOSSIBLE		: UINT	:= 16#8000;		(*channel error type data transmission impossible*)
+	nxpnsCERR_REMOTE_MISM				: UINT	:= 16#8001;		(*channel error type remote mismatch*)
+	nxpnsCERR_MEDIA_REDUNDANCY_MIS		: UINT	:= 16#8002;		(*channel error type media redundancy mismatch*)
+	nxpnsCERR_SYNC_MISMATCH				: UINT	:= 16#8003;		(*channel error type sync mismatch*)
+	nxpnsCERR_ISOCHRONOUS_MODE_MIS		: UINT	:= 16#8004;		(*channel error type isochronous mode mismatch*)
+	nxpnsCERR_MULTICAST_CR_MIS			: UINT	:= 16#8005;		(*channel error type multicast cr mismatch*)
+	nxpnsCERR_FIBER_OPTIC_MIS			: UINT	:= 16#8007;		(*channel error type fiber optic mismatch*)
+	nxpnsCERR_NET_COMP_FUNC_MIS			: UINT	:= 16#8008;		(*channel error type network component function mismatch*)
+	nxpnsCERR_TIME_MIS					: UINT	:= 16#8009;		(*channel error type time mismatch*)
+	
+	nxpnsCPROP_DIAGNOSIS				: UINT	:= 16#0000;		(*channel property diagnosis*)
+	nxpnsCPROP_MAINTENANCE_REQUIRED		: UINT	:= 16#0200;		(*channel property maintenance required*)
+	nxpnsCPROP_MAINTENANCE_DEMANDED		: UINT	:= 16#0400;		(*channel property maintenance demanded*)
+	nxpnsCPROP_QUALIFIED_DIAGNOSIS		: UINT	:= 16#0600;		(*channel property qualified diagnosis*)
+END_VAR

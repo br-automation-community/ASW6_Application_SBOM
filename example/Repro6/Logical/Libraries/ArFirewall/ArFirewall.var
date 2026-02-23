@@ -1,0 +1,5 @@
+
+VAR CONSTANT
+	arFIREWALL_ERR_INVALID_RULE	: DINT := -1070583546;	(*Is returned when the syntax of the given rule is not valid*)
+	arFIREWALL_ERR_SYSTEM		: DINT := -1070583545;	(*Is returned when an internal error occured.*)
+END_VAR

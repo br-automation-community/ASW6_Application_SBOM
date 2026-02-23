@@ -1,0 +1,443 @@
+(*********************** MTSkew ************************)
+
+TYPE
+    MTSkewActuatorSetupEnum :
+        ( (*Mechanical setup for skew system.*)
+        mtSKEW_SETUP_TWO_AC := 0, (*Two actuators mounted on the corners A and C.*)
+        mtSKEW_SETUP_TWO_BD := 1, (*Two actuators mounted on the corners B and D.*)
+        mtSKEW_SETUP_FOUR := 2 (*Four actuators, either hydraulic cylinders or electrical motors.*)
+        );
+    MTSkewCtrlModeEnum :
+        ( (*Controller states.*)
+        mtSKEW_MODE_OFF := 0, (*Contoller is off.*)
+        mtSKEW_MODE_ANTISKEW := 1, (*Anti-Skew control is activ.*)
+        mtSKEW_MODE_AUTOSKEW := 2 (*Anti-Skew and Skew-Position (Skewangle) control is activ.*)
+        );
+    MTSkewCtrlStateEnum :
+        ( (*Controller states.*)
+        mtSKEW_STATE_OFF := 0, (*Contoller is off.*)
+        mtSKEW_STATE_ANTISKEW := 1, (*Anti-Skew control is activ.*)
+        mtSKEW_STATE_ANTISKEW_POS := 2, (*Anti-Skew and Actuator position control is activ.*)
+        mtSKEW_STATE_AUTOSKEW := 3 (*Anti-Skew and Skew-Position (Skew-Angle) control is activ.*)
+        );
+    MTSkewObserverStateEnum :
+        ( (*Observer states.*)
+        mtSKEW_OBSERVER_OFF := 0, (*Observer is off.*)
+        mtSKEW_OBSERVER_INIT := 1, (*Observer is in warm up phase.*)
+        mtSKEW_OBSERVER_OPENLOOP := 2, (*Trivial Observer is active and estimates the states of the system.*)
+        mtSKEW_OBSERVER_CLOSEDLOOP := 3 (*Observer is active and estimates the states of the system.*)
+        );
+	MTSkewPIDIntegrationEnum : 
+		( (*PID integration enumeration.*)
+		mtSKEW_INTEGRATION_FREE := 0, (*PID integration part can increase or decrease.*)
+		mtSKEW_HOLD_POSITIVE := +1, (*The output has reached its maximum allowed value and the integration has stopped.*)
+		mtSKEW_HOLD_NEGATIVE := -1 (*The output has reached its minimum allowed value and the integration has stopped.*)
+		);
+    MTSkewActuatorConfigType : 	STRUCT  (*Skew actuator configuration.*)
+        Limits : MTSkewActuatorLimitsType; (*Limits of the actuator system.*)
+        MechanicalSetup : MTSkewActuatorSetupEnum; (*Mechanical setup of the hoist rope reeving.*)
+        HomePosition : ARRAY[0..3]OF REAL; (*Home positions of the actuators. Unit: [m].*)
+    END_STRUCT;
+    MTSkewActuatorLimitsType : 	STRUCT  (*Skew actuator limits.*)
+        MinPosition : REAL; (*Minimum position of an actuator. Unit: [m]. Valid value range: MaxPosition > MinPosition.*)
+        MaxPosition : REAL; (*Maximum position of an actuator. Unit: [m]. Valid value range: MaxPosition > MinPosition.*)
+        MaxVelocity : REAL; (*Maximum velocity of an actuator in both directions. Unit: [m/s]. Valid value range: MaxVelocity > 0.*)
+        MaxAcceleration : REAL; (*Maximum acceleration of an actuator in both directions. Unit: [m/s²]. Valid value range: MaxAcceleration > 0.*)
+    END_STRUCT;
+	MTSkewCoordinatesXZType : 	STRUCT  (*2D cartesian coordinates (x, z).*)
+		x : REAL; (*x-coordinate (trolley direction).*)
+		z : REAL; (*z-coordinate (gantry direction).*)
+	END_STRUCT;
+    MTSkewSystemType : 	STRUCT  (*Skew system parameters.*)
+        Gain : REAL; (*Gain of the skew system. Unit: [°/m].*)
+        GainCorrectionCCW : REAL; (*Gain correction factor for the counter-clockwise direction. Unit: [°/m/m].*)
+        GainCorrectionCW : REAL; (*Gain correction factor for the clockwise direction. Unit: [°/m/m].*)
+        DynamicConstant : REAL; (*Dynamic constant of the skew system. The dynamic constant depends on the hoist length. Unit: [s²/m].*)
+        DampingConstant : REAL; (*Damping constant of the skew system. The damping constant depends on the hoist length. Unit: [s/m].*)
+    END_STRUCT;
+END_TYPE
+
+(************** MTSkewController ***************)
+
+TYPE
+	MTSkewOscillationParType : 	STRUCT  (*Parameters of oscillation controller.*)
+		DampingFactor : REAL; (*Damping factor (set value). Unit: [1].*)
+	END_STRUCT;
+	MTSkewPIDParType : 	STRUCT  (*PID controller parameters.*)
+		ProportionalGain : REAL; (*Proportional gain. Unit: [.].*)
+		IntegrationTime : REAL; (*Integration time constant. Unit: [s].*)
+		DerivativeTime : REAL; (*Derivative action time constant. Unit: [s].*)
+	END_STRUCT;
+    MTSkewCtrlIntType : 	STRUCT  (*Internal variables of function block MTSkewController.*)
+        CycleTime : LREAL; (*Task cycle time. Unit: [s].*)
+        Configuration : MTSkewActuatorConfigType; (*Data for internal use.*)
+        DelayTime : REAL; (*Data for internal use.*)
+        Parameters : MTSkewCtrlParType; (*Data for internal use.*)
+        LTHS : MTSkewCtrl_LTHS_Type; (*Data for internal use.*)
+        StatusVariables : MTSkewCtrlStatVarType; (*Data for internal use.*)
+    END_STRUCT;
+    MTSkewCtrlParType : 	STRUCT  (*Skew controller parameters.*)
+        AntiSkew : MTSkewOscillationParType; (*Parameters for oscillation controller.*)
+        SkewPosition : MTSkewPIDParType; (*Parameters for stationary controller.*)
+        SkewSystem : MTSkewSystemType; (*Skew system parameters.*)
+        HomePositionOffset : ARRAY[0..3]OF REAL; (*Offset from home position to target actuator positions. Unit: [m].*)
+    END_STRUCT;
+    MTSkewCtrl_LTHS_Type : 	STRUCT  (*Internal data type of function block MTSkewController.*)
+        LTH : MTSkewCtrl_LTHcomp_Type; (*Data for internal use.*)
+        Skew : MTSkewCtrl_S_Type; (*Data for internal use.*)
+        CorrectionVelocity : ARRAY[0..3]OF REAL; (*Data for internal use.*)
+        Limiter : ARRAY[0..3]OF MTSkewLimiterDataType; (*Data for internal use.*)
+    END_STRUCT;
+    MTSkewCtrl_LTHcomp_Type : 	STRUCT  (*Internal data type of function block MTSkewController.*)
+        ProportionalGain : REAL; (*Data for internal use.*)
+        List : MTSkewCtrl_LTH_Type; (*Data for internal use.*)
+        Trim : MTSkewCtrl_LTH_Type; (*Data for internal use.*)
+        Hoist : MTSkewCtrl_LTH_Type; (*Data for internal use.*)
+        CorrectionVelocity : ARRAY[0..3]OF REAL; (*Data for internal use.*)
+    END_STRUCT;
+    MTSkewCtrl_LTH_Type : 	STRUCT  (*Internal data type of function block MTSkewController.*)
+        Transformation : ARRAY[0..3]OF SINT; (*Data for internal use.*)
+        Position : REAL; (*Data for internal use.*)
+        CorrectionVelocity : REAL; (*Data for internal use.*)
+    END_STRUCT;
+    MTSkewCtrl_S_Type : 	STRUCT  (*Internal data type of function block MTSkewController.*)
+        Transformation : ARRAY[0..3]OF SINT; (*Data for internal use.*)
+        Position : REAL; (*Data for internal use.*)
+        PositionOffset : REAL; (*Data for internal use.*)
+        OpenLoopSystem : MTSkewOscillationSystType; (*Data for internal use.*)
+        DesiredSkewAngle : ARRAY[0..2]OF REAL; (*Data for internal use.*)
+        OscillationController : MTSkewOscillationDataType; (*Data for internal use.*)
+        KalmanEstimator : MTSkewKalmanEstDataType; (*Data for internal use.*)
+        StationaryController : MTSkewStationaryDataType; (*Data for internal use.*)
+        CorrectionVelocity : REAL; (*Data for internal use.*)
+    END_STRUCT;
+	MTSkewOscillationSystType : 	STRUCT  (*System characterization for an oscillating system (open & closed loop).*)
+		Gain : REAL; (*Gain.*)
+		AngularFrequency : REAL; (*Angular frequency. Unit: [1/s].*)
+		DampingFactor : REAL; (*Damping factor. Unit: [1].*)
+	END_STRUCT;
+	MTSkewOscillationDataType : 	STRUCT  (*Collection of all data of oscillation controller.*)
+		Parameters : MTSkewOscillationParAugType; (*Augmented parameters of oscillation controller.*)
+		ClosedLoopSystem : MTSkewOscillationSystType; (*System characterization of oscillating closed loop system.*)
+		Output : REAL; (*Controller output.*)
+	END_STRUCT;
+	MTSkewOscillationParAugType : 	STRUCT  (*Augmented parameters of oscillation controller.*)
+		SetDampingFactor : REAL; (*Set damping factor. Unit: [1].*)
+		OutputLimit : REAL; (*Limit value of output. Unit: [.].*)
+		OutputRateLimit : REAL; (*Rate limit value of output. Unit: [./s].*)
+	END_STRUCT;
+	MTSkewKalmanEstDataType : 	STRUCT  (*Collection of all data of Kalman estimator.*)
+		Parameters : MTSkewKalmanEstParType; (*Parameters of Kalman estimator.*)
+		States : MTSkewKalmanEstStatesType; (*States of Kalman estimator.*)
+		Output : REAL; (*Kalman estimator output.*)
+	END_STRUCT;
+	MTSkewKalmanEstParType : 	STRUCT  (*Parameters of Kalman estimator.*)
+		NbInitCycles : UDINT; (*Number of necessary init cycles.*)
+		Q : ARRAY[0..2]OF LREAL; (*Q-matrix as diagonal matrix only.*)
+		r : LREAL; (*R-matrix (here: 1x1).*)
+	END_STRUCT;
+	MTSkewKalmanEstStatesType : 	STRUCT  (*States of Kalman estimator.*)
+		Initialized : BOOL; (*Init of Kalman estimator completed.*)
+		CntInitCycles : UDINT; (*Init cycles counter.*)
+		ObserverStates : ARRAY[0..2]OF LREAL; (*Vector of states.*)
+		ErrorCovariance : ARRAY[0..8]OF LREAL; (*Error covariance matrix (3x3).*)
+		StationaryValue : LREAL; (*Estimated stationary value.*)
+	END_STRUCT;
+	MTSkewStationaryDataType : 	STRUCT  (*Collection of all data of stationary controller.*)
+		Initialize : BOOL; (*Trigger init of stationary controller.*)
+		Suspend : BOOL; (*Suspend stationary controller.*)
+		HoldIntegration : MTSkewPIDIntegrationEnum; (*Hold integration of PID.*)
+		States : MTSkewPIDStatesType; (*States of PID controller.*)
+		Output : REAL; (*Controller output.*)
+	END_STRUCT;
+	MTSkewPIDStatesType : 	STRUCT  (*PID controller internal states.*)
+		ProportionalGain : REAL; (*Proportional gain. Unit: [.].*)
+		IntegrationTime : REAL; (*Integration time. Unit: [s].*)
+		DerivativeTime : REAL; (*Derivative time. Unit: [s].*)
+		FilterTime : REAL; (*Filter time. Unit: [s].*)
+		FilterTimeFactor : REAL; (*Filter time factor. Unit: [1].*)
+		OutputLimit : REAL; (*Limit value of output. Unit: [.].*)
+		ControlErrorOld : REAL; (*Old control error.*)
+		ProportionalPart : REAL; (*Proportional part of PID output.*)
+		IntegrationPart : REAL; (*Integration part of PID output.*)
+		DerivativePart : REAL; (*Derivative part of PID output.*)
+		IntegrationStatus : MTSkewPIDIntegrationEnum; (*Status of integration of PID (in limitation or not).*)
+	END_STRUCT;
+	MTSkewLimiterDataType : 	STRUCT  (*Internal data type of rate limiter.*)
+		InLimitation : SINT; (*In limitation flag.*)
+		OldValue : REAL; (*Old/last value.*)
+	END_STRUCT;
+    MTSkewCtrlStatVarType : 	STRUCT  (*Internal data type of function block MTSkewController.*)
+        ConfigurationValid : BOOL; (*Data for internal use.*)
+        ParametersValid : BOOL; (*Data for internal use.*)
+        Update : BOOL; (*Data for internal use.*)
+        UpdateOld : BOOL; (*Data for internal use.*)
+        EnableOld : BOOL; (*Data for internal use.*)
+    END_STRUCT;
+END_TYPE
+
+(************ MTSkewIdentification *************)
+
+TYPE
+    MTSkewIdentModeEnum :
+        ( (*Skew identification mode.*)
+        mtSKEW_IDENT_MODE_ADVANCED := 0, (*Advanced identification mode.*)
+        mtSKEW_IDENT_MODE_BASIC := 1 (*Basic identification mode.*)
+        );
+    MTSkewIdentStateEnum :
+        ( (*Skew ident state.*)
+        mtSKEW_IDENT_OFF := 0, (*Identification is off.*)
+        mtSKEW_IDENT_INIT_SVF := 1, (*Initialize state variable filters.*)
+        mtSKEW_IDENT_IDLE := 2, (*Idle state.*)
+        mtSKEW_IDENT_HOME_ACTUATORS := 3, (*Home all actuators.*)
+        mtSKEW_IDENT_OFFSET := 4, (*Identify offset.*)
+        mtSKEW_IDENT_EXCITE := 5, (*Excite skew system.*)
+        mtSKEW_IDENT_DYN_DAMP := 6, (*Identify dynamic and damping behavior.*)
+        mtSKEW_IDENT_MOVE_2_I_CCW := 7, (*Move to intermediate CCW actuator position.*)
+        mtSKEW_IDENT_KINEMATIC_I_CCW := 8, (*Identify kinematic factor at intermediate position (CCW).*)
+        mtSKEW_IDENT_MOVE_2_M_CCW := 9, (*Move to maximum CCW actuator position.*)
+        mtSKEW_IDENT_KINEMATIC_M_CCW := 10, (*Identify kinematic factor at maximum position (CCW).*)
+        mtSKEW_IDENT_MOVE_2_I_CW := 11, (*Move to intermediate CW actuator position.*)
+        mtSKEW_IDENT_KINEMATIC_I_CW := 12, (*Identify kinematic factor at intermediate position (CW).*)
+        mtSKEW_IDENT_MOVE_2_M_CW := 13, (*Move to maximum CW actuator position.*)
+        mtSKEW_IDENT_KINEMATIC_M_CW := 14, (*Identify kinematic factor at maximum position (CW).*)
+        mtSKEW_IDENT_MOVE_2_HOME := 15, (*Move to actuator home-position.*)
+        mtSKEW_IDENT_DONE := 16, (*Identification is done.*)
+        mtSKEW_IDENT_ABORTED := 17, (*Identification was aborted.*)
+        mtSKEW_IDENT_ERROR := 18 (*Identification error occured.*)
+        );
+    MTSkewIdentInternalType : 	STRUCT  (*Internal variables of function block MTSkewIdentification.*)
+        CycleTime : LREAL; (*Task cycle time. Unit: [s].*)
+        Configuration : MTSkewActuatorConfigType; (*Data for internal use.*)
+        ActuatorSetup : ARRAY[0..3]OF SINT; (*Data for internal use.*)
+        SVF : MTSkewIdentSVFType; (*Data for internal use.*)
+        ActuatorSystem : MTSkewIdentActuSysType; (*Data for internal use.*)
+        IdentData : MTSkewIdentDataType; (*Data for internal use.*)
+        StatusVariables : MTSkewIdentStatVarType; (*Data for internal use.*)
+    END_STRUCT;
+    MTSkewIdentOrientEnum :
+        ( (*Orientation of identification movement.*)
+        mtSKEW_IDENT_ORIENT_M_CW := -2, (*To maximum position in clockwise/negative direction.*)
+        mtSKEW_IDENT_ORIENT_I_CW := -1, (*To intermediate position in clockwise/negative direction.*)
+        mtSKEW_IDENT_ORIENT_ZERO := 0, (*In/To neutral zero position.*)
+        mtSKEW_IDENT_ORIENT_I_CCW := +1, (*To intermediate position in counter-clockwise/positive direction.*)
+        mtSKEW_IDENT_ORIENT_M_CCW := +2 (*To maximum position in counter-clockwise/positive direction.*)
+        );
+    MTSkewIdentActuSysType : 	STRUCT  (*Internal data type of function block MTSkewIdentification.*)
+        State : USINT; (*Data for internal use.*)
+        Orientation : MTSkewIdentOrientEnum; (*Data for internal use.*)
+        OrientationChanged : BOOL; (*Data for internal use.*)
+        Margins : ARRAY[0..4]OF REAL; (*Data for internal use.*)
+        Excite : MTSkewIdentExciteType; (*Data for internal use.*)
+        Profile : ARRAY[0..3]OF MTSkewIdentProfileType; (*Data for internal use.*)
+    END_STRUCT;
+    MTSkewIdentDataType : 	STRUCT  (*Internal data type of function block MTSkewIdentification.*)
+        State : USINT; (*Data for internal use.*)
+        MinIdentTime : LREAL; (*Data for internal use.*)
+        HoistLength : REAL; (*Data for internal use.*)
+        LSQ : MTSkewIdentLSQType; (*Data for internal use.*)
+        Timer : LREAL; (*Data for internal use.*)
+        OscTime : LREAL; (*Data for internal use.*)
+        SkewPositionSum : LREAL; (*Data for internal use.*)
+        SkewPositionMean : ARRAY[0..5]OF LREAL; (*Data for internal use.*)
+        GainTimesSkewPositionPlusOffset : ARRAY[0..5]OF LREAL; (*Data for internal use.*)
+        DynamicConstant : REAL; (*Data for internal use.*)
+        DampingConstant : REAL; (*Data for internal use.*)
+        Gain : REAL; (*Data for internal use.*)
+        Offset : REAL; (*Data for internal use.*)
+        Done : BOOL; (*Data for internal use.*)
+        Error : BOOL; (*Data for internal use.*)
+    END_STRUCT;
+    MTSkewIdentExciteType : 	STRUCT  (*Internal data type of function block MTSkewIdentification.*)
+        MaxSkewAngle : REAL; (*Data for internal use.*)
+        Timer : LREAL; (*Data for internal use.*)
+        TimerThreshold : LREAL; (*Data for internal use.*)
+        Error : BOOL; (*Data for internal use.*)
+    END_STRUCT;
+    MTSkewIdentLSQType : 	STRUCT  (*Internal data type of function block MTSkewIdentification.*)
+        NbSamples : UDINT; (*Data for internal use.*)
+        PMatrix : ARRAY[0..3,0..3]OF LREAL; (*Data for internal use.*)
+        CoeffVec : ARRAY[0..3]OF LREAL; (*Data for internal use.*)
+    END_STRUCT;
+    MTSkewIdentProfileType : 	STRUCT  (*Internal data type of function block MTSkewIdentification.*)
+        Active : BOOL; (*Data for internal use.*)
+        StartPosition : REAL; (*Data for internal use.*)
+        EndPosition : REAL; (*Data for internal use.*)
+        MaxVelocity : REAL; (*Data for internal use.*)
+        MoveDir : SINT; (*Data for internal use.*)
+        MaxDistance : REAL; (*Data for internal use.*)
+        MinDuration : LREAL; (*Data for internal use.*)
+        Distance : REAL; (*Data for internal use.*)
+        Exceeded : BOOL; (*Data for internal use.*)
+        Velocity : REAL; (*Data for internal use.*)
+        ExpirationTimer : LREAL; (*Data for internal use.*)
+        ExpirationThreshold : LREAL; (*Data for internal use.*)
+        Expired : BOOL; (*Data for internal use.*)
+    END_STRUCT;
+    MTSkewIdentStatVarType : 	STRUCT  (*Internal data type of function block MTSkewIdentification.*)
+        ConfigurationValid : BOOL; (*Data for internal use.*)
+        State : MTSkewIdentStateEnum; (*Data for internal use.*)
+        Mode : MTSkewIdentModeEnum; (*Data for internal use.*)
+        GotStarted : BOOL; (*Data for internal use.*)
+        GotAborted : BOOL; (*Data for internal use.*)
+        Start : BOOL; (*Data for internal use.*)
+        StartOld : BOOL; (*Data for internal use.*)
+        Stop : BOOL; (*Data for internal use.*)
+        StopOld : BOOL; (*Data for internal use.*)
+        EnableOld : BOOL; (*Data for internal use.*)
+    END_STRUCT;
+    MTSkewIdentSVFType : 	STRUCT  (*Internal data type of function block MTSkewIdentification.*)
+        Initialize : BOOL; (*Data for internal use.*)
+        FilterTime : LREAL; (*Data for internal use.*)
+        NumCoeffD0 : ARRAY[0..3]OF LREAL; (*Data for internal use.*)
+        NumCoeffD1 : ARRAY[0..3]OF LREAL; (*Data for internal use.*)
+        NumCoeffD2 : ARRAY[0..3]OF LREAL; (*Data for internal use.*)
+        DenomCoeff : ARRAY[0..3]OF LREAL; (*Data for internal use.*)
+        SkewAngleD0State : ARRAY[0..2]OF LREAL; (*Data for internal use.*)
+        SkewAngleD1State : ARRAY[0..2]OF LREAL; (*Data for internal use.*)
+        SkewAngleD2State : ARRAY[0..2]OF LREAL; (*Data for internal use.*)
+        SkewPositionState : ARRAY[0..2]OF LREAL; (*Data for internal use.*)
+        InitCounter : UINT; (*Data for internal use.*)
+        Initialized : BOOL; (*Data for internal use.*)
+        SkewAngleD0 : LREAL; (*Data for internal use.*)
+        SkewAngleD1 : LREAL; (*Data for internal use.*)
+        SkewAngleD2 : LREAL; (*Data for internal use.*)
+        SkewPosition : LREAL; (*Data for internal use.*)
+    END_STRUCT;
+END_TYPE
+
+(************** MTSkewObserver ***********)
+
+TYPE
+    MTSkewObserverIntType : 	STRUCT  (*Internal variables of function block MTSkewObserver.*)
+        CycleTime : LREAL; (*Task cycle time. Unit: [s].*)
+        Configuration : MTSkewActuatorConfigType; (*Data for internal use.*)
+        ActuatorSetup : ARRAY[0..3]OF SINT; (*Data for internal use.*)
+        SkewSystem : MTSkewSystemType; (*Data for internal use.*)
+        ObserverParameters : MTSkewObserverParType; (*Data for internal use.*)
+        SkewPosition : REAL; (*Data for internal use.*)
+        Observer : MTSkewObserverDataType; (*Data for internal use.*)
+        StatusVariables : MSkewObserverStatVarType; (*Data for internal use.*)
+    END_STRUCT;
+    MTSkewObserverDataType : 	STRUCT  (*Internal data type of function block MTSkewObserver.*)
+        MinInitTime : LREAL; (*Data for internal use.*)
+        InitTimer : LREAL; (*Data for internal use.*)
+        Initialized : BOOL; (*Data for internal use.*)
+        StatesFigure : ARRAY[0..2]OF LREAL; (*Data for internal use.*)
+        DynamicFigure : LREAL; (*Data for internal use.*)
+        ErrorCovariance : ARRAY[0..2,0..2]OF LREAL; (*Data for internal use.*)
+        ActSkewGain : REAL; (*Data for internal use.*)
+        InputVector : ARRAY[0..2]OF LREAL; (*Data for internal use.*)
+        SystemMatrix : ARRAY[0..2,0..2]OF LREAL; (*Data for internal use.*)
+        SystemStates : ARRAY[0..2]OF LREAL; (*Data for internal use.*)
+        OutputVector : ARRAY[0..2]OF LREAL; (*Data for internal use.*)
+    END_STRUCT;
+    MTSkewObserverParType : 	STRUCT  (*Internal data type of function block MTSkewObserver.*)
+        AngleFactor : LREAL; (*Data for internal use.*)
+        AngularFrequencyFactor : LREAL; (*Data for internal use.*)
+        DisturbanceFactor : LREAL; (*Data for internal use.*)
+        DynamicFactor : LREAL; (*Data for internal use.*)
+    END_STRUCT;
+    MSkewObserverStatVarType : 	STRUCT  (*Internal data type of function block MTSkewObserver.*)
+        ConfigurationValid : BOOL; (*Data for internal use.*)
+        ParametersValid : BOOL; (*Data for internal use.*)
+        Update : BOOL; (*Data for internal use.*)
+        UpdateOld : BOOL; (*Data for internal use.*)
+        EnableOld : BOOL; (*Data for internal use.*)
+    END_STRUCT;
+END_TYPE
+
+(************** MTSkewSimulationModel **************)
+
+TYPE
+    MTSkewSimDimensionsType : 	STRUCT  (*Dimensions of the hoist rope reeving.*)
+        TrolleyWidth : MTSkewCoordinatesXZType; (*Distance between the pulleys of the trolley (x & z direction). Unit: [m].*)
+        SpreaderWidth : MTSkewCoordinatesXZType; (*Distance between the pulleys of the spreader (x & z direction). Unit: [m].*)
+    END_STRUCT;
+    MTSkewSimConfigType : 	STRUCT  (*Configuration parameters of skew simulation.*)
+        Dimensions : MTSkewSimDimensionsType; (*Skew (hoist rope reeving) dimensions.*)
+        Actuators : MTSkewActuatorConfigType; (*Skew actuators.*)
+        InitValue : MTSkewSimInitValuesType; (*Initial skew coordinates.*)
+        DelayTime : REAL; (*Delay time of skew actuators. Unit: [s].*)
+    END_STRUCT;
+    MTSkewSimInitValuesType : 	STRUCT  (*Initial skew coordinates.*)
+        ActuatorPositionOffset : ARRAY[0..3]OF REAL; (*Initial offset of actuator home positions. Unit: [m].*)
+        SkewAngle : REAL; (*Initial skew angle. Unit: [°].*)
+    END_STRUCT;
+    MTSkewSimModelInfoType : 	STRUCT  (*Skew simulation information.*)
+        SkewSystem : MTSkewSystemType; (*Skew system parameters.*)
+    END_STRUCT;
+    MTSkewSimModelParType : 	STRUCT  (*Parameters for skew simulation model.*)
+        System : MTSkewSimSystemParType; (*Skew system parameters used with simulation.*)
+        NoiseFactor : MTSkewSimNoiseFactorType; (*Noise factors for actuators and skew movement.*)
+    END_STRUCT;
+    MTSkewSimNoiseFactorType : 	STRUCT  (*Noise factors.*)
+        Actuators : REAL; (*Noise factor for actuators.*)
+        Skew : REAL; (*Noise factor for skew movement (angle, angular velocity).*)
+    END_STRUCT;
+    MTSkewSimSystemParType : 	STRUCT  (*Skew system parameters used with simulation.*)
+        LoadMass : REAL; (*Mass of load. Unit: [kg].*)
+        LoadMomentOfInertia : REAL; (*Moment of inertia of load. Unit: [kgm²].*)
+        DampingFactor : REAL; (*Damping factor. Unit: [kgm²/s].*)
+        KinematicFactor : REAL; (*Kinematic factor between skew angle and actuator position. Unit: [°/m].*)
+    END_STRUCT;
+    MTSkewSimModelIntType : 	STRUCT  (*Internal variables of function block MTSkewSimulationModel.*)
+        CycleTime : LREAL; (*Task cycle time. Unit: [s].*)
+        Configuration : MTSkewSimConfigType; (*Data for internal use.*)
+        Parameters : MTSkewSimModelParType; (*Data for internal use.*)
+        Skew : MTSkewSimSkewDataType; (*Data for internal use.*)
+        StatusVariables : MTSkewSimModStatVarType; (*Data for internal use.*)
+    END_STRUCT;
+    MTSkewSimActuDataType : 	STRUCT  (*Internal data type of function block MTSkewSimulationModel.*)
+        InLimitation : SINT; (*Data for internal use.*)
+        Velocity : REAL; (*Data for internal use.*)
+        VelocityLimited : REAL; (*Data for internal use.*)
+        VelocityOld : REAL; (*Data for internal use.*)
+        Position : REAL; (*Data for internal use.*)
+    END_STRUCT;
+    MTSkewSimModCharType : 	STRUCT  (*Internal data type of function block MTSkewSimulationModel.*)
+        SingularAngle : REAL; (*Data for internal use.*)
+        HoistLength : LREAL; (*Data for internal use.*)
+        JB : LREAL; (*Data for internal use.*)
+        dB : LREAL; (*Data for internal use.*)
+        iB : LREAL; (*Data for internal use.*)
+        cB : LREAL; (*Data for internal use.*)
+        T : LREAL; (*Data for internal use.*)
+        w : LREAL; (*Data for internal use.*)
+        d : LREAL; (*Data for internal use.*)
+    END_STRUCT;
+    MTSkewSimModIntDataType : 	STRUCT  (*Internal data type of function block MTSkewSimulationModel.*)
+        Angle : ARRAY[0..2]OF LREAL; (*Data for internal use.*)
+        AngularVelocity : ARRAY[0..2]OF LREAL; (*Data for internal use.*)
+    END_STRUCT;
+    MTSkewSimSkewDataType : 	STRUCT  (*Internal data type of function block MTSkewSimulationModel.*)
+        Delay : ARRAY[0..3]OF MTSkewTimeDelayFcnType; (*Data for internal use.*)
+        Actuator : ARRAY[0..3]OF MTSkewSimActuDataType; (*Data for internal use.*)
+        Transformation : ARRAY[0..3]OF SINT; (*Data for internal use.*)
+        Position : REAL; (*Data for internal use.*)
+        Characteristics : MTSkewSimModCharType; (*Data for internal use.*)
+        SimModelInt : MTSkewSimModIntDataType; (*Data for internal use.*)
+        ActAngle : REAL; (*Data for internal use.*)
+        ActAngularVelocity : REAL; (*Data for internal use.*)
+    END_STRUCT;
+    MTSkewSimModStatVarType : 	STRUCT  (*Internal data type of function block MTSkewSimulationModel.*)
+        ConfigurationValid : BOOL; (*Data for internal use.*)
+        ParametersValid : BOOL; (*Data for internal use.*)
+        Update : BOOL; (*Data for internal use.*)
+        UpdateOld : BOOL; (*Data for internal use.*)
+        EnableOld : BOOL; (*Data for internal use.*)
+    END_STRUCT;
+END_TYPE
+
+(************** Common internal data types **************)
+
+TYPE
+    MTSkewTimeDelayFcnType : 	STRUCT  (*Data for internal use.*)
+        DelayCounter : UDINT; (*Data for internal use.*)
+        ActBufferIndex : UDINT; (*Data for internal use.*)
+        ActBufferElements : UDINT; (*Data for internal use.*)
+        OldBufferElements : UDINT; (*Data for internal use.*)
+        DelayTimeAct : REAL; (*Data for internal use.*)
+        BufferPointer : REFERENCE TO REAL; (*Data for internal use.*)
+    END_STRUCT;
+END_TYPE

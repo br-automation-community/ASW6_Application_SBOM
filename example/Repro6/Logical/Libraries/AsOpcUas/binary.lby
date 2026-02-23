@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library Version="6.5.0" SubType="binary" Description="The AsOpcUas library provides function blocks for handling OPC UA Server functionality" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>AsOpcUas.fun</File>
+    <File>AsOpcUas.var</File>
+    <File>AsOpcUas.typ</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="AsOpcUac" FromVersion="0.0.0" ToVersion="2147483647.2147483647.2147483647" />
+  </Dependencies>
+</Library>

@@ -1,0 +1,4 @@
+VAR CONSTANT
+	arISCSHM_ERR_OPEN          : DINT := -1070583446;	(*shared memory partition open error*)
+	arISCSHM_ERR_IDENT_INVALID : DINT := -1070583445;	(*invalid ident*)
+END_VAR

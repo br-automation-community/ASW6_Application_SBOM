@@ -1,0 +1,41 @@
+TYPE
+    FxNetMgrNetworkStateEnum :
+	(
+		fxNETMGR_NET_STATE_UNINIT := 0,
+		fxNETMGR_NET_STATE_INIT:= 1,
+		fxNETMGR_NET_STATE_IN_PROGRESS := 2,
+		fxNETMGR_NET_STATE_ERROR := 3,
+		fxNETMGR_NET_STATE_OPERATIONAL := 4
+	);
+END_TYPE
+
+TYPE
+    FxNetMgrCommandEnum:
+	(
+		fxNETMGR_CMD_STARTUP_NETWORK := 0,
+		fxNETMGR_CMD_DEPLOY_TSN_CONFIG := 1,
+		fxNETMGR_CMD_VERIFY_TOPOLOGY := 2
+	);
+END_TYPE
+
+TYPE
+    FxNetMgrProcessingStrategyEnum :
+    (
+        fxNETMGR_PROC_STRAT_INITIAL := 0,
+        fxNETMGR_PROC_STRAT_INCREMENTAL := 1
+    );
+END_TYPE
+
+TYPE
+    FxNetMgrErrorStateEnum :
+    (
+        fxNETMGR_ERROR_NONE:= 0,
+        fxNETMGR_ERROR_TOP_VERIFICATION := 1,
+        fxNETMGR_ERROR_DEVICE_CONFIG := 2,
+        fxNETMGR_ERROR_TSN_CONFIG := 3,
+        fxNETMGR_ERROR_NETWORK_SYSTEM := 4,
+        fxNETMGR_ERROR_APP_CONFIG := 5,
+        fxNETMGR_ERROR_TIMESYNC_CONFIG := 6,
+        fxNETMGR_ERROR_DEVICE_REBOOT := 7
+    );
+END_TYPE

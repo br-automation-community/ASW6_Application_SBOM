@@ -1,0 +1,7 @@
+VAR CONSTANT
+	arMCS_ERR_INTERNAL                 : DINT := -1070582346;	(*internal error*)
+	arMCS_ERR_DNS_INVALID              : DINT := -1070582345;	(*invalid DNS name given*)
+	arMCS_ERR_IP_INVALID               : DINT := -1070582344;	(*invalid IP given*)
+	arMCS_ERR_INVALID                  : DINT := -1070582343;	(*invalid MCS given*)
+	arMCS_ERR_URI_INVALID              : DINT := -1070582342;	(*invalid Uri given*)
+END_VAR

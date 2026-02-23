@@ -1,0 +1,11 @@
+                                                                      
+VAR CONSTANT
+	asimERR_INVALID_DEVICE				: UINT	:= 35030;	(*error invalid device*)
+	asimERR_SEND_MESSAGE				: UINT	:= 35031;	(*error send message*)
+	asimERR_TIMEOUT						: UINT	:= 35032;	(*error timeout*)
+	asimERR_ASI_STACK					: UINT	:= 35033;	(*error receive message*)
+	asimERR_PARAMETER					: UINT	:= 35034;	(*error parameter*)
+	asimERR_LENGTH						: UINT	:= 35035;	(*error max length*)
+	
+	asimDIAG_REQ_FLAG_PEEK				: UDINT	:= 16#00000001;	(*diagnose request flag peek*)
+END_VAR

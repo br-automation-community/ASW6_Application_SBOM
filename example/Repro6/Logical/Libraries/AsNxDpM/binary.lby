@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="The AsNxDpM library handles access to netX Profibus DP master." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>AsNxDpM.fun</File>
+    <File>AsNxDpM.typ</File>
+    <File>AsNxDpM.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

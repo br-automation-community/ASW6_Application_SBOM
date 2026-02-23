@@ -1,0 +1,15 @@
+
+VAR CONSTANT
+	arCAN_11BIT                 : UDINT := 16#00000001;	(*11BIT CAN frame*)
+	arCAN_29BIT                 : UDINT := 16#00000002; (*29BIT CAN frame*)
+	
+	arCAN_RECEIVE_ALL           : UDINT := 16#00000000;	(*Receive all IDs*)
+	arCAN_RECEIVE_SINGLE_ID     : UDINT := 16#FFFFFFFF;	(*Receive single ID*)
+	
+	arCAN_ERR_INVALID_ID		: DINT := -1070584145;	(*The ID is invalid.*)
+	arCAN_ERR_BUFFER_FULL		: DINT := -1070584146;	(*The buffer for this device is full.*)
+	arCAN_ERR_INVALID_PARAMETER	: DINT := -1070584147;	(*Check parameters.*)
+	arCAN_ERR_DEVICE_NAME		: DINT := -1070584148;	(*Check device name.*)
+	arCAN_ERR_TIMEOUT		 	: DINT := -1070584149;	(*The Timeout was reached.*)
+	arCAN_ERR_INVALID_DATALENGTH: DINT := -1070584150;	(*The length of the data is invalid.*)
+END_VAR

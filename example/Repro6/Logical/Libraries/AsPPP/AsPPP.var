@@ -1,0 +1,4 @@
+                                                                      
+VAR CONSTANT
+	pppERR_INVALID_DEVICE				: UINT := 32000;	(*invlalid parent device*)
+END_VAR

@@ -1,0 +1,30 @@
+*.zip
+*.7z
+
+# Ignore AR versions as those are not considered part of the project
+/**/AS/System/
+
+# Ignore build results
+/**/Binaries/
+
+# Ignore (all) debugging content
+/**/Diagnosis/**
+
+# Ignore standard temp folder
+/**/Temp/**
+
+# Ignore upgrades as those are not considered part of the project source code
+/**/Upgrades/
+
+# Ignore user settings file
+/**/*.set
+
+# Ignore is open indication
+/**/*.isopen
+
+# Ignore debug logs
+/**/debug.log
+ 
+# Ignore .zip files, for the moment
+/**/*.zip
+

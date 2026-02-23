@@ -1,0 +1,23 @@
+                                                                      
+VAR CONSTANT
+
+	smtpERR_PARAMETER					: UINT := 32700;	(*invalid parameter, check parameter*)
+	smtpERR_SOCKET_CREATE				: UINT := 32701;	(*create socket failed*)
+	smtpERR_SOCKET_CONNECT				: UINT := 32702;	(*connect socket failed*)
+	smtpERR_RESPONSE_TIMEOUT			: UINT := 32703;	(*server response timeout*)
+	smtpERR_RESPONSE_UNEXPECTED			: UINT := 32704;	(*unexpected response*)
+	smtpERR_AUTHENTICATION_METHOD		: UINT := 32705;	(*no supported authentication method*)
+	smtpERR_AUTHENTICATION_FAILED		: UINT := 32706;	(*authentication failed*)
+	smtpERR_ATTACHMENT_INVALID			: UINT := 32707;	(*invalid attachment*)
+	
+	smtpERR_SSL							: UINT := 32708;	(*common SSL error*)
+	smtpERR_HANDSHAKE   				: UINT := 32709;	(*SSL handshake failed*)
+	smtpERR_INVALID_SSL_CONFIG			: UINT := 32710;	(*invalid SSL configuration given*)
+	smtpERR_INVALID_MCS_CONFIG			: UINT := 32711;	(*invalid MCS configuration given*)
+	
+	smtpERR_SYSTEM						: UINT := 32749;	(*system error*)
+
+	smtpATT_TYPE_FILE					: USINT := 1;		(*attachment type file*)
+	smtpATT_TYPE_DATMOD					: USINT := 2;		(*attachment type datamodule*)
+	smtpATT_TYPE_MEMORY					: USINT := 3;		(*attachment type memory area*)
+END_VAR

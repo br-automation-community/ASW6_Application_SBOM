@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library Version="6.5.1" SubType="Binary" Description="Programmable machine sequence" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>MpSequence.var</File>
+    <File>MpSequence.typ</File>
+    <File>MpSequenceError.typ</File>
+    <File>MpSequenceAlarm.typ</File>
+    <File>MpSequence.fun</File>
+    <File>Configuration.tmx</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="MpBase" FromVersion="6.5.0" ToVersion="6.2147483647.2147483647" />
+  </Dependencies>
+</Library>

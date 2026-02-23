@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="This library contains function blocks for a digital cam switch functionality on the PLC." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>ASMcDcs.fun</File>
+    <File>ASMcDcs.typ</File>
+    <File>ASMcDcs.var</File>
+  </Files>
+</Library>

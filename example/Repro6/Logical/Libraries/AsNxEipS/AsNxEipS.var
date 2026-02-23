@@ -1,0 +1,12 @@
+                                                                      
+VAR CONSTANT
+	eipsERR_INVALID_DEVICE				: UINT	:= 37810;	(*error invalid device*)
+	eipsERR_SEND_MESSAGE				: UINT	:= 37811;	(*error send message*)
+	eipsERR_TIMEOUT						: UINT	:= 37812;	(*error timeout*)
+	eipsERR_EIP_STACK					: UINT	:= 37813;	(*error receive message*)
+	eipsERR_PARAMETER					: UINT	:= 37814;	(*error parameter*)
+	eipsERR_MEMORY						: UINT	:= 37815;	(*error low memory*)
+	eipsERR_SUBSCRIBE_LISTENER			: UINT	:= 37816;	(*error subscribe listener*)
+	eipsERR_NO_MORE_ENTRIES				: UINT	:= 37817;	(*error no more entries available*)
+	eipsERR_DATA_SIZE					: UINT	:= 37818;	(*error data size*)
+END_VAR

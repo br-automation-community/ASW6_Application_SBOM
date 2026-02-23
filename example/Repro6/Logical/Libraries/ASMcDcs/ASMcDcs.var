@@ -1,0 +1,23 @@
+(********************************************************************
+ * COPYRIGHT -- Bernecker + Rainer
+ ********************************************************************
+ * Library: ASMcDcs
+ * File: ASMcDcs.var
+ * Author: B+R
+ ********************************************************************
+ * Constants of library ASMcDcs
+ ********************************************************************)
+VAR CONSTANT
+	ASMCDCS_MODE_DIRECT : UINT := 0;
+	ASMCDCS_MODE_FORCE_EVENT : UINT := 2;
+	ASMCDCS_MODE_PERIOD : UINT := 1;
+	ASMCDCS_MODE_PERIOD_ADVANCED : UINT := 2;
+	ASMCDCS_MODE_DIRECT_SET_VALUE : UINT := 8;
+	ASMCDCS_MODE_FORCE_BEHAVIOR_1 : UINT := 0;
+	ASMCDCS_MODE_FORCE_BEHAVIOR_2  : UINT := 64;
+	ASMCDCS_MODE_ENABLETRACK_AT_ONCE : UINT := 128;
+	ASMCDCS_TDCS_MODE_DIRECT : UINT := 0;
+	ASMCDCS_TDCS_MODE_EXP_PERIOD : UINT := 2;
+	ASMCDCS_TDCS_MODE_PERIOD : UINT := 1;
+	ASMCDCS_MODE_FORCE_OUTPUT : UINT := 4;
+END_VAR

@@ -1,0 +1,6 @@
+VAR CONSTANT
+	arSRM_ERR_INTERNAL : DINT := -1070583646; (*An internal error has occurred: Please contact B+R support*)
+	arSRM_ERR_INVALID_DEVICE : DINT := -1070583645; (*Specified device name does not exist*)
+	arSRM_ERR_INVALID_NAME : DINT := -1070583644; (*Specified parameter name does not exist or has been selected twice*)
+	arSRM_ERR_FORMAT : DINT := -1070583643; (*Parameter value has wrong data format*)
+END_VAR

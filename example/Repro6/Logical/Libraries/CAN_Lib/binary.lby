@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="Send and receive CAN frames " xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>CAN_Lib.fun</File>
+    <File>CAN_Lib.typ</File>
+    <File>CAN_Lib.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

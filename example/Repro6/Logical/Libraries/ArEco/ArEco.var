@@ -1,0 +1,8 @@
+VAR CONSTANT
+	arECO_ERR_FB_NOT_SUPPORTED : DINT := -1070584446; (*The used PLC do not support this functionblock*)
+	arECO_ERR_INVALID_PARAMETER : DINT := -1070584445; (*Please check function block parameters*)
+	arECO_ERR_INTERNAL : DINT := -1070584444; (*An internal error has occurred: Please contact B+R support*)
+	arECO_ERR_INVALID_WAKEUPTRIGGER : DINT := -1070584443; (*Please check wake-up triggers*)
+	arECO_ERR_INVALID_WAKEUPMODE : DINT := -1070584442; (*Please check wake-up modes*)
+	arECO_ERR_NO_WAKEUP_PAR : DINT := -1070584441; (*No wake-up parameters set*)
+END_VAR

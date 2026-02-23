@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="The AsMbTCP library is used to insert commands to the modbusTCP driver." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>AsMbTCP.fun</File>
+    <File>AsMbTCP.typ</File>
+    <File>AsMbTCP.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library Version="6.5.1" SubType="Binary" Description="Centralized event audit trail" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>MpAudit.typ</File>
+    <File>MpAuditError.typ</File>
+    <File>MpAuditAlarm.typ</File>
+    <File>MpAuditCfg.typ</File>
+    <File>MpAudit.fun</File>
+    <File>TxtEvent.tmx</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="MpBase" FromVersion="6.5.0" ToVersion="6.2147483647.2147483647" />
+  </Dependencies>
+</Library>

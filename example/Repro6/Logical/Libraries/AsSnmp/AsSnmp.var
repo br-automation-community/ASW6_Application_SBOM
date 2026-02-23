@@ -1,0 +1,39 @@
+                                                                      
+VAR CONSTANT
+	snmpINTEGER					: UINT	:= 2;		(*SNMP 32 Bit Integer value *)
+	snmpSTRING					: UINT	:= 4;		(*SNMP STRING value*)
+	
+	snmpERR_NULLPOINTER			: UINT := 34250;	(*null pointer*)
+	snmpERR_INVALID_IP_PORT		: UINT := 34251;	(*invalid IP address, hostname or port*)
+	snmpERR_EMPTY_OID			: UINT := 34252;	(*variable with an empty OID*)
+	snmpERR_INSUFFICIENT_MEMORY : UINT := 34253;	(*insufficient memory*)
+	snmpERR_CREATING_REQUEST	: UINT := 34254;	(*request packet creation failed*)
+	snmpERR_DECODING_RESPONSE	: UINT := 34255;	(*response packet decoding failed*)
+	snmpERR_INVALID_RESPONSE	: UINT := 34256;	(*an invalid SNMP response was received*)
+	snmpERR_SNMP_RESPONSE		: UINT := 34257;	(*SNMP response packet error, see snmpError and snmpErrorIdx*)
+	snmpERR_NULLPOINTER_VALUE	: UINT := 34258;	(*pValue not set*)
+	snmpERR_INVALID_TYPE		: UINT := 34259;	(*invalid type*)
+	snmpERR_BUFFER_TOO_SMALL	: UINT := 34260;	(*buffer too small*)
+	snmpERR_NO_RESPONSE			: UINT := 34261;	(*no response*)
+	snmpERR_PACKET_TOO_LARGE	: UINT := 34262;	(*SNMP packet too large*)
+	snmpERR_INVALID_LENGTH		: UINT := 34263;	(*invalid variable length*)
+	snmpERR_UNSUPP_RESP_VAR		: UINT := 34264; 	(*unsupported response variable type*)
+	snmpERR_INVALID_TRAP_ID		: UINT := 34265;	(*invalid general trap id*)
+	snmpERR_CREATING_TRAP		: UINT := 34266;	(*trap packet creation failed*)
+
+	snmpNO_ERROR				: UINT := 0;		(*no error*)
+	snmpTOO_BIG					: UINT := 1;		(*SNMP packet too big*)
+	snmpNO_SUCH_NAME			: UINT := 2;		(*SNMP variable not available*)
+	snmpBAD_VALUE				: UINT := 3;		(*incorrect type, value, or length*)
+	snmpREAD_ONLY				: UINT := 4;		(*no write access*)
+	snmpGEN_ERR					: UINT := 5;		(*generic error*)
+
+	snmpCOLD_START				: UINT := 0;		(*cold start*)
+	snmpWARM_START				: UINT := 1;		(*warm start*)
+	snmpLINK_DOWN				: UINT := 2;		(*link down*)
+	snmpLINK_UP					: UINT := 3;		(*link up*)
+	snmpAUTH_FAILURE			: UINT := 4;		(*authentication failure*)
+	snmpEGP_NEIGHBOR_LOSS		: UINT := 5;		(*egp neighbor loss*)
+	snmpENTERPRISE_SPECIFIC		: UINT := 6;		(*enterprise specific*)
+	
+END_VAR

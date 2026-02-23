@@ -1,0 +1,4 @@
+                                                                      
+ VAR CONSTANT
+	arETHBOND_ERR_INVALID_NAME 	: DINT := -1070585906;	(*invalid bond name as input parameter*)
+END_VAR

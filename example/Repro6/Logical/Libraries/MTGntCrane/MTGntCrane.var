@@ -1,0 +1,61 @@
+(*Errors: Common errors*)
+VAR CONSTANT
+	mtCRN_ERR_CONFIGURATION_INVALID : DINT := -1058003147; (*Error: Invalid configuration.*)
+	mtCRN_ERR_DELAY_TIME_INVALID : DINT := -1058003157; (*Error: Delay time is invalid.*)
+	mtCRN_ERR_DYNAMIC_PAR_INVALID : DINT := -1058003146; (*Error: Invalid dynamic parameters.*)
+END_VAR
+(*Errors: MTGntCrane2DTrajectory*)
+VAR CONSTANT
+	mtCRN_ERR_GEOMETRIC_PAR_INVALID : DINT := -1058003145; (*Error: Invalid geometric parameters.*)
+	mtCRN_ERR_INIT_POINT_INVALID : DINT := -1058003144; (*Error: Invalid init position.*)
+	mtCRN_ERR_START_POINT_INVALID : DINT := -1058003143; (*Error: Invalid start position.*)
+	mtCRN_ERR_END_POINT_INVALID : DINT := -1058003141; (*Error: Invalid end position.*)
+	mtCRN_ERR_START_VEL_INVALID : DINT := -1058003140; (*Error: Invalid start velocity.*)
+	mtCRN_ERR_END_VEL_INVALID : DINT := -1058003139; (*Error: Invalid end velocity.*)
+END_VAR
+(*Errors: MTGntCraneController*)
+VAR CONSTANT
+	mtCRN_ERR_CTRL_PAR_INVALID : DINT := -1058003164; (*Error: Controller parameters are invalid.*)
+	mtCRN_ERR_FF_MODE_INVALID : DINT := -1058003162; (*Error: Invalid mode set for feed forward.*)
+END_VAR
+(*Errors: MTGntCraneLoadObserver*)
+VAR CONSTANT
+	mtCRN_ERR_OBSERVER_PAR_INVALID : DINT := -1058003159; (*Error: Observer parameters are invalid.*)
+END_VAR
+(*Errors: MTGntCraneSimulationModel*)
+VAR CONSTANT
+	mtCRN_ERR_AXIS_PAR_INVALID : DINT := -1058003160; (*Error: Invalid parameter in the axis parameter structure.*)
+	mtCRN_ERR_NOISE_FACTOR_INVALID : DINT := -1058003134; (*Error: Invalid noise factor.*)
+	mtCRN_ERR_SYSTEM_PAR_INVALID : DINT := -1058003161; (*Error: Invalid system parameters.*)
+END_VAR
+(*Warnings: Common warnings*)
+VAR CONSTANT
+	mtCRN_WRN_DYNAMIC_PAR_INVALID : DINT := -2131744963; (*Warning: Invalid dynamic parameters.*)
+	mtCRN_WRN_HOISTLENGTH_INVALID : DINT := -2131744964; (*Warning: Invalid hoist length.*)
+END_VAR
+(*Warnings: MTGntCrane2DTrajectory*)
+VAR CONSTANT
+	mtCRN_WRN_COMMAND_INVALID : DINT := -2131744970; (*Warning: Invalid command.*)
+	mtCRN_WRN_START_EQUAL_DEST : DINT := -2131744968; (*Warning: Start and end position are equal.*)
+	mtCRN_WRN_VEL_NOT_REACHED : DINT := -2131744961; (*Warning: Demanded start or end velocity cannot be reached.*)
+	mtCRN_WRN_GEOMETRIC_PAR_INVALID : DINT := -2131744960; (*Warning: Invalid geometric parameters.*)
+	mtCRN_WRN_END_POINT_INVALID : DINT := -2131744959; (*Warning: Invalid end position.*)
+	mtCRN_WRN_END_VEL_INVALID : DINT := -2131744958; (*Warning: Invalid end velocity.*)
+	mtCRN_WRN_CRASH_DUE_TO_END_VEL : DINT := -2131744969; (*Warning: The choosen end velocity could lead to a crash.*)
+END_VAR
+(*Warnings: MTGntCraneControlller*)
+VAR CONSTANT
+	mtCRN_WRN_CTRL_PAR_INVALID : DINT := -2131744988; (*Warning: Controller parameters are invalid.*)
+	mtCRN_WRN_FF_MODE_INVALID : DINT := -2131744986; (*Warning: Invalid mode set for feed forward.*)
+	mtCRN_WRN_MODE_INVALID : DINT := -2131744987; (*Warning: Invalid controller mode.*)
+END_VAR
+(*Warnings: MTGntCraneLoadObserver*)
+VAR CONSTANT
+	mtCRN_WRN_OBSERVER_PAR_INVALID : DINT := -2131744971; (*Warning: Observer parameters are invalid.*)
+END_VAR
+(*Warnings: MTGntCraneSimulationModel*)
+VAR CONSTANT
+	mtCRN_WRN_AXIS_PAR_INVALID : DINT := -2131744984; (*Warning: Axis parameters set for crane are invalid.*)
+	mtCRN_WRN_NOISE_FACTOR_INVALID : DINT := -2131744966; (*Warning: Invalid noise factor.*)
+	mtCRN_WRN_SYSTEM_PAR_INVALID : DINT := -2131744985; (*Warning: Invalid system parameters.*)
+END_VAR

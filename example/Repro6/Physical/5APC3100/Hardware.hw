@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio WorkingVersion="6.5" FileVersion="4.9"?>
+<Hardware xmlns="http://br-automation.co.at/AS/Hardware">
+  <Module Name="0AC808.9-1" Type="0AC808.9-1" Version="1.0.0.0">
+    <Connection Connector="ETH1" TargetModule="5ACCIF02.FPSC-000" TargetConnector="IF1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Connection Connector="ETH8" TargetModule="oX20BC1083" TargetConnector="PLK1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+  </Module>
+  <Module Name="5ACCIF02.FPSC-000" Type="5ACCIF02.FPSC-000" Version="1.6.0.0">
+    <Connection Connector="SL" TargetModule="5APC3100_KBU0_000" TargetConnector="SL2" />
+  </Module>
+  <Module Name="5APC3100_KBU0_000" Type="5APC3100.KBU0-000" Version="2.3.1.0">
+    <Connector Name="IF3">
+      <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
+      <Parameter ID="ActivateDevice" Value="1" />
+      <Parameter ID="HostName" Value="repro6" />
+    </Connector>
+    <Connector Name="IF4">
+      <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
+      <Parameter ID="ActivateDevice" Value="1" />
+      <Parameter ID="HostName" Value="repro6" />
+      <Parameter ID="Mode" Value="Manual" />
+      <Parameter ID="InternetAddress" Value="192.168.103.174" />
+      <Parameter ID="SubnetMask" Value="255.255.255.0" />
+      <Parameter ID="ActivateSnmp" Value="1" />
+    </Connector>
+    <Connector Name="IF9">
+      <Parameter ID="OperatingSystem" Value="ARemb" />
+      <Parameter ID="ActivateDevice" Value="1" />
+    </Connector>
+    <Connector Name="IF5">
+      <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
+    </Connector>
+    <Connector Name="IF6">
+      <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
+    </Connector>
+    <Connector Name="IF7">
+      <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
+    </Connector>
+    <Connector Name="IF8">
+      <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
+    </Connector>
+    <Parameter ID="ConfigurationID" Value="Repro6_5APC3100" />
+    <Group ID="FileDevice1" />
+    <Parameter ID="FileDeviceName1" Value="USER" />
+    <Parameter ID="FileDevicePath1" Value="USER_PATH" />
+    <Parameter ID="EthernetHostName" Value="repro6" />
+  </Module>
+</Hardware>

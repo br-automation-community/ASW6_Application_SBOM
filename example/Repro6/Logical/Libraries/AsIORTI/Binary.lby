@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="Binary" Description="This library contains functions for reACTION IO modules." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>AsIORTI.fun</File>
+    <File>AsIORTI.typ</File>
+    <File>AsIORTI.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="Provides configuration, status and statistical data about bonded ethernet devices." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>ArEthBond.fun</File>
+    <File>ArEthBond.typ</File>
+    <File>ArEthBond.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

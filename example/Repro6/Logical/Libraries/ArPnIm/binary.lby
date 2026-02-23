@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="PROFINET I&amp;M management" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>ArPnIm.fun</File>
+    <File>ArPnIm.typ</File>
+    <File>ArPnIm.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

@@ -1,0 +1,1316 @@
+{
+    "serialNumber":  "urn:uuid:4622e978-3bd9-44c9-aa4e-49e0a50293ba",
+    "version":  1,
+    "bomFormat":  "CycloneDX",
+    "metadata":  {
+                     "tools":  [
+                                   {
+                                       "vendor":  "PowerShell",
+                                       "version":  "1.0",
+                                       "name":  "Native SBOM Generator"
+                                   }
+                               ],
+                     "timestamp":  "2026-02-20T13:01:12.2359046+01:00",
+                     "component":  {
+                                       "name":  "Repro6",
+                                       "version":  "1.0.0",
+                                       "type":  "application",
+                                       "bom-ref":  "ref-Config1"
+                                   }
+                 },
+    "specVersion":  "1.5",
+    "components":  [
+                       {
+                           "version":  "6.5.1.7",
+                           "name":  "Automation Studio",
+                           "type":  "tool",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:br-automation:automation_studio:6.5.1.7:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.1",
+                           "name":  "Automation Runtime",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:br-automation:automation_runtime:6.5.1:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.1",
+                           "name":  "mappMotion",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:br-automation:mappMotion:6.5.1:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.1",
+                           "name":  "mappServices",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:br-automation:mappServices:6.5.1:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.0",
+                           "name":  "OpcUaCs",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:br-automation:OpcUaCs:6.5.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.0",
+                           "name":  "mappView",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:br-automation:mappView:6.5.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.0",
+                           "name":  "mappCockpit",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:br-automation:mappCockpit:6.5.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.0",
+                           "name":  "OpcUaFx",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:br-automation:OpcUaFx:6.5.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.1",
+                           "name":  "mappSafety",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:br-automation:mappSafety:6.4.1:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "mappControl",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:br-automation:mappControl:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "mappVision",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:br-automation:mappVision:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.1.0",
+                           "name":  "mappConnect",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:br-automation:mappConnect:6.1.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "3.5.0",
+                           "name":  "mapp6D",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:br-automation:mapp6D:3.5.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "1.0.0.0",
+                           "name":  "0AC808.9-1",
+                           "type":  "hardware",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:h:0AC808.9-1:1.0.0.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "1.1.0.0",
+                           "name":  "X20BB80",
+                           "type":  "hardware",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:h:X20BB80:1.1.0.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "2.17.0.0",
+                           "name":  "X20BC0083",
+                           "type":  "hardware",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:h:X20BC0083:2.17.0.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "1.9.0.0",
+                           "name":  "X20CP1686X",
+                           "type":  "hardware",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:h:X20CP1686X:1.9.0.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "1.9.0.0",
+                           "name":  "X20PS9400",
+                           "type":  "hardware",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:h:X20PS9400:1.9.0.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "1.0.0.0",
+                           "name":  "X20TB12",
+                           "type":  "hardware",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:h:X20TB12:1.0.0.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "1.3.2.0",
+                           "name":  "X20AI2237",
+                           "type":  "hardware",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:h:X20AI2237:1.3.2.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "1.1.0.0",
+                           "name":  "X20BM11",
+                           "type":  "hardware",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:h:X20BM11:1.1.0.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.0",
+                           "name":  "MpBase",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpBase:6.5.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.1",
+                           "name":  "SfDomain",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:SfDomain:6.4.1:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "unknown",
+                           "name":  "AsIORTI",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "unknown"
+                                        },
+                           "cpe":  "cpe:2.3:a:AsIORTI:unknown:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "unknown",
+                                                                "url":  "unknown"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.0.0",
+                           "name":  "AsRfbExt",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:AsRfbExt:6.0.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "2.0.6",
+                           "name":  "Cp61850",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:Cp61850:2.0.6:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "1.4.0",
+                           "name":  "CpDnp3",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:CpDnp3:1.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "1.1.1",
+                           "name":  "CpIsobus",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:CpIsobus:1.1.1:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "1.1.1",
+                           "name":  "CpLin",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:CpLin:1.1.1:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.0.0",
+                           "name":  "LoopConR",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:LoopConR:6.0.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.1",
+                           "name":  "MpAlarmX",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpAlarmX:6.5.1:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.1",
+                           "name":  "MpAudit",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpAudit:6.5.1:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.1",
+                           "name":  "MpBackup",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpBackup:6.5.1:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MpClamp",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpClamp:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MTBasics",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MTBasics:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.1",
+                           "name":  "MpCodeBox",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpCodeBox:6.5.1:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.1",
+                           "name":  "MpCom",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpCom:6.5.1:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MpCorePull",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpCorePull:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.1",
+                           "name":  "MpData",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpData:6.5.1:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.1",
+                           "name":  "MpDatabase",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpDatabase:6.5.1:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MpEjector",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpEjector:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.1",
+                           "name":  "MpFile",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpFile:6.5.1:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MpHalfNut",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpHalfNut:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MpHydAxis",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpHydAxis:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MpHydPump",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpHydPump:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MpInject",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpInject:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MpInjUnit",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpInjUnit:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.1",
+                           "name":  "MpIO",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpIO:6.5.1:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.1",
+                           "name":  "MpJ1939",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpJ1939:6.5.1:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MpMHeight",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpMHeight:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.1",
+                           "name":  "MpPackML",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpPackML:6.5.1:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MpPump",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpPump:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MTLookUp",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MTLookUp:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.1",
+                           "name":  "MpRecipe",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpRecipe:6.5.1:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MpRegMark",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpRegMark:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.1",
+                           "name":  "MpReport",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpReport:6.5.1:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MpSafeGate",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpSafeGate:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MpScale",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpScale:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.1",
+                           "name":  "MpSequence",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpSequence:6.5.1:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.0",
+                           "name":  "MpServer",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpServer:6.5.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.1",
+                           "name":  "MpSkyline",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpSkyline:6.5.1:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MpTemp",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpTemp:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MpTension",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpTension:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MpTieBar",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpTieBar:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.5.1",
+                           "name":  "MpUserX",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MpUserX:6.5.1:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MTData",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MTData:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MTFilter",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MTFilter:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MTGntCrane",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MTGntCrane:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MTIdentify",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MTIdentify:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MTLinAlg",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MTLinAlg:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MTProfile",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MTProfile:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.4.0",
+                           "name":  "MTSkew",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:MTSkew:6.4.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "unknown",
+                           "name":  "vclib",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "unknown"
+                                        },
+                           "cpe":  "cpe:2.3:a:vclib:unknown:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "unknown",
+                                                                "url":  "unknown"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "6.0.0",
+                           "name":  "VcScrSht",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "B\u0026R Industrial Automation GmbH"
+                                        },
+                           "cpe":  "cpe:2.3:a:VcScrSht:6.0.0:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "ABB_BR_Original",
+                                                                "url":  "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "unknown",
+                           "name":  "visapi",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "unknown"
+                                        },
+                           "cpe":  "cpe:2.3:a:visapi:unknown:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "unknown",
+                                                                "url":  "unknown"
+                                                            }
+                                            }
+                                        ]
+                       },
+                       {
+                           "version":  "unknown",
+                           "name":  "vncserv",
+                           "type":  "library",
+                           "supplier":  {
+                                            "name":  "unknown"
+                                        },
+                           "cpe":  "cpe:2.3:a:vncserv:unknown:*:*:*:*:*:*:*",
+                           "licenses":  [
+                                            {
+                                                "license":  {
+                                                                "id":  "unknown",
+                                                                "url":  "unknown"
+                                                            }
+                                            }
+                                        ]
+                       }
+                   ]
+}

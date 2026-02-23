@@ -1,0 +1,12 @@
+VAR CONSTANT
+	arPNDEVICE_ERR_DEVICE_NAME			: DINT := -1070582746;	(*Invalid device name*)
+	arPNDEVICE_ERR_DEVICE_NOT_SUP		: DINT := -1070582745;	(*Device name not supported*)
+	arPNDEVICE_ERR_RECORD_SLOT			: DINT := -1070582744;	(*Invalid slot*)
+	arPNDEVICE_ERR_RECORD_SUBSLOT		: DINT := -1070582743;	(*Invalid subslot*)
+	arPNDEVICE_ERR_RECORD_INDEX			: DINT := -1070582742;	(*Invalid index*)
+	arPNDEVICE_ERR_RECORD_EXISTS		: DINT := -1070582741;	(*Record already exists*)
+	arPNDEVICE_ERR_DATA_LENGTH			: DINT := -1070582740;	(*Invalid data length*)
+	arPNDEVICE_ERR_ACCESS_RIGHTS		: DINT := -1070582739;	(*Invalid access rights*)
+
+	arPNDEVICE_DEFAULT_API				: UDINT := 0; (*Default PROFINET Application Process Indentifier*)
+END_VAR

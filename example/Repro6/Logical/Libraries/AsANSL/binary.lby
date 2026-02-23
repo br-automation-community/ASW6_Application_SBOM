@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="With the AsANSL library, the application can read and write PVs from other controllers based on the Automation Network Service Link." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>AsANSL.fun</File>
+    <File>AsANSL.typ</File>
+    <File>AsANSL.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

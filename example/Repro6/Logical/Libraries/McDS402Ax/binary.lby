@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library Version="6.5.1" SubType="binary" Description="[mapp Motion] DS402 axis library" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>McDS402Ax.typ</File>
+    <File>McDS402Ax.fun</File>
+    <File>McDS402Ax.var</File>
+    <File>McDS402AxCfg.typ</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="McBase" FromVersion="6.5.0" ToVersion="6.5.2147483647" />
+    <Dependency ObjectName="McAxis" FromVersion="6.5.0" ToVersion="6.5.2147483647" />
+  </Dependencies>
+</Library>

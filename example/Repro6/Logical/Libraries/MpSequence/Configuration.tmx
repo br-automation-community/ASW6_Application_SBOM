@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tmx version="1.4">
+  <header creationtool="B&amp;R Automation Studio" creationtoolversion="4.2" datatype="unknown" segtype="sentence" adminlang="en" srclang="en" o-tmf="TMX">
+    <note>Change the namespace to define where this text module should be located within the logical structure of your texts</note>
+    <prop type="x-BR-TS:Namespace">MpSequence/Configuration</prop>
+  </header>
+  <body>
+    <tu tuid="Duration">
+      <tuv xml:lang="de">
+        <seg>Dauer</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Duration</seg>
+      </tuv>
+    </tu>
+    <tu tuid="PvValue">
+      <tuv xml:lang="de">
+        <seg>PV Wert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>PV Value</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Timeout">
+      <tuv xml:lang="de">
+        <seg>Timeout</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Timeout</seg>
+      </tuv>
+    </tu>
+    <tu tuid="LoopCount">
+      <tuv xml:lang="de">
+        <seg>Schleifenzahl</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Loop Count</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Parameter1">
+      <tuv xml:lang="de">
+        <seg>Ziel</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Target</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Parameter2">
+      <tuv xml:lang="de">
+        <seg>Index</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Index</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Parameter3">
+      <tuv xml:lang="de">
+        <seg>TestParameter3</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>TestParameter3</seg>
+      </tuv>
+    </tu>
+    <tu tuid="TestCommand1">
+      <tuv xml:lang="de">
+        <seg>Kommando 1</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Command 1</seg>
+      </tuv>
+    </tu>
+    <tu tuid="TestCommand2">
+      <tuv xml:lang="de">
+        <seg>Kommando 2</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Command 2</seg>
+      </tuv>
+    </tu>
+    <tu tuid="TestCommand3">
+      <tuv xml:lang="de">
+        <seg>Kommando 3</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Command 3</seg>
+      </tuv>
+    </tu>
+    <tu tuid="TestCommand4">
+      <tuv xml:lang="de">
+        <seg>Kommando 4</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Command 4</seg>
+      </tuv>
+    </tu>
+    <tu tuid="TestCommand5">
+      <tuv xml:lang="de">
+        <seg>Kommando 5</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Command 5</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Macro1">
+      <tuv xml:lang="de">
+        <seg>Makro 1</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Macro 1</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Macro2">
+      <tuv xml:lang="de">
+        <seg>Makro 2</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Macro 2</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Move">
+      <tuv xml:lang="de">
+        <seg>Bewegung</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Movement</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SetPV">
+      <tuv xml:lang="de">
+        <seg>PV Setzen</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Set PV</seg>
+      </tuv>
+    </tu>
+    <tu tuid="WaitPV">
+      <tuv xml:lang="de">
+        <seg>Auf PV Warten</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Wait for a PV</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Wait">
+      <tuv xml:lang="de">
+        <seg>Warten</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Wait for time</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Alarm">
+      <tuv xml:lang="de">
+        <seg>Alarm setzen</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Set alarm</seg>
+      </tuv>
+    </tu>
+    <tu tuid="If">
+      <tuv xml:lang="de">
+        <seg>Bedingung</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Condition</seg>
+      </tuv>
+    </tu>
+    <tu tuid="EndIf">
+      <tuv xml:lang="de">
+        <seg>Bedingung Ende</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>End condition</seg>
+      </tuv>
+    </tu>
+  </body>
+</tmx>

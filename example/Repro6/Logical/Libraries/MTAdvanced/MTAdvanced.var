@@ -1,0 +1,35 @@
+(********************************************************************
+ * COPYRIGHT -- Bernecker + Rainer
+ ********************************************************************
+ * Library: MTAdvanced
+ * File: MTAdvanced.var
+ * Author: B&R
+ ********************************************************************
+ * Constants of library MTAdvanced
+ ********************************************************************)
+VAR CONSTANT
+  mtACD_ERR_SYSTEM_REF_INVALID : DINT := -1058011174; (*Error: No valid system references available.*)
+  mtACD_ERR_RISETIME_NEG_ZERO : DINT := -1058011173; (*Error: RiseTime zero or negative.*)
+  mtACD_ERR_ILLEGAL_OVERSHOOT : DINT := -1058011172; (*Error: Overshoot outside the range -20% to +50%.*)
+  mtACD_ERR_SAMPLE_TIME_CTRL_NEG : DINT := -1058011171; (*Error: The sample time of the controller is negative.*)
+  mtACD_ERR_WRONG_CTRL_TYPE : DINT := -1058011170; (*Error: Invalid controller type.*)
+  mtACD_ERR_COMMON_FREQUENCY_AREA : DINT := -1058011169; (*Error: The minimum frequency is higher than the maximum frequency.*)
+  mtACD_ERR_PHASE_MARGIN_BELOW_20 : DINT := -1058011168; (*Error: The phase margin for every frequency between the minimum and maximum frequency is less than 20°.*)
+  mtACD_ERR_PHASE_MARGIN_TOO_LOW : DINT := -1058011167; (*Error: The phase margin is too low for the required overshoot.*)
+  mtACD_ERR_PHASE_MARGIN_TOO_HIGH : DINT := -1058011166; (*Error: The phase margin is too high for the required overshoot.*)
+  mtACD_WRN_RISETIME_TOO_LOW : DINT := -2131752998; (*Warning: The RiseTime value is too low.*)
+  mtACD_WRN_RISETIME_TOO_HIGH : DINT := -2131752997; (*Warning: The RiseTime value is too high.*)
+END_VAR
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+                                                                      
+VAR CONSTANT
+
+	mbERR_STATION_NOT_EXIST				: UDINT := 34200;		(*station does not exist*)
+	mbERR_STATION_NOT_CONNECTED			: UDINT := 34201;		(*station is not connected*)
+	mbERR_INVALID_NUMBER				: UDINT := 34202;		(*number of coils/registers incorrect*)
+	mbERR_NULLPOINTER					: UDINT := 34203;		(*nullpointer*)
+	mbERR_DATASIZE						: UDINT := 34204;		(*storage is too small*)
+	mbERR_EXCEPTION						: UDINT := 34205;		(*modbus response contains an exception*)
+	mbERR_REFRESH_TIME_VIOLATION		: UDINT := 34206;		(*refresh time violation*)
+	mbERR_QUEUE_OVL						: UDINT := 34207;		(*queue overload*)
+	
+	mbMFC_READ_COILS					: UDINT	:= 1;			(*mfc read coils*)
+	mbMFC_READ_DISCRETE_INPUTS			: UDINT	:= 2;			(*mfc read discrete inputs*)
+	mbMFC_READ_HOLDING_REGISTERS		: UDINT	:= 3;			(*mfc read holding registers*)
+	mbMFC_READ_INPUT_REGISTERS			: UDINT	:= 4;			(*mfc read input register*)
+	mbMFC_WRITE_SINGLE_COIL				: UDINT	:= 5;			(*mfc write single coil*)
+	mbMFC_WRITE_SINGLE_REGISTER			: UDINT	:= 6;			(*mfc write single register*)
+	mbMFC_WRITE_MULTIPLE_COILS			: UDINT	:= 15;			(*mfc write multiple coils*)
+	mbMFC_WRITE_MULTIPLE_REGISTERS		: UDINT	:= 16;			(*mfc write multiple registers*)
+	mbMFC_READ_WRITE_MULTIPLE_REG		: UDINT	:= 23;			(*mfc read write multiple registers*)
+END_VAR

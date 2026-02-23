@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library Version="1.1.1" SubType="Binary" Description="ISO 11783/ISOBUS Protocol Stack Implementation developed under ISO 25119 Functional Safety." xmlns="http://br-automation.co.at/AS/Library">
+  <Objects>
+    <Object Type="File">CpIsobus.fun</Object>
+    <Object Type="File">CpIsobus.typ</Object>
+    <Object Type="File">Errors.tmx</Object>
+    <Object Type="Package">stack</Object>
+  </Objects>
+  <Dependencies>
+    <Dependency ObjectName="ArCan" />
+    <Dependency ObjectName="astime" />
+    <Dependency ObjectName="AsMem" />
+  </Dependencies>
+</Library>

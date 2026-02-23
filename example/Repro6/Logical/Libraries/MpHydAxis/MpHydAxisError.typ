@@ -1,0 +1,31 @@
+
+TYPE
+    MpHydAxisErrorEnum : 
+        ( (* Error numbers of library MpHydAxis *)
+        mpHYDAXIS_NO_ERROR := 0, (* No error *)
+        mpHYDAXIS_ERR_ACTIVATION := -1064239103, (* Could not create component [Error: 1, 0xc0910001] *)
+        mpHYDAXIS_ERR_MPLINK_NULL := -1064239102, (* MpLink is NULL pointer [Error: 2, 0xc0910002] *)
+        mpHYDAXIS_ERR_MPLINK_INVALID := -1064239101, (* MpLink connection not allowed [Error: 3, 0xc0910003] *)
+        mpHYDAXIS_ERR_MPLINK_CHANGED := -1064239100, (* MpLink modified [Error: 4, 0xc0910004] *)
+        mpHYDAXIS_ERR_MPLINK_CORRUPT := -1064239099, (* Invalid MpLink contents [Error: 5, 0xc0910005] *)
+        mpHYDAXIS_ERR_MPLINK_IN_USE := -1064239098, (* MpLink already in use [Error: 6, 0xc0910006] *)
+        mpHYDAXIS_ERR_CONFIG_NULL := -1064239096, (* Configuration structure is null pointer [Error: 8, 0xc0910008] *)
+        mpHYDAXIS_ERR_CONFIG_NO_PV := -1064239095, (* Configuration pointer not PV [Error: 9, 0xc0910009] *)
+        mpHYDAXIS_ERR_CONFIG_LOAD := -1064239094, (* Error loading configuration {2:ConfigName} (ErrorCause: {1:ErrorNumber}) [Error: 10, 0xc091000a] *)
+        mpHYDAXIS_WRN_CONFIG_LOAD := -2137980917, (* Warning loading configuration [Warning: 11, 0x8091000b] *)
+        mpHYDAXIS_ERR_CONFIG_SAVE := -1064239092, (* Error saving configuration {2:ConfigName} (ErrorCause: {1:ErrorNumber}) [Error: 12, 0xc091000c] *)
+        mpHYDAXIS_ERR_CONFIG_INVALID := -1064239091, (* Invalid Configuration [Error: 13, 0xc091000d] *)
+        mpHYDAXIS_ERR_CONFIG_PAR := -1064027392, (* The specified configuration parameters are invalid. [Error: 15104, 0xc0943b00] *)
+        mpHYDAXIS_ERR_COMMAND_FAILED := -1064027391, (* The selected command "{2:Command}" failed. [Error: 15105, 0xc0943b01] *)
+        mpHYDAXIS_ERR_ACTUATOR_INACTIVE := -1064027390, (* The actuator "{2:Actuator}" is not active. [Error: 15106, 0xc0943b02] *)
+        mpHYDAXIS_ERR_ACTUATOR_ERROR := -1064027389, (* The actuator "{2:Actuator}" is in error state. Errorcause:{3:StatusID} [Error: 15107, 0xc0943b03] *)
+        mpHYDAXIS_WRN_ACTUATOR_INACTIVE := -2137769212, (* The actuator "{2:Actuator}" is not active. [Warning: 15108, 0x80943b04] *)
+        mpHYDAXIS_WRN_ACTUATOR_ERROR := -2137769211, (* The actuator "{2:Actuator}" is in error state. Errorcause:{3:StatusID} [Warning: 15109, 0x80943b05] *)
+        mpHYDAXIS_WRN_COMMAND_FAILED := -2137769209, (* The selected command "{2:Command}" failed. [Warning: 15111, 0x80943b07] *)
+        mpHYDAXIS_ERR_CFG_STRUCT := -1064027384, (* A parameter in the configuration structure on the function block input is invalid. [Error: 15112, 0xc0943b08] *)
+        mpHYDAXIS_WRN_CFG_STRUCT := -2137769207, (* A parameter in the configuration structure on the function block input is invalid. [Warning: 15113, 0x80943b09] *)
+        mpHYDAXIS_INF_CFG_STRUCT := 1083456266, (* A parameter in the configuration structure on the function block input has a suspect value. The parameter can be valid, please double-check it. [Informational: 15114, 0x40943b0a] *)
+        mpHYDAXIS_WRN_NO_ACTION_CHANGE := -2137769205, (* The action has not been changed. Previous action is still active. [Warning: 15115, 0x80943b0b] *)
+        mpHYDAXIS_WRN_CONFIG_NOT_SAVED := -2137769204 (* The configuration parameter "{2:ParName}" could not be updated. It is not allowed to change this parameter during the function block is "{3:OperationState}". The old value remains until the FB is re-enabled. [Warning: 15116, 0x80943b0c] *)
+        );
+END_TYPE

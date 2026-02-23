@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="The AsNxDnS library handles access to netX Devicenet Slave." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>AsNxDnS.fun</File>
+    <File>AsNxDnS.typ</File>
+    <File>AsNxDnS.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">IsoStackVt_types.h</Object>
+    <Object Type="File">IsoStackVt.h</Object>
+    <Object Type="File">IsoStackUds_types.h</Object>
+    <Object Type="File">IsoStackUds.h</Object>
+    <Object Type="File">IsoStackTecu_types.h</Object>
+    <Object Type="File">IsoStackTecuSrv_types.h</Object>
+    <Object Type="File">IsoStackTecuSrv.h</Object>
+    <Object Type="File">IsoStackTecu.h</Object>
+    <Object Type="File">IsoStackTc_types.h</Object>
+    <Object Type="File">IsoStackTc.h</Object>
+    <Object Type="File">IsoStackProp_types.h</Object>
+    <Object Type="File">IsoStackProp.h</Object>
+    <Object Type="File">IsoStackNw_types.h</Object>
+    <Object Type="File">IsoStackNw.h</Object>
+    <Object Type="File">IsoStackIsb_types.h</Object>
+    <Object Type="File">IsoStackIsb.h</Object>
+    <Object Type="File">IsoStackGnss.h</Object>
+    <Object Type="File">IsoStackDiag_types.h</Object>
+    <Object Type="File">IsoStackDiag.h</Object>
+    <Object Type="File">IsoStackCore_types.h</Object>
+    <Object Type="File">IsoStackCore.h</Object>
+    <Object Type="File">HalTypedef.h</Object>
+    <Object Type="File">HalText.h</Object>
+    <Object Type="File">HalSystem.h</Object>
+    <Object Type="File">HalStorage.h</Object>
+    <Object Type="File">HalCan.h</Object>
+  </Objects>
+</Package>

@@ -1,0 +1,7 @@
+VAR CONSTANT
+    fxNETMGR_ERR_UNKNOWN : DINT :=              -1038009704; (*Error (Code: 15000): An unknown error occurred*)
+    fxNETMGR_ERR_BUSY : DINT :=                 -1038009703; (*Error (Code: 15001): FxNetMgrB is currently busy*)
+    fxNETMGR_ERR_NOT_INITIALIZED : DINT :=      -1038009702; (*Error (Code: 15002): FxNetMgrB is not initialized*)
+    fxNETMGR_ERR_NOT_SUPPORTED : DINT :=        -1038009701; (*Error (Code: 15003): Functionality is not supported*)
+    fxNETMGR_ERR_INVALID_PARAM : DINT :=        -1038009700; (*Error (Code: 15004): Invalid parameter*)
+END_VAR

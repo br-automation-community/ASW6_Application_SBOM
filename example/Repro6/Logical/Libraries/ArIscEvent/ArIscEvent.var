@@ -1,0 +1,9 @@
+VAR CONSTANT
+	arISCEVENT_ERR_CLOSE         : DINT := -1070583395;	(*event close error*)
+	arISCEVENT_ERR_CREATE        : DINT := -1070583394;	(*event create error*)
+	arISCEVENT_ERR_OPEN          : DINT := -1070583393;	(*event open error*)
+	arISCEVENT_ERR_TRIGGER       : DINT := -1070583392;	(*event poll error*)
+	arISCEVENT_ERR_WAIT          : DINT := -1070583391;	(*event wait error*)
+	
+	arISCEVENT_INFINITE_TIME           : UDINT := 16#FFFFFFFF;	(*infinite time for ArIscEventWait()*)
+END_VAR

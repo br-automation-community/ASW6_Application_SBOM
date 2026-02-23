@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="The AsRtCont library is used to download reACTION tasks to reACTION IO modules" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>AsRtCont.fun</File>
+    <File>AsRtCont.typ</File>
+    <File>AsRtCont.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

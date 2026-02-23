@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="This library version is suited for use with Automation Studio only and provides functions for communicating with Allen-Bradley controller." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>DRVABDF1.fun</File>
+    <File>DRVABDF1.typ</File>
+    <File>DRVABDF1.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="DataObj" />
+    <Dependency ObjectName="dvframe" />
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

@@ -1,0 +1,20 @@
+       
+VAR CONSTANT
+	arSSL_ERR_CRLS_INVALID             : DINT := -1070585996;    (*invalid given; CRLs can only be used with trusted certificates*)
+	arSSL_ERR_IDENT_INVALID            : DINT := -1070585995;    (*invalid identifier specified*)
+	arSSL_ERR_SSL_CFG_NOT_FOUND        : DINT := -1070585994;    (*SSL configuration not found*)
+	arSSL_ERR_CERTIFICATE_INVALID      : DINT := -1070585993;    (*invalid certificate given*)
+	arSSL_ERR_PRIVATE_KEY_NOT_FOUND    : DINT := -1070585992;    (*private key not found*)
+	arSSL_ERR_PASSWORD_INVALID         : DINT := -1070585991;    (*invalid password given*)
+	arSSL_ERR_INTERNAL                 : DINT := -1070585990;    (*internal error*)
+	arSSL_ERR_INDEX_OUT_OF_RANGE       : DINT := -1070585989;    (*given index is out of range*)
+	arSSL_ERR_CFG_ALREADY_EXISTS       : DINT := -1070585988;    (*given SSL configuration already exists*)
+	arSSL_ERR_NAME_INVALID             : DINT := -1070585987;    (*invalid name given*)
+	arSSL_ERR_OWN_CERT_INVALID         : DINT := -1070585986;    (*invalid own certificate given*)
+	arSSL_ERR_PRIVATE_KEY_INVALID      : DINT := -1070585985;    (*invalid own private key given*)
+	arSSL_ERR_SSL_VERSION_INVALID      : DINT := -1070585984;    (*invalid SSL version given*)
+	arSSL_ERR_TRUSTED_DATA_INVALID     : DINT := -1070585983;    (*invalid trusted data given*)
+	arSSL_ERR_TRUSTEDCOUNT_INVALID     : DINT := -1070585982;    (*invalid trusted count given*)
+	arSSL_ERR_CRLS_DATA_INVALID        : DINT := -1070585981;    (*invalid CRLs data given*)
+	arSSL_ERR_CRLCOUNT_INVALID         : DINT := -1070585980;    (*invalid CRL count given*)
+END_VAR

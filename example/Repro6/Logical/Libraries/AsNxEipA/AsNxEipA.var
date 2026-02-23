@@ -1,0 +1,17 @@
+
+VAR CONSTANT
+	eipaERR_INVALID_DEVICE				: UINT	:= 37835;	(*error invalid device*)
+	eipaERR_SEND_MESSAGE				: UINT	:= 37836;	(*error send message*)
+	eipaERR_TIMEOUT						: UINT	:= 37837;	(*error timeout*)
+	eipaERR_EIP_STACK					: UINT	:= 37838;	(*error receive message*)
+	eipaERR_PARAMETER					: UINT	:= 37839;	(*error parameter*)
+	eipaERR_MEMORY						: UINT	:= 37840;	(*error low memory*)
+	eipaERR_SUBSCRIBE_LISTENER			: UINT	:= 37841;	(*error subscribe listener*)
+	eipaERR_NO_MORE_ENTRIES				: UINT	:= 37842;	(*error no more entries available*)
+	eipaERR_DATA_SIZE					: UINT	:= 37843;	(*error data size*)
+	
+	eipaMODE_STORED_CONFIG				: UDINT := 0; (*stored configuration settings*)
+	eipaMODE_DHCP						: UDINT := 1; (*dhcp*)
+	eipaMODE_BOOTP						: UDINT := 2; (*bootp*)
+	eipaMODE_FIXED						: UDINT := 3; (*fixed*)
+END_VAR

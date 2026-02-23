@@ -1,0 +1,21 @@
+(********************************************************************
+ * COPYRIGHT (C) BERNECKER + RAINER, AUSTRIA, A-5142 EGGELSBERG
+ ********************************************************************
+ * Library: VncServ
+ * File: VncServ.var
+ * Created: 11.11.2003
+ ********************************************************************
+ * Constants of library VncServ
+ ********************************************************************)
+VAR CONSTANT
+	RES1024x768	: USINT	:= 4;
+	RES800x600	: USINT	:= 3;
+	RES640x480	: USINT	:= 1;
+	RES320x240	: USINT	:= 2;
+	IMMEDIATE	: USINT	:= 2;
+	VERYHIGH	: USINT	:= 4;
+	IPCXXXX	: USINT	:= 0;
+	PPXXX	: USINT	:= 1;
+	HIGH	: USINT	:= 3;
+	LOW	: USINT	:= 1;
+END_VAR

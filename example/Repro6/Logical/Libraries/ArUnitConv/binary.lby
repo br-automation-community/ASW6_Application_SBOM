@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="The ArUnitConv library provides function blocks for convert values from one unit to another one." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>ArUnitConv.fun</File>
+    <File>ArUnitConv.typ</File>
+    <File>ArUnitConv.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

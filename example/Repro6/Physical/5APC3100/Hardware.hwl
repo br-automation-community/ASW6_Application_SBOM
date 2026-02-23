@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?AutomationStudio FileVersion="4.9"?>
+<BR.AS.HardwareTopology>
+  <TimeStamps>
+    <TimeStamp LogicalPath="5APC3100.Hardware.hw" LastWriteTime="02/17/2026 09:57:09" />
+    <TimeStamp LogicalPath="5APC3100.BC1083.hw" LastWriteTime="02/17/2026 09:57:09" />
+  </TimeStamps>
+  <Modules>
+    <Module Name="5APC3100_KBU0_000" Type="5APC3100.KBU0-000" X="115" Y="100" />
+    <Module Name="5ACCIF02.FPSC-000" Type="5ACCIF02.FPSC-000" X="120.8" Y="123" />
+    <Module Name="0AC808.9-1" Type="0AC808.9-1" X="167" Y="279" />
+    <Module Name="oX20BB82" Type="X20BB82" X="322" Y="279" />
+    <Module Name="oX20PS9400" Type="X20PS9400" X="397" Y="279" />
+    <Module Name="oX20TB12" Type="X20TB12" X="397" Y="306" />
+    <Module Name="oX20BC1083" Type="X20BC1083" X="372" Y="279" />
+  </Modules>
+  <Links>
+    <Link From="0AC808.9-1" To="5ACCIF02.FPSC-000" FromPort="ETH1" ToPort="IF1" IsRoutedByUser="False">
+      <Point X="193" Y="290" />
+      <Point X="193" Y="290" />
+      <Point X="193" Y="278" />
+      <Point X="193" Y="131" />
+      <Point X="174.8" Y="131" />
+      <Point X="161.8" Y="131" />
+      <Point X="161.8" Y="131" />
+    </Link>
+    <Link From="0AC808.9-1" To="oX20BC1083" FromPort="ETH8" ToPort="PLK1" IsRoutedByUser="False">
+      <Point X="232" Y="303" />
+      <Point X="232" Y="303" />
+      <Point X="232" Y="323" />
+      <Point X="232" Y="385" />
+      <Point X="377.75" Y="385" />
+      <Point X="377.75" Y="379" />
+      <Point X="377.75" Y="354" />
+      <Point X="386" Y="354" />
+    </Link>
+  </Links>
+  <InfoElements />
+</BR.AS.HardwareTopology>

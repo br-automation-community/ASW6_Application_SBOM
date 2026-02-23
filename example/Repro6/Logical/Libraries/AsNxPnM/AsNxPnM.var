@@ -1,0 +1,15 @@
+                                                                      
+VAR CONSTANT
+	nxpnmERR_INVALID_DEVICE					: UINT	:= 35340;		(*error invalid device*)
+	nxpnmERR_SEND_MESSAGE					: UINT	:= 35341;		(*error send message*)
+	nxpnmERR_TIMEOUT						: UINT	:= 35342;		(*error timeout*)
+	nxpnmERR_PROFINET_STACK					: UINT	:= 35343;		(*error receive message*)
+	nxpnmERR_PARAMETER						: UINT	:= 35344;		(*error invalid parameter*)
+	nxpnmERR_MEMORY							: UINT	:= 35345;		(*error less memory*)
+	nxpnmERR_SUBSCRIBE_LISTENER				: UINT	:= 35346;		(*error subscribe listener*)
+	nxpnmERR_NO_MORE_ENTRIES				: UINT	:= 35347;		(*error no more entries available*)
+	nxpnmERR_INVALID_NAME					: UINT	:= 35348;		(*error invlaid name*)
+	
+	nxpnmFLAG_DELETE_DIAG_BUFFER			: UDINT	:= 16#00000001;	(*delete the content of the diagnosis buffer*)
+	nxpnmFLAG_DIFF_BLOCK_IS_BIGGER			: UDINT := 16#00000001; (*difference block is bigger than reported*)
+END_VAR

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="The Ethernet library establishes an efficient connection between the 2005 and 2010 systems and specific ethernet networks using TCP/IP and UDP. (obsolete)" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>Ethernet.fun</File>
+    <File>Ethernet.typ</File>
+    <File>Ethernet.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

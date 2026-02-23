@@ -1,0 +1,18 @@
+
+VAR CONSTANT
+    fxPUBSUB_INVALID_HANDLE         : DINT := -1;           (*Invalid PubSub handle*)
+
+    fxPUBSUB_ERR_IN_PROGRESS        : DINT := -1038015704;	(*Error (Code: 9000): Another PubSub Control FUB is running at the moment*)
+    fxPUBSUB_ERR_NO_TASK            : DINT := -1038015703;	(*Error (Code: 9001): There is no PubSub task running*)
+    fxPUBSUB_ERR_STARTUP_FAILED     : DINT := -1038015702;	(*Error (Code: 9002): Error during PubSub startup*)
+    fxPUBSUB_ERR_TRANSFER           : DINT := -1038015701;	(*Error (Code: 9003): The requested state change was canceled due to a project transfer*)
+    fxPUBSUB_WRN_NO_STATE_CHANGE    : DINT := -2111757524;	(*Warning (Code: 9004): PubSub has already been in the requested state*)
+    fxPUBSUB_ERR_ITEM_NOT_FOUND     : DINT := -1038015699;	(*Error (Code: 9005): PubSub item not found*)
+    fxPUBSUB_ERR_INVALID_HANDLE     : DINT := -1038015698;	(*Error (Code: 9006): Handle is invalid*)
+    fxPUBSUB_ERR_GET_CONFIG_FAIL    : DINT := -1038015697;	(*Error (Code: 9007): Failed to get config*)
+    fxPUBSUB_ERR_EDIT_CONFIG_FAIL   : DINT := -1038015696;	(*Error (Code: 9008): Failed to edit config*)
+    fxPUBSUB_ERR_RESET_INITIAL      : DINT := -1038015695;	(*Error (Code: 9009): Failed to set binary file as PubSub config*)
+    fxPUBSUB_ERR_NO_RESOURCE        : DINT := -1038015694;	(*Error (Code: 9010): No resource available*)
+    fxPUBSUB_ERR_INVALID_PARAMETER  : DINT := -1038015693;	(*Error (Code: 9011): PubSub configuration parameter is invalid*)
+    fxPUBSUB_ERR_DIAG_CNT_NOT_FOUND : DINT := -1038015692;	(*Error (Code: 9012): PubSub diagnostics counter not found*)
+END_VAR

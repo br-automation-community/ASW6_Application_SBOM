@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="This library provides functions for enabling and disabling configuration or mapping modules." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>AsIOMMan.fun</File>
+    <File>AsIOMMan.typ</File>
+    <File>AsIOMMan.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="The AsNxAsiM library handles access to netX AS-Interface master." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>AsNxAsiM.fun</File>
+    <File>AsNxAsiM.typ</File>
+    <File>AsNxAsiM.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

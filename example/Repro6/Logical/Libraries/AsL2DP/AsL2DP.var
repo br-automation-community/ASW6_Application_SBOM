@@ -1,0 +1,22 @@
+                                                                      
+VAR CONSTANT
+	ERR_ASL2DP_WAIT_FOR_DATAMODE	: UINT	:= 28826;	(*data transfermode is not jet reached*)
+	ERR_ASL2DP_WRONG_OUTDATAPTR	: UINT	:= 28821;		(*0 = output data pointer and 0 != output data length*)
+	ERR_ASL2DP_WRONG_DESCRIPTOR	: UINT	:= 28820;		(*string "SLx.SSy" not valid*)
+	ERR_ASL2DP_WRONG_SUBSLOTNR	: UINT	:= 28822;		(*determined slot on the module is not supported*)
+	ERR_ASL2DP_WRONG_INDATAPTR	: UINT	:= 28823;		(*0 = input data pointer and 0 != input data length*)
+	ERR_ASL2DP_WRONG_MODULTYP	: UINT	:= 28825;		(*no L2DP slave module*)
+	ERR_ASL2DP_INIT_LESS_MEM	: UINT	:= 28827;		(*L2DP has too less memory*)
+	ERR_ASL2DP_WRONG_SLOTNR	: UINT	:= 28824;			(*determined module is not present*)
+	ERR_ASL2DP_DP_STATE	: UINT	:= 28828;				(*internal statemaschine error*)
+	ERR_ASL2DP_INDATA_TOOLONG	: UINT	:= 28831;		(*maximum input datalength exceeded*)
+	ERR_ASL2DP_IO_DATA_TOOLONG	: UINT	:= 28832;		(*maximum output and input datalength exceeded*)
+	ERR_ASL2DP_OUTDATA_TOOLONG	: UINT	:= 28830;		(*maximum output datalength exceeded*)
+	ERR_ASL2DP_WRONG_NODENR	: UINT	:= 28829;			(*invalid node number*)
+	ASL2DP_MAX_INPUTLENGTH	: USINT	:= 240;				(*maximum data length (input direction)*)				
+	ASL2DP_MAX_IN_OUT_LENGTH	: UINT	:= 368;			(*maximum data length*)
+	ASL2DP_MAX_OUTPUTLENGTH	: USINT	:= 240;				(*maximum data length (output direction)*)
+	ASL2DP_VPC3_MAX_INPUTLENGTH	: USINT	:= 244;			(*maximum data length (input direction) - VPC3*)
+	ASL2DP_VPC3_MAX_IN_OUT_LENGTH	: UINT	:= 488;		(*maximum data length - VPC3*)
+	ASL2DP_VPC3_MAX_OUTPUTLENGTH	: USINT	:= 244;		(*maximum data length (output direction) - VPC3*)
+END_VAR

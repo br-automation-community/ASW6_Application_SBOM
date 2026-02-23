@@ -1,0 +1,657 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tmx version="1.4">
+  <header creationtool="B&amp;R Automation Studio" creationtoolversion="4.2" datatype="unknown" segtype="sentence" adminlang="en" srclang="en" o-tmf="TMX">
+    <note>Change the namespace to define where this text module should be located within the logical structure of your texts</note>
+    <prop type="x-BR-TS:Namespace">MpAudit/Event</prop>
+  </header>
+  <body>
+    <tu tuid="Root">
+      <tuv xml:lang="de">
+        <seg>{&amp;evtime[TIME=%u%R]} {&amp;op} {=$MpAudit/Event/{&amp;ev}}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>{&amp;evtime[TIME=%u%R]} {&amp;op} {=$MpAudit/Event/{&amp;ev}}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="100">
+      <tuv xml:lang="de">
+        <seg>Angemeldet</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>logged in</seg>
+      </tuv>
+    </tu>
+    <tu tuid="101">
+      <tuv xml:lang="de">
+        <seg>Abgemeldet</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>logged out</seg>
+      </tuv>
+    </tu>
+    <tu tuid="102">
+      <tuv xml:lang="de">
+        <seg>Abgemeldet (Timeout)</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>was logged out (timeout)</seg>
+      </tuv>
+    </tu>
+    <tu tuid="103">
+      <tuv xml:lang="de">
+        <seg>Gesperrt (inkorrektes Passwort)</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>got locked (incorrect password)</seg>
+      </tuv>
+    </tu>
+    <tu tuid="104">
+      <tuv xml:lang="de">
+        <seg>Passwort geändert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>changed password</seg>
+      </tuv>
+    </tu>
+    <tu tuid="105">
+      <tuv xml:lang="de">
+        <seg>Wert {&amp;attr} von {&amp;old} auf {&amp;new} geändert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>edited {&amp;attr} from {&amp;old} to {&amp;new}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="106">
+      <tuv xml:lang="de">
+        <seg>Anmelden fehlgeschlagen</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>failed to log in</seg>
+      </tuv>
+    </tu>
+    <tu tuid="107">
+      <tuv xml:lang="de">
+        <seg>Passwortänderung fehlgeschlagen</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>failed to change password</seg>
+      </tuv>
+    </tu>
+    <tu tuid="108">
+      <tuv xml:lang="de">
+        <seg>Ändern eines oder mehrerer Attribute fehlgeschlagen</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>failed to edit one or more attributes</seg>
+      </tuv>
+    </tu>
+    <tu tuid="150">
+      <tuv xml:lang="de">
+        <seg>Benutzer {&amp;obj} hinzugefügt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>added user {&amp;obj}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="151">
+      <tuv xml:lang="de">
+        <seg>Wert {&amp;attr} des Nutzers {&amp;obj} von {&amp;old} auf {&amp;new} geändert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>edited {&amp;attr} of {&amp;obj} from {&amp;old} to {&amp;new}</seg>
+      </tuv>
+    </tu>
+	<tu tuid="152">
+      <tuv xml:lang="de">
+        <seg>Rolle {&amp;attr} dem Nutzer {&amp;obj} hinzugefügt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>added role {&amp;attr} for user {&amp;obj}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="153">
+      <tuv xml:lang="de">
+        <seg>Rolle {&amp;attr} dem Nutzer {&amp;obj} entfernt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>removed role {&amp;attr} for user {&amp;obj}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="154">
+      <tuv xml:lang="de">
+        <seg>Nutzer {&amp;obj} gelöscht</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>deleted user {&amp;obj}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="155">
+      <tuv xml:lang="de">
+        <seg>Nutzer {&amp;obj} deaktiviert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>deactivated user {&amp;obj}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="156">
+      <tuv xml:lang="de">
+        <seg>Nutzer {&amp;obj} gesperrt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>locked user {&amp;obj}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="157">
+      <tuv xml:lang="de">
+        <seg>Nutzer {&amp;obj} entsperrt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>unlocked user {&amp;obj}</seg>
+      </tuv>
+    </tu>
+	<tu tuid="158">
+      <tuv xml:lang="de">
+        <seg>Password von Nutzer {&amp;obj} zurückgesetzt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>reset password of user {&amp;obj}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="159">
+      <tuv xml:lang="de">
+        <seg>Hinzufügen des Nutzers {&amp;obj} fehlgeschlagen</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>failed to add user {&amp;obj}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="160">
+      <tuv xml:lang="de">
+        <seg>Ändern eines oder mehrerer Attribute des Nutzers {&amp;obj} fehlgeschlagen</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>failed to edit one or more attributes of user {&amp;obj}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="161">
+      <tuv xml:lang="de">
+        <seg>Nutzer {&amp;obj} konnte nicht gelöscht werden</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>failed to delete user {&amp;obj}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="162">
+      <tuv xml:lang="de">
+        <seg>Nutzer {&amp;obj} konnte nicht deaktiviert werden</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>could not deactivate user {&amp;obj}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="163">
+      <tuv xml:lang="de">
+        <seg>Nutzer {&amp;obj} konnte nicht gesperrt werden</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>could not lock user {&amp;obj}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="164">
+      <tuv xml:lang="de">
+        <seg>Nutzer {&amp;obj} konnte nicht entsperrt werden</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>could not unlock user {&amp;obj}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="165">
+      <tuv xml:lang="de">
+        <seg>Passwort des Nutzers {&amp;obj} konnte nicht geändert werden</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>could not change password of user {&amp;obj}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="166">
+      <tuv xml:lang="de">
+        <seg>Rolle {&amp;obj} hinzugefügt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>added role {&amp;obj}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="167">
+      <tuv xml:lang="de">
+        <seg>Wert {&amp;attr} der Rolle {&amp;obj} von {&amp;old} auf {&amp;new} geändert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>edited {&amp;attr} of role {&amp;obj} from {&amp;old} to {&amp;new}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="168">
+      <tuv xml:lang="de">
+        <seg>Rolle {&amp;obj} gelöscht</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>deleted role {&amp;obj}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="169">
+      <tuv xml:lang="de">
+        <seg>Rolle {&amp;obj} konnte nicht hinzugefügt werden</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>could not add role {&amp;obj}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="170">
+      <tuv xml:lang="de">
+        <seg>Ändern eines oder mehrerer Attribute der Rolle{&amp;obj} fehlgeschlagen</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>failed to edit one or more attributes of role {&amp;obj}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="171">
+      <tuv xml:lang="de">
+        <seg>Rolle {&amp;obj} konnte nicht gelöscht werden</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>could not delete Role {&amp;obj}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="300">
+      <tuv xml:lang="de">
+        <seg>Benutzer/Rollen - Datei importiert: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>imported user/role file: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="301">
+      <tuv xml:lang="de">
+        <seg>Benutzer/Rollen - Datei exportiert: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>exported user/role file: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="302">
+      <tuv xml:lang="de">
+        <seg>Benutzer/Rollen - Datei konnte nicht importiert werden: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>could not import user/role file: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="303">
+      <tuv xml:lang="de">
+        <seg>Benutzer/Rollen - Datei konnte nicht exportiert werden: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>could not export user/role file: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="350">
+      <tuv xml:lang="de">
+        <seg>Elektronische Signatur erfolgreich durchgeführt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>performed electronic signature successfully</seg>
+      </tuv>
+    </tu>
+    <tu tuid="351">
+      <tuv xml:lang="de">
+        <seg>Elektronische Signatur fehlgeschlagen</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>failed to perform electronic signature successfully</seg>
+      </tuv>
+    </tu>
+    <tu tuid="352">
+      <tuv xml:lang="de">
+        <seg>Elektronische Signatur abgebrochen</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>cancelled electronic signature</seg>
+      </tuv>
+    </tu>
+    <tu tuid="353">
+      <tuv xml:lang="de">
+        <seg>Elektronische Signatur aufgrund von überschrittener Grenze von falschen Eingaben verlassen</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>exited electronic signature due to exceeded limit for incorrect input</seg>
+      </tuv>
+    </tu>
+    <tu tuid="400">
+      <tuv xml:lang="de">
+        <seg>Wert von {&amp;dpid} von {&amp;old|'} auf {&amp;new|'} geändert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>changed value of {&amp;dpid} from {&amp;old|'} to {&amp;new|'}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="401">
+      <tuv xml:lang="de">
+        <seg>Wert von (UserID: {&amp;dpid}) von {&amp;old|'} auf {&amp;new|'} geändert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>changed value of (UserID: {&amp;dpid}) from {&amp;old|'} to {&amp;new|'}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="402">
+      <tuv xml:lang="de">
+        <seg>{=$MpAudit/Custom/{&amp;typ}}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>{=$MpAudit/Custom/{&amp;typ}}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="403">
+      <tuv xml:lang="de">
+        <seg>Batch von {&amp;old} auf {&amp;new} geändert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>changed batch from {&amp;old} to {&amp;new}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="404">
+      <tuv xml:lang="de">
+        <seg>Neues Audit - Archiv verfügbar</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>new audit archive available</seg>
+      </tuv>
+    </tu>
+    <tu tuid="405">
+      <tuv xml:lang="de">
+        <seg>Audit - Puffer gelöscht</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>cleared the audit buffer</seg>
+      </tuv>
+    </tu>
+    <tu tuid="500">
+      <tuv xml:lang="de">
+        <seg>Wert von {&amp;dpid} von {&amp;old|'} auf {&amp;new|'} geändert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>changed value of {&amp;dpid} from {&amp;old|'} to {&amp;new|'}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="600">
+      <tuv xml:lang="de">
+        <seg>Alarm {&amp;name} hat den Zustand von {&amp;old} auf {&amp;new} geändert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>alarm {&amp;name} changed state from {&amp;old} to {&amp;new}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="700">
+      <tuv xml:lang="de">
+        <seg>Laden des Rezepts gestartet: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>started loading recipe: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="701">
+      <tuv xml:lang="de">
+        <seg>Laden des Rezepts beendet: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>ended loading recipe: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="702">
+      <tuv xml:lang="de">
+        <seg>Rezept gespeichert: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>saved recipe: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="703">
+      <tuv xml:lang="de">
+        <seg>Rezept von {&amp;old} auf {&amp;new} umbenannt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>renamed recipe from {&amp;old} to {&amp;new}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="704">
+      <tuv xml:lang="de">
+        <seg>Rezept gelöscht: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>deleted recipe: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="800">
+      <tuv xml:lang="de">
+        <seg>PackML Modus von {&amp;old} auf {&amp;new} geändert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>changed PackML mode from {&amp;old} to {&amp;new}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="801">
+      <tuv xml:lang="de">
+        <seg>PackML Zustand von {&amp;old} auf {&amp;new} geändert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>changed PackML state from {&amp;old} to {&amp;new}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="802">
+      <tuv xml:lang="de">
+        <seg>PackML Substatus von {&amp;old} auf {&amp;new} geändert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>changed PackML substate from {&amp;old} to {&amp;new}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="900">
+      <tuv xml:lang="de">
+        <seg>Erstellen von Backup gestartet: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>started creating backup: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="901">
+      <tuv xml:lang="de">
+        <seg>Erstellen von Backup beendet: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>ended creating backup: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="902">
+      <tuv xml:lang="de">
+        <seg>Backup installiert: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>installed backup: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1000">
+      <tuv xml:lang="de">
+        <seg>Program erstellt: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>created the program: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1001">
+      <tuv xml:lang="de">
+        <seg>Programm gelöscht: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>deleted the program: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1002">
+      <tuv xml:lang="de">
+        <seg>Programm geändert: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>changed the program: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1003">
+      <tuv xml:lang="de">
+        <seg>Programm importiert: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>imported the program: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1100">
+      <tuv xml:lang="de">
+        <seg>Datei erstellt: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>created a file: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1101">
+      <tuv xml:lang="de">
+        <seg>Datei überschrieben: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>overwrote a file: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1102">
+      <tuv xml:lang="de">
+        <seg>Information zu einer Datei hinzugefügt: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>information appended to a file: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1103">
+      <tuv xml:lang="de">
+        <seg>Datei gelöscht: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>deleted a file: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1104">
+      <tuv xml:lang="de">
+        <seg>Datei von {&amp;old} auf {&amp;new} umbenannt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>renamed a file from {&amp;old} to {&amp;new}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1105">
+      <tuv xml:lang="de">
+        <seg>Datei {&amp;name} von {&amp;src} nach {&amp;dest} kopiert und eingefügt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>copied and pasted file {&amp;name} from {&amp;src} to {&amp;dest}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1106">
+      <tuv xml:lang="de">
+        <seg>Datei {&amp;name} von {&amp;src} nach {&amp;dest} ausgeschnitten und eingefügt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>cut and pasted file {&amp;name} from {&amp;src} to {&amp;dest}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1107">
+      <tuv xml:lang="de">
+        <seg>Datei gesperrt: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>locked a file: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1108">
+      <tuv xml:lang="de">
+        <seg>Datei entsperrt: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>unlocked a file: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1150">
+      <tuv xml:lang="de">
+        <seg>Ordner erstellt: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>created a folder: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1151">
+      <tuv xml:lang="de">
+        <seg>Ordner überschrieben: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>overwrote a folder: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1152">
+      <tuv xml:lang="de">
+        <seg>Ordner gelöscht: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>deleted a folder: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1153">
+      <tuv xml:lang="de">
+        <seg>Ordner von {&amp;old} auf {&amp;new} umbenannt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>renamed a folder from {&amp;old} to {&amp;new}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1154">
+      <tuv xml:lang="de">
+        <seg>Ordner {&amp;name} von {&amp;src} nach {&amp;dest} kopiert und eingefügt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>copied and pasted folder {&amp;name} from {&amp;src} to {&amp;dest}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1155">
+      <tuv xml:lang="de">
+        <seg>Ordner {&amp;name} von {&amp;src} nach {&amp;dest} ausgeschnitten und eingefügt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>cut and pasted folder {&amp;name} from {&amp;src} to {&amp;dest}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1556">
+      <tuv xml:lang="de">
+        <seg>Ordner gesperrt: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>locked a folder {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1557">
+      <tuv xml:lang="de">
+        <seg>Ordner entsperrt: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>unlocked a folder: {&amp;name}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1200">
+      <tuv xml:lang="de">
+        <seg>Neue Hardware-Konfiguration importiert: {&amp;name}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>imported new hardware configuration: {&amp;name}</seg>
+      </tuv>
+    </tu>
+  </body>
+</tmx>

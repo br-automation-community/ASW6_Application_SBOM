@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="Library for handling power saving functionality." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>ArEco.fun</File>
+    <File>ArEco.typ</File>
+    <File>ArEco.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+    <Dependency ObjectName="astime" />
+  </Dependencies>
+</Library>

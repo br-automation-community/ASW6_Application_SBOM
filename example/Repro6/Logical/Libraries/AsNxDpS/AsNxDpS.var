@@ -1,0 +1,28 @@
+                                                                      
+VAR CONSTANT
+	nxdpsERR_INVALID_DEVICE					: UINT	:= 34800;		(*error invalid device*)
+	nxdpsERR_SEND_MESSAGE					: UINT	:= 34801;		(*error send message*)
+	nxdpsERR_TIMEOUT						: UINT	:= 34802;		(*error timeout*)
+	nxdpsERR_PROFIBUSDP_STACK				: UINT	:= 34803;		(*error receive message*)
+	nxdpsERR_PARAMETER						: UINT	:= 34804;		(*error invalid parameter*)
+	nxdpsERR_MEMORY							: UINT	:= 34805;		(*error less memory*)
+	nxdpsERR_SUBSCRIBE_LISTENER				: UINT	:= 34806;		(*error subscribe listener*)
+	nxdpsERR_NO_MORE_ENTRIES				: UINT	:= 34807;		(*error no more entries available*)
+	
+	nxdpsALARM_DIAGNOSTIC					: USINT	:= 1;			(*diagnostic alarm*)
+	nxdpsALARM_PROCESS						: USINT	:= 2;			(*process alarm*)
+	nxdpsALARM_PULL							: USINT	:= 3;			(*pull alarm*)
+	nxdpsALARM_PLUG							: USINT	:= 4;			(*plug alarm*)
+	nxdpsALARM_STATUS						: USINT	:= 5;			(*status alarm*)
+	nxdpsALARM_UPDATE						: USINT	:= 6;			(*update alarm*)
+
+	nxdpsALARM_SPEC_NO_DIFF					: USINT	:= 0;			(*no further differentiation*)
+	nxdpsALARM_SPEC_ERR_APP_SLOT_DIS		: USINT	:= 1;			(*error appears and slot disturbed*)
+	nxdpsALARM_SPEC_ERR_DIS_SLOT_OK			: USINT	:= 2;			(*error disappears and slot is ok*)
+	nxdpsALARM_SPEC_ERR_DIS_SLOT_DIS		: USINT	:= 3;			(*error disappears and slot is still disturbed*)
+	
+	nxdpsNEGATIVE_ACK						: BOOL	:= 0;			(*negative acknowledgment*)
+	nxdpsPOSITIVE_ACK						: BOOL	:= 1;			(*positive acknowledgment*)
+	
+	nxdpsMAX_DIAG_DATA_SIZE					: UDINT	:= 238;			(*max diagnostic data size*)
+END_VAR

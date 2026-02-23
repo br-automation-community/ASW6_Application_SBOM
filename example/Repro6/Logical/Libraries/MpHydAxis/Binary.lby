@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library Version="6.4.0" SubType="Binary" Description="Library for controlling hydraulic axes" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>MpHydAxis.var</File>
+    <File>MpHydAxis.typ</File>
+    <File>MpHydAxisError.typ</File>
+    <File>MpHydAxisAlarm.typ</File>
+    <File>MpHydAxis.fun</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="MpBase" FromVersion="6.0.0" ToVersion="6.2147483647.2147483647" />
+  </Dependencies>
+</Library>

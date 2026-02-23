@@ -1,0 +1,40 @@
+                                                                      
+VAR CONSTANT
+	asANSL_OPTION_FILTER_ALL 			: USINT		:= 0;		(*iterate over all connections*)
+	asANSL_OPTION_FILTER_NOERROR 		: USINT		:= 1;		(*iterate over all connections without error*)
+	asANSL_OPTION_FILTER_ERROR			: USINT		:= 2;		(*iterate over all connections with error*)
+	
+	asANSL_OPTION_CPU_LOCAL				: USINT		:= 0;		(*local plc*)
+	asANSL_OPTION_CPU_PARTNER			: USINT		:= 1;		(*partner plc*)
+	
+	asANSL_PV_DIRECTION_READ			: USINT		:= 1;		(*client read pv*)
+	asANSL_PV_DIRECTION_WRITE			: USINT		:= 2;		(*client write pv*)
+	
+	asANSL_RED_CONN_NO_CONNECTION		: UDINT		:= 0;		(*no connection to one of the redundancy CPUs*)
+	asANSL_RED_CONN_PRI_NOT_ACTIV		: UDINT		:= 2;		(*connection of the primary (not activ) CPU*)
+	asANSL_RED_CONN_PRI_ACTIV			: UDINT		:= 3;		(*connection of the primary (activ) CPU*)
+	asANSL_RED_CONN_SEC_NOT_ACTIV 		: UDINT		:= 4;		(*connection of the secondary (not activ) CPU*)
+	asANSL_RED_CONN_SEC_ACTIV			: UDINT		:= 5;		(*connection of the secondary (activ) CPU*)
+	
+	asANSL_RED_CONN_CLU_OK				: UDINT		:= 1;		(*cluster connection is OK*)
+	asANSL_RED_CONN_CLU_ERROR			: UDINT		:= 2;		(*cluster connection is in an error state*)
+	asANSL_RED_CONN_PRI_OK				: UDINT		:= 4;		(*connection to the primary CPU is OK*)
+	asANSL_RED_CONN_PRI_ERROR			: UDINT		:= 8;		(*connection to the primary CPU is in an error state*)
+	asANSL_RED_CONN_SEC_OK				: UDINT		:= 16;		(*connection to the secondary CPU is OK*)
+	asANSL_RED_CONN_SEC_ERROR			: UDINT		:= 32;		(*connection to the secondary CPU is in an error state*)
+	
+	asANSL_ERR_MEMORY_RESOURCE			: UINT		:= 31651;	(*system out of memory*)
+	asANSL_ERR_EVENT_RESOURCE			: UINT		:= 31652;	(*system out of event resource*)
+	asANSL_ERR_THREAD_RESOURCE			: UINT		:= 31653;	(*system out of thread resource*)
+	asANSL_ERR_SYNC_RESOURCE			: UINT		:= 31654;	(*system out of synchronisation resource*)
+	asANSL_ERR_FILE_RESOURCE			: UINT		:= 31655;	(*system out of file resource*)
+	
+	asANSL_ERR_PARAM_INVALID			: UINT		:= 31870;	(*invalid parameter*)
+	asANSL_ERR_XML_PARSER_INIT_ERROR	: UINT		:= 31871;	(*xml parser error*)
+	asANSL_ERR_XML_INVALID				: UINT		:= 31872;	(*invalid xml configuration*)
+	asANSL_ERR_DATAMODUL_NOT_EXIST		: UINT		:= 31873;	(*datamodul not found*)
+	asANSL_ERR_CLIENT_NOT_EXIST			: UINT		:= 31874;	(*client not found/started*)
+	asANSL_ERR_CONN_NOT_EXIST			: UINT		:= 31875;	(*connection not found*)
+	asANSL_ERR_PV_CONN_NOT_EXIST		: UINT		:= 31876;	(*pv connection not found*)
+	asANSL_ERR_END_OF_LIST				: UINT		:= 31877;	(*end of client/connection/pv list*)
+END_VAR

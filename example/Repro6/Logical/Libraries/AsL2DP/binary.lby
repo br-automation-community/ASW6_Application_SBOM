@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="This Library contains a function block for operating the Profibus DP slave modules." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>AsL2DP.fun</File>
+    <File>AsL2DP.typ</File>
+    <File>AsL2DP.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

@@ -1,0 +1,30 @@
+
+TYPE
+    MpClampErrorEnum : 
+        ( (* Error numbers of library MpClamp *)
+        mpCLAMP_NO_ERROR := 0, (* No error *)
+        mpCLAMP_ERR_ACTIVATION := -1064239103, (* Could not create component [Error: 1, 0xc0910001] *)
+        mpCLAMP_ERR_MPLINK_NULL := -1064239102, (* MpLink is NULL pointer [Error: 2, 0xc0910002] *)
+        mpCLAMP_ERR_MPLINK_INVALID := -1064239101, (* MpLink connection not allowed [Error: 3, 0xc0910003] *)
+        mpCLAMP_ERR_MPLINK_CHANGED := -1064239100, (* MpLink modified [Error: 4, 0xc0910004] *)
+        mpCLAMP_ERR_MPLINK_CORRUPT := -1064239099, (* Invalid MpLink contents [Error: 5, 0xc0910005] *)
+        mpCLAMP_ERR_MPLINK_IN_USE := -1064239098, (* MpLink already in use [Error: 6, 0xc0910006] *)
+        mpCLAMP_ERR_PAR_NULL := -1064239097, (* Parameters structure is a null pointer [Error: 7, 0xc0910007] *)
+        mpCLAMP_ERR_CONFIG_NULL := -1064239096, (* Configuration structure is null pointer [Error: 8, 0xc0910008] *)
+        mpCLAMP_ERR_CONFIG_NO_PV := -1064239095, (* Configuration pointer not PV [Error: 9, 0xc0910009] *)
+        mpCLAMP_ERR_CONFIG_LOAD := -1064239094, (* Error loading configuration {2:ConfigName} (ErrorCause: {1:ErrorNumber}) [Error: 10, 0xc091000a] *)
+        mpCLAMP_WRN_CONFIG_LOAD := -2137980917, (* Warning loading configuration [Warning: 11, 0x8091000b] *)
+        mpCLAMP_ERR_CONFIG_SAVE := -1064239092, (* Error saving configuration {2:ConfigName} (ErrorCause: {1:ErrorNumber}) [Error: 12, 0xc091000c] *)
+        mpCLAMP_ERR_CONFIG_INVALID := -1064239091, (* Invalid Configuration [Error: 13, 0xc091000d] *)
+        mpCLAMP_WRN_PARAMETER_LIMITED := -2137766912, (* The movement parameters have been limited due to configuration settings [Warning: 17408, 0x80944400] *)
+        mpCLAMP_ERR_PROTECT_TIMEOUT := -1064025087, (* The mold protection phase has timed out ({2:Timeout} s) [Error: 17409, 0xc0944401] *)
+        mpCLAMP_ERR_MOLD_LOCKED := -1064025086, (* The mold is locked (timeout was triggered) ({2:Timeout} s) [Error: 17410, 0xc0944402] *)
+        mpCLAMP_WRN_CONFIG_WAIT_IDLE := -2137766909, (* The configuration values will be updated as soon as no movement is active [Warning: 17411, 0x80944403] *)
+        mpCLAMP_WRN_PAR_WAIT_IDLE := -2137766908, (* The parameters will be updated as soon as no movement is active [Warning: 17412, 0x80944404] *)
+        mpCLAMP_ERR_PRELOCK_TIMEOUT := -1064025083, (* The mold prelock step has timed out ({2:Timeout} s) (no feedback from ClampPreLocked pin) [Error: 17413, 0xc0944405] *)
+        mpCLAMP_ERR_POSTUNLOCK_TIMEOUT := -1064025082, (* The mold post unlock step has timed out ({2:Timeout} s) (no feedback from ClampPostLocked pin) [Error: 17414, 0xc0944406] *)
+        mpCLAMP_ERR_AXIS_ERROR := -1064025081, (* Axis error at {2:AxisName}. (ErrorCause {1:ErrorNumber}). [Error: 17415, 0xc0944407] *)
+        mpCLAMP_ERR_LIBRARY_MISSING := -1064025080, (* Library {2:LibName} is missing an the target. [Error: 17416, 0xc0944408] *)
+        mpCLAMP_ERR_COMMAND_INVALID := -1064025079 (* The selected command {2:Command} is invalid. [Error: 17417, 0xc0944409] *)
+        );
+END_TYPE

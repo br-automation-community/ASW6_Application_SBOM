@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tmx version="1.4">
+  <header creationtool="B&amp;R Automation Studio" creationtoolversion="4.2" datatype="unknown" segtype="sentence" adminlang="en" srclang="en" o-tmf="TMX">
+    <note>Do not change anything in this file, else the tmx-file will not be recognized as a valid system text anymore</note>
+    <prop type="x-BR-TS:Namespace">BR/EventLog</prop>
+    <prop type="x-BR-TS:systemtextsig">V+Voixa2o6c2puFqirjdMcNlc6Jl9TQsgaxTTw2CR4BBkWqj//w7LqI1N7/S1oI/4qZ7NaimN/TDcv9cGbq3mis8W95yPOm5LiN6REEB1CMZgHATqHYMe2Ewh5uB3V/NQv5u9bmmZxcbx9LJHC98JL3avzvypYVOEb+TBv6Zqmw=</prop>
+  </header>
+  <body>
+    <tu tuid="-1070582446">
+      <tuv xml:lang="en">
+        <seg>Maximum number of opened ports reached</seg>
+      </tuv>
+    </tu>
+    <tu tuid="-1070582445">
+      <tuv xml:lang="en">
+        <seg>Frame length outside valid range</seg>
+      </tuv>
+    </tu>
+    <tu tuid="-1070582444">
+      <tuv xml:lang="en">
+        <seg>Frame ID outside valid range</seg>
+      </tuv>
+    </tu>
+    <tu tuid="-1070582443">
+      <tuv xml:lang="en">
+        <seg>Multiple function block instances not permitted</seg>
+      </tuv>
+    </tu>
+    <tu tuid="-1070582442">
+      <tuv xml:lang="en">
+        <seg>No schedule set</seg>
+      </tuv>
+    </tu>
+    <tu tuid="-1070582441">
+      <tuv xml:lang="en">
+        <seg>TEST_ASSERT failed</seg>
+      </tuv>
+    </tu>
+    <tu tuid="-2144324270">
+      <tuv xml:lang="en">
+        <seg>Scheduler stopped</seg>
+      </tuv>
+    </tu>
+    <tu tuid="3159378">
+      <tuv xml:lang="en">
+        <seg>Scheduler started</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1076901202">
+      <tuv xml:lang="en">
+        <seg>DEBUG_INFO</seg>
+      </tuv>
+    </tu>
+  </body>
+</tmx>

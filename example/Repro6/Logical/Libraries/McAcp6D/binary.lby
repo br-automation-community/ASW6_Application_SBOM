@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library Version="3.5.0" SubType="binary" Description="[mapp 6D] ACOPOS 6D library" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>McAcp6D.typ</File>
+    <File>McAcp6D.fun</File>
+    <File>McAcp6D.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="McBase" FromVersion="6.0.0" />
+  </Dependencies>
+</Library>

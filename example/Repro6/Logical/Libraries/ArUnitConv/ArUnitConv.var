@@ -1,0 +1,11 @@
+
+VAR CONSTANT
+	arUNITCONV_ERR_INVALID_UNITID		: DINT := -1070585696;		(*Invalid unit identifier.*)
+	arUNITCONV_ERR_INVALID_CC			: DINT := -1070585695;      (*Invalid common code.*)
+	arUNITCONV_ERR_INVALID_NS			: DINT := -1070585694;      (*Invalid unit namespace.*)
+	arUNITCONV_ERR_INVALID_NSID			: DINT := -1070585693;      (*Invalid namespace identifier.*)
+	arUNITCONV_ERR_NOT_CONVERTIBLE		: DINT := -1070585692;      (*The units are not convertible.*)
+	arUNITCONV_ERR_WRONG_DB				: DINT := -1070585691;      (*Unit database is corrupt or has an unsupported format.*)
+	arUNITCONV_ERR_NO_DB				: DINT := -1070585690;		(*An internal error has occurred. Please contact B+R support.*)
+	arUNITCONV_ERR_INTERNAL				: DINT := -1070585689;		(*An internal error has occurred. Please contact B+R support.*)
+END_VAR

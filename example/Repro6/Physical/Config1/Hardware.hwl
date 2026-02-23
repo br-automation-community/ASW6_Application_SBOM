@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?AutomationStudio FileVersion="4.9"?>
+<BR.AS.HardwareTopology>
+  <TimeStamps>
+    <TimeStamp LogicalPath="Config1.Hardware.hw" LastWriteTime="02/17/2026 13:57:24" />
+    <TimeStamp LogicalPath="Config1.Hardware1.hw" LastWriteTime="02/17/2026 13:55:07" />
+  </TimeStamps>
+  <Modules>
+    <Module Name="X20CP1686X" Type="X20CP1686X" X="100" Y="100" />
+    <Module Name="X20BM11" Type="X20BM11" X="250" Y="100" />
+    <Module Name="X20AI2237" Type="X20AI2237" X="250" Y="100" />
+    <Module Name="X20TB12" Type="X20TB12" X="250" Y="127" />
+    <Module Name="0AC808.9-1" Type="0AC808.9-1" X="263" Y="249" />
+    <Module Name="X20BB80" Type="X20BB80" X="418" Y="249" />
+    <Module Name="X20PS9400" Type="X20PS9400" X="443" Y="249" />
+    <Module Name="X20TB12_a" Type="X20TB12" X="443" Y="276" />
+    <Module Name="X20BC0083" Type="X20BC0083" X="418" Y="249" />
+  </Modules>
+  <Links>
+    <Link From="X20CP1686X" To="0AC808.9-1" FromPort="IF3" ToPort="ETH1" IsRoutedByUser="False">
+      <Point X="156" Y="187" />
+      <Point X="156" Y="187" />
+      <Point X="156" Y="200" />
+      <Point X="156" Y="205" />
+      <Point X="289" Y="205" />
+      <Point X="289" Y="248" />
+      <Point X="289" Y="260" />
+      <Point X="289" Y="260" />
+    </Link>
+    <Link From="0AC808.9-1" To="X20BC0083" FromPort="ETH2" ToPort="PLK1" IsRoutedByUser="False">
+      <Point X="302" Y="260" />
+      <Point X="302" Y="260" />
+      <Point X="302" Y="248" />
+      <Point X="302" Y="235" />
+      <Point X="375" Y="235" />
+      <Point X="375" Y="324" />
+      <Point X="417" Y="324" />
+      <Point X="432" Y="324" />
+      <Point X="432" Y="324" />
+    </Link>
+  </Links>
+  <InfoElements />
+</BR.AS.HardwareTopology>

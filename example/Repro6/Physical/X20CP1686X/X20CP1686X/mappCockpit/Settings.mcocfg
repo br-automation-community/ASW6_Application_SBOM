@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="Settings" Type="mcocfg">
+    <Property ID="ActivateVisualization" Value="TRUE" />
+    <Group ID="Extensions">
+      <Property ID="mappMotion" Value="TRUE" />
+      <Property ID="mappSafety" Value="TRUE" />
+      <Property ID="mappView" Value="TRUE" />
+      <Property ID="mappVision" Value="TRUE" />
+      <Property ID="Package1" Value="TRUE" />
+      <Property ID="Package2" Value="TRUE" />
+      <Property ID="Package3" Value="TRUE" />
+      <Property ID="Package4" Value="TRUE" />
+      <Property ID="Package5" Value="TRUE" />
+    </Group>
+  </Element>
+</Configuration>

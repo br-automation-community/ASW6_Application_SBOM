@@ -1,0 +1,7 @@
+
+VAR CONSTANT
+	arSAFEUDP_ERR_DEV_NOT_FOUND		: DINT := -1070583900;	(*Is returned when no openSAFETY-over-UDP tunnel exists with the given device name.*)
+	arSAFEUDP_ERR_TUNNEL_ENABLED	: DINT := -1070583901;	(*Is returned when the openSAFETY-over-UDP tunnel must not be enabled to use this function.*)
+	arSAFEUDP_ERR_IP_INVALID		: DINT := -1070583902;	(*Is returned when the given IP is not in the valid range of "1.0.0.1" - "247.255.255.255".*)
+	arSAFEUDP_ERR_IP_IN_USE			: DINT := -1070583903;	(*Is returned when the configured IP is already in use by another openSAFETY-over-UDP tunnel.*)
+END_VAR

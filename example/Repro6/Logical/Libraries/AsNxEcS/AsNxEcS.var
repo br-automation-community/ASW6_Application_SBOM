@@ -1,0 +1,7 @@
+                                                                      
+VAR CONSTANT
+	nxecsERR_INVALID_DEVICE					: UINT	:= 38350;	(*error invalid device*)
+	nxecsERR_SEND_MESSAGE					: UINT	:= 38351;	(*error send message*)
+	nxecsERR_TIMEOUT						: UINT	:= 38352;	(*error timeout*)
+	nxecsERR_ETHERCAT_STACK					: UINT	:= 38353;	(*error receive message*)
+END_VAR

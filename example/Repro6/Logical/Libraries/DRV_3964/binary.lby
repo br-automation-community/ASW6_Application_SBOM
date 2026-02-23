@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="The DRV_3964 library provides the functions that allow a B&amp;R System 2000 to operate as a 3964R slave." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>DRV_3964.fun</File>
+    <File>DRV_3964.typ</File>
+    <File>DRV_3964.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="dvframe" />
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

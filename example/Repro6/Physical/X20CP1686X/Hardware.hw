@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio WorkingVersion="6.5" FileVersion="4.9"?>
+<Hardware xmlns="http://br-automation.co.at/AS/Hardware">
+  <Module Name="0AC808.9-1" Type="0AC808.9-1" Version="1.0.0.0">
+    <Connection Connector="ETH1" TargetModule="X20CP1686X" TargetConnector="IF3">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Connection Connector="ETH5" TargetModule="X20BC0083" TargetConnector="PLK1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Connection Connector="ETH8" TargetModule="oX20BC1083" TargetConnector="PLK1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+  </Module>
+  <Module Name="X20AI4622" Type="X20AI4622" Version="1.6.0.0">
+    <Connection Connector="SS1" TargetModule="X20TB12" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11" TargetConnector="SL1" />
+  </Module>
+  <Module Name="X20AO4622" Type="X20AO4622" Version="1.5.0.0">
+    <Connection Connector="SS1" TargetModule="X20TB12_a" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11_a" TargetConnector="SL1" />
+  </Module>
+  <Module Name="X20BB80" Type="X20BB80" Version="1.1.0.0" />
+  <Module Name="X20BC0083" Type="X20BC0083" Version="2.17.0.0" NodeNumber="1">
+    <Connection Connector="PLK1" TargetModule="0AC808.9-1" TargetConnector="ETH5">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Connection Connector="SL" TargetModule="X20BB80" TargetConnector="SL1" />
+  </Module>
+  <Module Name="X20BM11" Type="X20BM11" Version="1.1.0.0">
+    <Connection Connector="X2X1" TargetModule="X20CP1686X" TargetConnector="IF6" />
+  </Module>
+  <Module Name="X20BM11_a" Type="X20BM11" Version="1.1.0.0">
+    <Connection Connector="X2X1" TargetModule="X20BM11" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11_b" Type="X20BM11" Version="1.1.0.0">
+    <Connection Connector="X2X1" TargetModule="X20BM11_a" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11_c" Type="X20BM11" Version="1.1.0.0">
+    <Connection Connector="X2X1" TargetModule="X20BM11_b" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20CP1686X" Type="X20CP1686X" Version="1.9.0.0">
+    <Connector Name="IF2">
+      <Parameter ID="ActivateDevice" Value="1" />
+      <Parameter ID="HostName" Value="repro6" />
+      <Parameter ID="Mode" Value="Manual" />
+      <Parameter ID="InternetAddress" Value="192.168.103.175" />
+      <Parameter ID="SubnetMask" Value="255.255.255.0" />
+      <Group ID="Vnc1" />
+      <Parameter ID="VncVcObjectName1" Value="Visu" />
+      <Parameter ID="VncKeyMappingFile1" Value="VC\PS2-Keyboard1.dis" />
+      <Parameter ID="ActivateSnmp" Value="1" />
+    </Connector>
+    <Connector Name="IF3">
+      <Parameter ID="EplHostName" Value="repro6" />
+      <Parameter ID="HostName" Value="repro6" />
+    </Connector>
+    <Parameter ID="ConfigurationID" Value="Repro6_X20CP1686X" />
+    <Parameter ID="ConfigVersion" Value="1.0.1" />
+    <Parameter ID="MotionLoggerSize" Value="2048000" />
+    <Group ID="FileDevice1" />
+    <Parameter ID="FileDeviceName1" Value="USER" />
+    <Parameter ID="FileDevicePath1" Value="USER_PATH" />
+    <Parameter ID="EthernetHostName" Value="repro6" />
+    <Group ID="AdditionalHardwareEntry1" />
+    <Parameter ID="AdditionalHardwareModule1" Value="X20BR9300" />
+    <Parameter ID="AdditionalHardwareVersion1" Value="1.5.0.0" />
+    <Group ID="AdditionalHardwareEntry2" />
+    <Parameter ID="AdditionalHardwareModule2" Value="X20BT9100" />
+    <Parameter ID="AdditionalHardwareVersion2" Value="1.4.0.0" />
+  </Module>
+  <Module Name="X20DI9371" Type="X20DI9371" Version="1.6.1.0">
+    <Connection Connector="SS1" TargetModule="X20TB12_b" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11_b" TargetConnector="SL1" />
+  </Module>
+  <Module Name="X20DO9321" Type="X20DO9321" Version="1.2.2.0">
+    <Connection Connector="SS1" TargetModule="X20TB12_c" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11_c" TargetConnector="SL1" />
+  </Module>
+  <Module Name="X20TB12" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12_a" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12_b" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12_c" Type="X20TB12" Version="1.0.0.0" />
+</Hardware>

@@ -1,0 +1,12 @@
+                                                                      
+VAR CONSTANT
+	mbSlOFFSET_DISCRETE_INPUT			: UINT := 0;			(*startaddress of discrete input addressspace => 0x0000*)
+	mbSlOFFSET_COIL						: UINT := 16384;		(*startaddress of coil addressspace => 0x4000*)
+	mbSlOFFSET_INPUT_REGISTER			: UINT := 8192;			(*startaddress of coil addressspace => 0x2000*)
+	mbSlOFFSET_HOLDING_REGISTER			: UINT := 24576;		(*startaddress of coil addressspace => 0x6000*)
+	mbSlERR_INVALID_CONFIG				: UINT := 37450;		(*slave has to be configured with fixed buffersize*)
+	mbSlERR_INVALID_STATION				: UINT := 37451;		(*station does not exist*)
+	mbSlERR_INVALID_ADDRESS				: UINT := 37452;		(*startaddress or number of coils/registers incorrect*)
+	mbSlERR_NULLPOINTER					: UINT := 37453;		(*nullpointer*)
+	mbSlERR_INVALID_NUMBER_OF_ITEMS		: UINT := 37454;		(*Number of Items must be between 1 and 128*)
+END_VAR

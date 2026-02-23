@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tmx version="1.4">
+  <header creationtool="B&amp;R Automation Studio" creationtoolversion="4.2" datatype="unknown" segtype="sentence" adminlang="en" srclang="en" o-tmf="TMX">
+    <note>Do not change anything in this file, else the tmx-file will not be recognized as a valid system text anymore</note>
+    <prop type="x-BR-TS:Namespace">BR/EventLog</prop>
+    <prop type="x-BR-TS:systemtextsig">b5FDnAh38LMPzpjjF5YdAKj2FpriXCJfTlJYDU7ynWSWVVY399FDGwbqNyU6mErbl6KwPpARmeqshD9mqdy6uuMg4UCFyE/XpZp92vaKBz+rG0OWPSAiPABL9rBwNbYw6XXLIExJ0puDOou1tFORB0WBqzLvanrpAaawU7iy21s=</prop>
+  </header>
+  <body>
+    <tu tuid="-1057216702">
+      <tuv xml:lang="en">
+        <seg>TEST_ASSERT failed</seg>
+      </tuv>
+    </tu>
+    <tu tuid="-1057216701">
+      <tuv xml:lang="en">
+        <seg>Server initialization failed</seg>
+      </tuv>
+    </tu>
+    <tu tuid="-1057216700">
+      <tuv xml:lang="en">
+        <seg>Failed to set attribute on server</seg>
+      </tuv>
+    </tu>
+    <tu tuid="-1057216699">
+      <tuv xml:lang="en">
+        <seg>Failed to get attribute from server</seg>
+      </tuv>
+    </tu>
+    <tu tuid="-1057216698">
+      <tuv xml:lang="en">
+        <seg>Invalid reference</seg>
+      </tuv>
+    </tu>
+    <tu tuid="-1057216697">
+      <tuv xml:lang="en">
+        <seg>Invalid variable</seg>
+      </tuv>
+    </tu>
+    <tu tuid="-1057216696">
+      <tuv xml:lang="en">
+        <seg>Goose initialization failed</seg>
+      </tuv>
+    </tu>
+    <tu tuid="-1057216695">
+      <tuv xml:lang="en">
+        <seg>Data types do not match</seg>
+      </tuv>
+    </tu>
+    <tu tuid="-1057216694">
+      <tuv xml:lang="en">
+        <seg>Configuration file not found</seg>
+      </tuv>
+    </tu>
+    <tu tuid="-1057216693">
+      <tuv xml:lang="en">
+        <seg>Client initialization failed</seg>
+      </tuv>
+    </tu>
+    <tu tuid="-1057216692">
+      <tuv xml:lang="en">
+        <seg>Control operation failed</seg>
+      </tuv>
+    </tu>
+    <tu tuid="-1057216691">
+      <tuv xml:lang="en">
+        <seg>Log control block operation failed</seg>
+      </tuv>
+    </tu>
+    <tu tuid="-2130958526">
+      <tuv xml:lang="en">
+        <seg>Server stopped</seg>
+      </tuv>
+    </tu>
+    <tu tuid="-2130958525">
+      <tuv xml:lang="en">
+        <seg>Client stopped</seg>
+      </tuv>
+    </tu>
+    <tu tuid="16525122">
+      <tuv xml:lang="en">
+        <seg>Server started</seg>
+      </tuv>
+    </tu>
+    <tu tuid="16525123">
+      <tuv xml:lang="en">
+        <seg>Client started</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1090266946">
+      <tuv xml:lang="en">
+        <seg>Debug message</seg>
+      </tuv>
+    </tu>
+  </body>
+</tmx>

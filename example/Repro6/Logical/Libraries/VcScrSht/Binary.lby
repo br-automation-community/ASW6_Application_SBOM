@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library Version="6.0.0" SubType="Binary" Description="The VcScrSht library provides function blocks for creating screenshots on SG4-Targets." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>VcScrSht.fun</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+    <Dependency ObjectName="visapi" />
+    <Dependency ObjectName="fileio" />
+  </Dependencies>
+</Library>

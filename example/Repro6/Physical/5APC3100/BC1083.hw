@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio WorkingVersion="6.5" FileVersion="4.9"?>
+<Hardware xmlns="http://br-automation.co.at/AS/Hardware">
+  <Module Name="oX20BB82" Type="X20BB82" Version="1.2.0.0" />
+  <Module Name="oX20BC1083" Type="X20BC1083" Version="2.17.0.0" NodeNumber="20">
+    <Connection Connector="PLK1" TargetModule="0AC808.9-1" TargetConnector="ETH8">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Connection Connector="SL" TargetModule="oX20BB82" TargetConnector="SL1" />
+  </Module>
+  <Module Name="oX20PS9400" Type="X20PS9400" Version="1.9.0.0">
+    <Connection Connector="SS1" TargetModule="oX20TB12" TargetConnector="SS" />
+    <Connection Connector="PS" TargetModule="oX20BB82" TargetConnector="PS1" />
+  </Module>
+  <Module Name="oX20TB12" Type="X20TB12" Version="1.0.0.0" />
+</Hardware>

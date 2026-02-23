@@ -1,0 +1,45 @@
+(*Errors: Common errors*)
+VAR CONSTANT
+	mtSKW_ERR_CONFIGURATION_INVALID : DINT := -1058003120; (*Error: Invalid configuration.*)
+	mtSKW_ERR_DELAY_TIME_INVALID : DINT := -1058003119; (*Error: Delay time is invalid.*)
+	mtSKW_ERR_SYSTEM_PAR_INVALID : DINT := -1058003118; (*Error: Invalid system parameters.*)
+END_VAR
+(*Errors: MTSkewController*)
+VAR CONSTANT
+	mtSKW_ERR_CTRL_PAR_INVALID : DINT := -1058003117; (*Error: Controller parameters are invalid.*)
+END_VAR
+(*Errors: MTSkewObserver*)
+VAR CONSTANT
+END_VAR
+(*Errors: MTSkewIdentification*)
+VAR CONSTANT
+	mtSKW_ERR_IDENT_INVALID : DINT := -1058003115; (*Error: Invalid identification of parameters.*)
+END_VAR
+(*Errors: MTSkewSimulationModel*)
+VAR CONSTANT
+	mtSKW_ERR_NOISE_FACTOR_INVALID : DINT := -1058003114; (*Error: Invalid noise factor.*)
+	mtSKW_ERR_SIM_SYSTEM_PAR_INVALID : DINT := -1058003113; (*Error: Invalid simulation system parameters.*)
+END_VAR
+(*Warnings: Common warnings*)
+VAR CONSTANT
+	mtSKW_WRN_HOISTLENGTH_INVALID : DINT := -2131744944; (*Warning: Invalid hoist length.*)
+	mtSKW_WRN_SYSTEM_PAR_INVALID : DINT := -2131744943; (*Warning: Invalid system parameters.*)
+END_VAR
+(*Warnings: MTSkewControllerer*)
+VAR CONSTANT
+	mtSKW_WRN_CTRL_PAR_INVALID : DINT := -2131744942; (*Warning: Controller parameters are invalid.*)
+	mtSKW_WRN_MODE_INVALID : DINT := -2131744941; (*Warning: Invalid controller mode.*)
+END_VAR
+(*Warnings: MTSkewObserver*)
+VAR CONSTANT
+	mtSKW_WRN_OBSERVER_PAR_INVALID : DINT := -2131744940; (*Warning: Observer parameters are invalid.*)
+END_VAR
+(*Warnings: MTSkewIdentification*)
+VAR CONSTANT
+	mtSKW_WRN_IDENT_ABORTED : DINT := -2131744939; (*Warning: Identification was aborted by user.*)
+END_VAR
+(*Warnings: MTSkewSimulationModel*)
+VAR CONSTANT
+	mtSKW_WRN_NOISE_FACTOR_INVALID : DINT := -2131744938; (*Warning: Invalid noise factor.*)
+	mtSKW_WRN_SIM_SYSTEM_PAR_INVALID : DINT := -2131744937; (*Warning: Invalid simulation system parameters.*)
+END_VAR

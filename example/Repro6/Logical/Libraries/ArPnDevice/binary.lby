@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="PROFINET device utils - record management" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>ArPnDevice.fun</File>
+    <File>ArPnDevice.typ</File>
+    <File>ArPnDevice.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

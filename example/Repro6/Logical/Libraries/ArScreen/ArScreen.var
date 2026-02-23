@@ -1,0 +1,8 @@
+VAR CONSTANT
+	arSCREEN_SCREEN_ALL : UDINT := 0; (*All supported screens on target*)
+	arSCREEN_SCREEN_1	: UDINT := 1; (*First screen on target*)
+
+	arSCREEN_ERR_INVALID_SCREEN 	: DINT := -1070583246; (*Screen selector has invalid value*)
+	arSCREEN_ERR_INVALID_BRIGHTNESS : DINT := -1070583245; (*Value for brightness not valid, because not in range (0..100)*)
+	arSCREEN_ERR_NOT_SUPPORTED 		: DINT := -1070583244; (*No screen available on the PLC, or the library is not supported on this PLC*)
+END_VAR

@@ -1,0 +1,55 @@
+                                                                      
+VAR CONSTANT
+	nxcomERR_INVALID_DEVICE					: UINT	:= 34500;		(*error invlaid device*)
+	nxcomERR_SEND_MESSAGE					: UINT	:= 34501;		(*error send message*)
+	nxcomERR_TIMEOUT						: UINT	:= 34502;		(*error timeout*)
+	nxcomERR_CANOPEN_STACK					: UINT	:= 34503;		(*error receive message*)
+	nxcomERR_DATALEN						: UINT	:= 34504;		(*error datalen*)
+	nxcomERR_PARAMETER						: UINT	:= 34505;		(*error parameter*)
+	
+	nxcomNMT_STATE_UNKNOWN					: UDINT	:= 0;			(*unknown*)
+	nxcomNMT_STATE_INITIALISING				: UDINT	:= 1;			(*initialising*)
+	nxcomNMT_STATE_STOPPED					: UDINT	:= 2;			(*stopped*)
+	nxcomNMT_STATE_OPERATIONAL				: UDINT	:= 3;			(*operational*)
+	nxcomNMT_STATE_PRE_OPERATIONAL			: UDINT	:= 4;			(*pre-operational*)
+	nxcomNMT_STATE_RESET_APPL				: UDINT	:= 5;			(*reset application*)
+	nxcomNMT_STATE_RESET_COMM				: UDINT	:= 6;			(*reset communication*)
+	
+	nxcomNMT_CMD_START						: UDINT	:= 1;			(*start the node*)
+	nxcomNMT_CMD_STOP						: UDINT	:= 2;			(*stop the node*)
+	nxcomNMT_CMD_ENTER_PREOP				: UDINT	:= 128;			(*set the node into the pre-operational mode*)
+	nxcomNMT_CMD_RESET_NODE					: UDINT	:= 129;			(*reset the node*)
+	nxcomNMT_CMD_RESET_COMM					: UDINT	:= 130;			(*reset the communication to the node*)
+	
+	nxcomEREG_GENERIC_BIT					: USINT := 16#01;
+	nxcomEREG_CURRENT_BIT					: USINT := 16#02;
+	nxcomEREG_VOLTAGE_BIT					: USINT := 16#04;
+	nxcomEREG_TEMPERATURE_BIT				: USINT := 16#08;
+	nxcomEREG_COMM_ERROR_BIT				: USINT := 16#10;
+	nxcomEREG_DEV_PROFILE_BIT				: USINT := 16#20;
+	nxcomEREG_MANU_SPEC_BIT					: USINT := 16#80;
+	
+	nxcomFLAG_PEEK							: UDINT := 16#00000001;	(*node remains in diagnostic lists after request*)
+	
+	nxcomNODE_FLAG_DEACTIVATED				: UDINT := 16#80000000; (*node is deactivated and not handled by the master*)
+	nxcomNODE_FLAG_STATE_NOT_HANDLED		: UDINT := 16#40000000; (*at least one state has been omitted during the initialization sequence of the node*)
+	nxcomNODE_FLAG_INVALID_PARAMETER		: UDINT := 16#00001000; (*parameter set of node is invalid*)
+	nxcomNODE_FLAG_UNEXPECTED_BOOTUP		: UDINT := 16#00000800; (*unexpected bootup message from node received*)
+	nxcomNODE_FLAG_BOOTUP					: UDINT := 16#00000400; (*expected bootup message from node received*)
+	nxcomNODE_FLAG_EMCY_BUFF_OVER			: UDINT := 16#00000200; (*emergency buffer overflow*)
+	nxcomNODE_FLAG_EMCY_RECEIVED			: UDINT := 16#00000100; (*emergency telegram received*)
+	nxcomNODE_FLAG_UNEXPECTED_STATE			: UDINT := 16#00000080; (*node is in unexpected NMT state*)
+	nxcomNODE_FLAG_HEARTBEAT_ERROR			: UDINT := 16#00000040; (*error in heartbeat protocol*)
+	nxcomNODE_FLAG_CON_LOST					: UDINT := 16#00000020; (*node guarding has been lost*)
+	nxcomNODE_FLAG_GUARD_ERROR				: UDINT := 16#00000010; (*a guarding message has been lost*)
+	nxcomNODE_FLAG_HEARTBEAT_STARTED		: UDINT := 16#00000008; (*heartbeat protocol started*)
+	nxcomNODE_FLAG_CFG_FAULT				: UDINT := 16#00000004; (*configuration fault*)
+	nxcomNODE_FLAG_SDO_ERROR				: UDINT := 16#00000002; (*error during SDO transfer*)
+	nxcomNODE_FLAG_SDO_TIMEOUT				: UDINT := 16#00000001; (*timeout during SDO transfer*)
+	
+	nxcomMODE_STOP							: UDINT := 0;			(*mode stop*)
+	nxcomMODE_START							: UDINT := 1;			(*mode start*)
+	
+	nxcomMODE_SLAVE_ACTIVATE				: UDINT := 1;			(*activate slave*)
+	nxcomMODE_SLAVE_DEACTIVATE				: UDINT := 2;			(*deactivate slave*)
+END_VAR

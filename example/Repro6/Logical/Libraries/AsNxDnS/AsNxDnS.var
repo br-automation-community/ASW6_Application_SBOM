@@ -1,0 +1,23 @@
+                                                                      
+VAR CONSTANT
+	nxdnsERR_INVALID_DEVICE					: UINT	:= 35360;		(*error invalid device*)
+	nxdnsERR_SEND_MESSAGE					: UINT	:= 35361;		(*error send message*)
+	nxdnsERR_TIMEOUT						: UINT	:= 35362;		(*error timeout*)
+	nxdnsERR_DEVICENET_STACK				: UINT	:= 35363;		(*error receive message*)
+	nxdnsERR_PARAMETER						: UINT	:= 35364;		(*error invalid parameter*)
+	nxdnsERR_MEMORY							: UINT	:= 35365;		(*error less memory*)
+	nxdnsERR_SUBSCRIBE_LISTENER				: UINT	:= 35366;		(*error subscribe listener*)
+	nxdnsERR_NO_MORE_ENTRIES				: UINT	:= 35367;		(*error no more entries available*)
+	
+	nxdnsGENERR_NO_ERROR					: USINT	:= 16#00;		(*no error*)
+	nxdnsGENERR_RES_NOT_AVAIL				: USINT	:= 16#02;		(*resources unavailable, class id invalid*)
+	nxdnsGENERR_SERV_NOT_AVAIL				: USINT	:= 16#08;		(*service not available, read or write not supported to class*)
+	nxdnsGENERR_ATTRIB_BAD_VALUE			: USINT	:= 16#09;		(*invalid attribute value, attribute not supported*)
+	nxdnsGENERR_ATTRIB_NOT_SET				: USINT	:= 16#0E;		(*attribute not settable, attribute has no write permission*)
+	nxdnsGENERR_ACCESS_DENIED				: USINT	:= 16#0F;		(*access denied, general error to deny access*)
+	nxdnsGENERR_STATE_CONFLICT				: USINT	:= 16#10;		(*state conflict, host state prohibits the command execution*)
+	nxdnsGENERR_NOT_ENOUGH_DATA				: USINT	:= 16#13;		(*not enough data received, master has send to less data*)
+	nxdnsGENERR_ATTRIB_NOT_SUP				: USINT	:= 16#14;		(*attribute not supported*)
+	nxdnsGENERR_TOO_MUCH_DATA				: USINT	:= 16#15;		(*too much data received, master has send to much data*)
+	nxdnsGENERR_VENDOR_SPEC_CODE			: USINT	:= 16#1F;		(*vendor specific error code, an addition error code can be placed in additionalError*)
+END_VAR

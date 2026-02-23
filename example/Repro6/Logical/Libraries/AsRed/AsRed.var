@@ -1,0 +1,27 @@
+
+VAR CONSTANT
+	redCPU_THIS		   		   : BYTE := 0;		(* This CPU *)
+	redCPU_PARTNER	   		   : BYTE := 1;		(* The partner CPU *)
+
+	redSWITCH_LEVEL_IMPOSSIBLE : BYTE := 0;		(* Switchover is impossible *)
+	redSWITCH_LEVEL_MAJOR_BUMP : BYTE := 16;	(* The CPUs differ, a switchover may affect the outputs *)
+	redSWITCH_LEVEL_MINOR_BUMP : BYTE := 32;	(* The CPUs differ only in the cyclic programs, a switchover can only affect the values of the outputs *)
+	redSWITCH_LEVEL_BUMPLESS   : BYTE := 255;	(* The CPUs are identical, the switchover will be bumpless *)
+	
+	redSTATE_ERROR			   : BYTE := 0;		(* CPU is in an error state *)	
+	redSTATE_PASSIVE		   : BYTE := 16;	(* CPU is passive. Obsolete for AR 4.10 or higher *)
+	redSTATE_STANDBY		   : BYTE := 32;	(* CPU is ready to become active *)
+	redSTATE_ACTIVE			   : BYTE := 255;	(* CPU is active *)
+	
+	redMODE_INVALID			   : BYTE := 0;		(* Mode switch is in an invalid position *)
+	redMODE_PRIMARY			   : BYTE := 1; 	(* Mode is primary *)
+	redMODE_SECONDARY		   : BYTE := 2;		(* Mode is secondary *)
+	
+	redRRAD_MAPPING_EMPTY	   : BYTE := 0;		(* No RRADs are configured *)
+	redRRAD_MAPPING_PARTIAL	   : BYTE := 1;		(* RRAD configuration is partially identical on both CPUs *)
+	redRRAD_MAPPING_COMPLETE   : BYTE := 2; 	(* RRAD configuration is completely identical on both CPUs *)
+	
+	redRRAD_STATE_STOPPED	   : BYTE := 0;		(* No RRADs are currently replicated *)
+	redRRAD_STATE_TRANSIENT	   : BYTE := 1;		(* Not all RRADs in all TCs are replicated *)
+	redRRAD_STATE_RUN	 	   : BYTE := 2; 	(* All RRADs are cyclic replicated *)	
+END_VAR

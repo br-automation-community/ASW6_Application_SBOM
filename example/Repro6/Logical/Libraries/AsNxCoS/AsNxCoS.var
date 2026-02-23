@@ -1,0 +1,26 @@
+                                                                      
+VAR CONSTANT
+	nxcosERR_INVALID_DEVICE					: UINT	:= 34600;	(*error invalid device*)
+	nxcosERR_SEND_MESSAGE					: UINT	:= 34601;	(*error send message*)
+	nxcosERR_TIMEOUT						: UINT	:= 34602;	(*error timeout*)
+	nxcosERR_CANOPEN_STACK					: UINT	:= 34603;	(*error receive message*)
+	nxcosERR_PARAMETER						: UINT	:= 34604;	(*error invalid parameter*)
+	
+	nxcosNMT_CMD_START						: UDINT	:= 1;		(*start the node*)
+	nxcosNMT_CMD_STOP						: UDINT	:= 2;		(*stop the node*)
+	nxcosNMT_CMD_ENTER_PREOP				: UDINT	:= 128;		(*set the node into the pre-operational mode*)
+	nxcosNMT_CMD_RESET_NODE					: UDINT	:= 129;		(*reset the node*)
+	nxcosNMT_CMD_RESET_COMM					: UDINT	:= 130;		(*reset the communication to the node*)
+	
+	nxcosMODE_STOP							: UDINT := 0;		(*mode stop*)
+	nxcosMODE_START							: UDINT := 1;		(*mode start*)
+	
+	nxcosEREG_ERROR_RESET					: USINT := 16#00;
+	nxcosEREG_GENERIC_BIT					: USINT := 16#01;
+	nxcosEREG_CURRENT_BIT					: USINT := 16#02;
+	nxcosEREG_VOLTAGE_BIT					: USINT := 16#04;
+	nxcosEREG_TEMPERATURE_BIT				: USINT := 16#08;
+	nxcosEREG_COMM_ERROR_BIT				: USINT := 16#10;
+	nxcosEREG_DEV_PROFILE_BIT				: USINT := 16#20;
+	nxcosEREG_MANU_SPEC_BIT					: USINT := 16#80;
+END_VAR

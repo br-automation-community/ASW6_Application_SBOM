@@ -1,0 +1,7 @@
+VAR CONSTANT
+	arSTORAGE_ERR_INVALID_STORAGE : DINT := -1070583196; (* Invalid storage device *)
+	arSTORAGE_ERR_NO_DATA : DINT := -1070583195; (* No data available *)
+	arSTORAGE_ERR_NOT_SUPPORTED : DINT := -1070583194; (* Unsupported storage device *)
+	arSTORAGE_ERR_BUFFER_SIZE : DINT := -1070583193; (* Passed buffer too small *)
+	arSTORAGE_ERR_INVALID_PARAMETER : DINT := -1070583192; (* Invalid parameter was passed *)
+END_VAR

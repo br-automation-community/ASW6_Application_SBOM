@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library Version="6.5.0" SubType="binary" Description="[OpcUaFx] IEC library providing functionality for PubSub control, configuration and diagnostics" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>FxPubSub.fun</File>
+    <File>FxPubSub.var</File>
+    <File>FxPubSub.typ</File>
+  </Files>
+</Library>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="This library reads information from a storage media." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>ArStorage.fun</File>
+    <File>ArStorage.typ</File>
+    <File>ArStorage.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

@@ -1,0 +1,13 @@
+VAR CONSTANT
+	fifoERR_INVALID_PARAM : UINT := 36780; (*check parameters. At least one of needed ones is zero*)
+	fifoERR_INVALID_IDENT : UINT := 36781; (*invalid fifo ident, check parameters*)
+	fifoERR_INVALID_MODE : UINT := 36782; (*error mode*)
+	fifoERR_FIFO_ALREADY_EXISTS : UINT := 36783; (*fifo with this name already exists*)
+	fifoERR_FIFO_NOT_EXIST : UINT := 36784; (*fifo not exist*)
+	fifoERR_FIFO_LIST_FULL : UINT := 36785; (*maximal amount of fifo reached*)
+	fifoERR_BUFFER_FULL : UINT := 36786; (*buffer is full error*)
+	fifoERR_BUFFER_EMPTY : UINT := 36787; (*buffer is empty*)
+	fifoERR_SYSTEM : UINT := 36788; (*internal error*)
+	fifoMODE_WRITE_UNTIL_FULL : UINT := 1; (*writes only until fifo is full, no overwrite*)
+	fifoMODE_WRITE_ALWAYS : UINT := 2; (*writes always, overwrites*)
+END_VAR

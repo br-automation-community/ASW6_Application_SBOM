@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="The AsIoTrc library provides functions for using the I/O trace driver." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>AsIoTrc.fun</File>
+    <File>AsIoTrc.typ</File>
+    <File>AsIoTrc.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

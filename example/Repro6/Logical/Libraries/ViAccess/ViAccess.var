@@ -1,0 +1,24 @@
+(********************************************************************
+ * COPYRIGHT (C) BERNECKER + RAINER, AUSTRIA, A-5142 EGGELSBERG
+ ********************************************************************
+ * Library: ViAccess
+ * File:	ViAccess.var
+ ********************************************************************
+ * Constants of library ViAccess
+ ********************************************************************)
+VAR CONSTANT
+	viACCESS_ERR_NO_EXECUTION_ROI    : DINT :=  -1044578301;	(* 0xc1bd0003 No execution ROI defined in vision function '{VisionFunctionInstanceName}'. [Error: 3] *)
+	viACCESS_ERR_PIXEL_OUT_OF_RANGE  : DINT :=  -1044578297;	(* 0xc1bd0007 Pixel coordinates lie outside the image dimensions [Error: 7] *)
+	viACCESS_ERR_MODEL_OPERATION     : DINT :=  -1044578296;	(* 0xc1bd0008 Model operation failed in vision function '{VisionFunctionInstanceName}'. [Error: 8] *)
+	viACCESS_ERR_UNSUPPORTED_FEATURE : DINT :=  -1044578295;	(* 0xc1bd0009 Vision function '{VisionFunctionInstanceName}' does not support this feature. [Error: 9] *)
+	viACCESS_ERR_NO_INPUT_IMG        : DINT :=  -1044578294;	(* 0xc1bd000a Input image of vision function '{VfName}' did not exist. [Error: 10] *)
+	viACCESS_ERR_INV_IMG_SELECTOR    : DINT :=  -1044578293;	(* 0xc1bd000b Image selector '{ImageSelector}' invalid. [Error: 11] *)
+	viACCESS_INF_VF_LIST_INCOMPLETE  : DINT :=   1102315672;	(* 0x41b40098 The number of listable Vision Functions '{NrEntries}' exceeds the size of the provided array '{BufferLen}'. [Informational: 152] *)
+	viACCESS_NO_DATA_CONNECTION      : DINT :=  -1045167878;	(* 0xc1b400fa Data connection not established. [Error: 250] *)
+	viACCESS_ERR_VF_MODEL_NOT_EXIST  : DINT :=  -1045167875;	(* 0xc1b400fd A model with Id '{ModelId}' and Model Type '{Modeltype}' does not exist for the Vision Function with execution number '{ExecutionNumber}'. [Error: 253] *)
+	viACCESS_CAM_ERROR               : DINT :=  -1045167873;	(* 0xc1b400ff Camera reports the error {Error Code}. [Error: 255] *)
+	viACCESS_ERR_EXECROI_INVALID     : DINT :=  -1045167869;	(* 0xc1b40103 The execution ROI could not be applied. [Error: 259] *)
+	viACCESS_INF_EXECROI_CROPPED     : DINT :=   1102315780;	(* 0x41b40104 The given execution ROI was partially outside of the valid area. [Informational: 260] *)
+	viACCESS_INF_OP_LIST_INCOMPLETE  : DINT :=   1102315784;	(* 0x41b40108 The number of listable operations '{NrEntries}' exceeds the size of the provided array '{BufferLen}'. [Informational: 264] *)
+END_VAR
+

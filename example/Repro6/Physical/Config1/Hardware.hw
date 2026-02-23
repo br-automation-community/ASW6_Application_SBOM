@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio WorkingVersion="6.5" FileVersion="4.9"?>
+<Hardware xmlns="http://br-automation.co.at/AS/Hardware">
+  <Module Name="0AC808.9-1" Type="0AC808.9-1" Version="1.0.0.0">
+    <Connection Connector="ETH1" TargetModule="X20CP1686X" TargetConnector="IF3">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Connection Connector="ETH2" TargetModule="X20BC0083" TargetConnector="PLK1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+  </Module>
+  <Module Name="X20BB80" Type="X20BB80" Version="1.1.0.0" />
+  <Module Name="X20BC0083" Type="X20BC0083" Version="2.17.0.0" NodeNumber="1">
+    <Connection Connector="PLK1" TargetModule="0AC808.9-1" TargetConnector="ETH2">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Connection Connector="SL" TargetModule="X20BB80" TargetConnector="SL1" />
+  </Module>
+  <Module Name="X20CP1686X" Type="X20CP1686X" Version="1.9.0.0">
+    <Connector Name="IF2">
+      <Parameter ID="ActivateDevice" Value="1" />
+    </Connector>
+    <Parameter ID="ConfigurationID" Value="Repro6_Config1" />
+    <Group ID="FileDevice1" />
+    <Parameter ID="FileDeviceName1" Value="USER" />
+    <Parameter ID="FileDevicePath1" Value="USER_PATH" />
+  </Module>
+  <Module Name="X20PS9400" Type="X20PS9400" Version="1.9.0.0">
+    <Connection Connector="SS1" TargetModule="X20TB12_a" TargetConnector="SS" />
+    <Connection Connector="PS" TargetModule="X20BB80" TargetConnector="PS1" />
+  </Module>
+  <Module Name="X20TB12_a" Type="X20TB12" Version="1.0.0.0" />
+</Hardware>

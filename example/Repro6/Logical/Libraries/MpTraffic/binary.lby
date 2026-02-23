@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library Version="3.5.0" SubType="binary" Description="[mapp Traffic] Traffic management library" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>MpTraffic.typ</File>
+    <File>MpTraffic.fun</File>
+    <File>MpTraffic.var</File>
+    <File>MpTrafficError.typ</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="McBase" FromVersion="6.0.0" />
+    <Dependency ObjectName="McAcp6D" FromVersion="3.5.0" ToVersion="3.5.2147483647" />
+    <Dependency ObjectName="MpBase" FromVersion="6.0.0" ToVersion="6.2147483647.2147483647" />
+  </Dependencies>
+</Library>

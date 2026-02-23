@@ -1,0 +1,16 @@
+
+VAR CONSTANT
+	hartERR_INVALID_DEVICE          : UINT := 35580;
+	hartERR_MODULE_DOESNT_EXIST     : UINT := 35581;
+	hartERR_ALREADY_OPENED          : UINT := 35582;
+	hartERR_DEVICE_OPEN             : UINT := 35583;
+	hartERR_INVALID_IDENT           : UINT := 35584;
+	hartERR_INVALID_BUFFER          : UINT := 35585;
+	hartERR_PUT_CMD_IOCTL           : UINT := 35586;
+	hartERR_QUEUE_FULL              : UINT := 35587;
+	hartERR_DEVICE_CLOSE            : UINT := 35588;
+	hartERR_CMD_MODEM_TIMEOUT       : UINT := 35459;
+	hartERR_CMD_NODE_TIMEOUT        : UINT := 35460;
+	hartERR_CMD_NODE_INACTIVE       : UINT := 35461;
+	hartERR_CMD_REPLY_BUFFER_SMALL  : UINT := 35462;
+END_VAR

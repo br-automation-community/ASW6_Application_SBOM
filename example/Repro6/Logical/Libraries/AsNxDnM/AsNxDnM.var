@@ -1,0 +1,30 @@
+                                                                      
+VAR CONSTANT
+	nxdnmERR_INVALID_DEVICE					: UINT	:= 35380;		(*error invalid device*)
+	nxdnmERR_SEND_MESSAGE					: UINT	:= 35381;		(*error send message*)
+	nxdnmERR_TIMEOUT						: UINT	:= 35382;		(*error timeout*)
+	nxdnmERR_DEVICENET_STACK				: UINT	:= 35383;		(*error receive message*)
+	nxdnmERR_PARAMETER						: UINT	:= 35384;		(*error invalid parameter*)
+	nxdnmERR_DATALEN						: UINT	:= 35385;		(*error data length*)
+	
+	nxdnmFAL_MODE_OFFLINE					: UDINT	:= 16#00;		(*fieldbus application layer mode offline*)
+	nxdnmFAL_MODE_STOP						: UDINT	:= 16#40;		(*fieldbus application layer mode stop*)
+	nxdnmFAL_MODE_IDLE						: UDINT	:= 16#80;		(*fieldbus application layer mode idle*)
+	nxdnmFAL_MODE_RUN						: UDINT	:= 16#C0;		(*fieldbus application layer mode run*)
+	
+	nxdnmLIFELIST_OWN_MAC					: USINT	:= 16#FF;		(*responds with own MAC-ID*)
+	nxdnmLIFELIST_MAC						: USINT	:= 16#01;		(*responds with MAC-ID*)
+	nxdnmLIFELIST_NO_MAC					: USINT	:= 16#00;		(*does not response*)
+	
+	nxdnmGENERR_NO_ERROR					: USINT	:= 16#00;		(*no error*)
+	nxdnmGENERR_RES_NOT_AVAIL				: USINT	:= 16#02;		(*resources unavailable, class id invalid*)
+	nxdnmGENERR_SERV_NOT_AVAIL				: USINT	:= 16#08;		(*service not available, read or write not supported to class*)
+	nxdnmGENERR_ATTRIB_BAD_VALUE			: USINT	:= 16#09;		(*invalid attribute value, attribute not supported*)
+	nxdnmGENERR_ATTRIB_NOT_SET				: USINT	:= 16#0E;		(*attribute not settable, attribute has no write permission*)
+	nxdnmGENERR_ACCESS_DENIED				: USINT	:= 16#0F;		(*access denied, general error to deny access*)
+	nxdnmGENERR_STATE_CONFLICT				: USINT	:= 16#10;		(*state conflict, host state prohibits the command execution*)
+	nxdnmGENERR_NOT_ENOUGH_DATA				: USINT	:= 16#13;		(*not enough data received, master has send to less data*)
+	nxdnmGENERR_ATTRIB_NOT_SUP				: USINT	:= 16#14;		(*attribute not supported*)
+	nxdnmGENERR_TOO_MUCH_DATA				: USINT	:= 16#15;		(*too much data received, master has send to much data*)
+	nxdnmGENERR_VENDOR_SPEC_CODE			: USINT	:= 16#1F;		(*vendor specific error code, an addition error code can be placed in additionalError*)
+END_VAR

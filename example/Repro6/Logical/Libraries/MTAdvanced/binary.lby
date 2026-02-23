@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library Version="6.0.0" SubType="binary" Description="This mechatronics library contains advanced control function blocks." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File Description="Exported functions and function blocks">MTAdvanced.fun</File>
+    <File Description="Exported data types">MTAdvanced.typ</File>
+    <File Description="Exported constants">MTAdvanced.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="MTTypes" FromVersion="6.0.0" />
+  </Dependencies>
+</Library>

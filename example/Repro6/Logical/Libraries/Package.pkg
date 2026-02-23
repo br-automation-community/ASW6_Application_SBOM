@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="Library" Language="binary" Description="This library contains function interfaces for IEC 61131-3 operator functions. For the most part, these are mathematical and logical functions.">operator</Object>
+    <Object Type="Library" Language="binary" Description="This library contains runtime functions for IEC tasks.">runtime</Object>
+    <Object Type="Library" Language="binary" Description="This library contains function interfaces for IEC 61131-3 conversion functions.">AsIecCon</Object>
+    <Object Type="Library" Language="binary" Description="This mechatronics library contains system function blocks.">MTSystem</Object>
+    <Object Type="Library" Language="binary" Description="The BRSystem library provides the user with a number of system functions for e.g. handling permanent memory, accessing exception information, etc.">brsystem</Object>
+    <Object Type="Library" Language="binary" Description="This mechatronics library contains different system datatypes and general error numbers.">MTTypes</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] Base library">McBase</Object>
+    <Object Type="Library" Language="Binary" Description="Core library for mapp components">MpBase</Object>
+    <Object Type="Library" Language="binary" Description="This library contains functionality to execute traces (to sample numeric values periodically for a defined time-span)">CoTrace</Object>
+    <Object Type="Library" Language="binary" Description="The AsZip library offers compressing archive-support">AsZip</Object>
+    <Object Type="Library" Language="binary" Description="The FileIO library provides function blocks for file handling.">FileIO</Object>
+    <Object Type="Library" Language="Binary" Description="[mapp Safety] SafeDOMAIN management library">SfDomain</Object>
+    <Object Type="Library" Language="IEC">MyCalc</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Traffic] Traffic management library">MpTraffic</Object>
+    <Object Type="Library" Language="binary" Description="[mapp 6D] ACOPOS 6D library">McAcp6D</Object>
+    <Object Type="Library" Language="binary" Description="mappVision module: ViBase">ViBase</Object>
+    <Object Type="Library" Language="binary" Description="The AsARCfg library supports reading and writing Automation Runtime configurations.">AsARCfg</Object>
+    <Object Type="Library" Language="binary" Description="The powerlnk library supports low level layer 2 access to POWERLINK networks.">powerlnk</Object>
+    <Object Type="Library" Language="binary" Description="The AsEPL library is used to access service data objects of Ethernet-Powerlink stations">AsEPL</Object>
+    <Object Type="Library" Language="binary" Description="The AsIO library makes it possible to determine the states and values of a data point and carry out forcing operations.">AsIO</Object>
+    <Object Type="Library" Language="binary" Description="This library contains FBKs for exchanging data (data stream) via stream sockets (TCP).">AsTCP</Object>
+    <Object Type="Library" Language="binary" Description="The AsTime Library supports DATE_AND_TIME and TIME data types.">astime</Object>
+    <Object Type="Library" Language="binary" Description="The SYS_LIB library contains functions for memory management and operating system manipulation as well as hardware-specific functions.">sys_lib</Object>
+    <Object Type="Library" Language="binary" Description="The DataObj library can be used to dynamically create, dynamically delete and copy data objects, etc. ">DataObj</Object>
+    <Object Type="Library" Language="binary" Description="This library contains FBs for handling SSL configurations.">ArSsl</Object>
+    <Object Type="Library" Language="binary" Description="Send and receive CAN frames">ArCan</Object>
+    <Object Type="Library" Language="binary" Description="This library contains FBs for the handling of certificates.">ArCert</Object>
+    <Object Type="Library" Language="binary" Description="Library for handling power saving functionality.">ArEco</Object>
+    <Object Type="Library" Language="binary" Description="Provides configuration, status and statistical data about bonded ethernet devices.">ArEthBond</Object>
+    <Object Type="Library" Language="binary" Description="The ArEventLog library can be used to collect additional error information and for further processing.">ArEventLog</Object>
+    <Object Type="Library" Language="binary" Description="Modify the firewall configuration.">ArFirewall</Object>
+    <Object Type="Library" Language="binary" Description="This library contains FBs for handling of events.">ArIscEvent</Object>
+    <Object Type="Library" Language="binary" Description="This library contains FBs for handling of shared memory partitions.">ArIscShm</Object>
+    <Object Type="Library" Language="binary" Description="This library contains FBs for the handling of Managed Certificate Store.">ArMcs</Object>
+    <Object Type="Library" Language="binary" Description="Object dictionary for CANopen and EtherCAT acyclic communication in manufacturer-specific area (0x4000 - 0x5FFF).">ArObjDict</Object>
+    <Object Type="Library" Language="binary" Description="PROFINET device utils - record management">ArPnDevice</Object>
+    <Object Type="Library" Language="binary" Description="PROFINET I&amp;M management">ArPnIm</Object>
+    <Object Type="Library" Language="binary" Description="Read information about the project currently installed on the target">ArProject</Object>
+    <Object Type="Library" Language="binary" Description="Library for handling the Real Time Data Layer.">ArRtdl</Object>
+    <Object Type="Library" Language="binary" Description="Modify an openSAFETY-over-UDP tunnel.">ArSafeUDP</Object>
+    <Object Type="Library" Language="binary" Description="Library for screen(display) operations.">ArScreen</Object>
+    <Object Type="Library" Language="binary" Description="Library for handling Secure Remote Maintenance devices.">ArSrm</Object>
+    <Object Type="Library" Language="binary" Description="This library reads information from a storage media.">ArStorage</Object>
+    <Object Type="Library" Language="binary" Description="IEC Text-System Library.">ArTextSys</Object>
+    <Object Type="Library" Language="binary" Description="The ArUnitConv library provides function blocks for convert values from one unit to another one.">ArUnitConv</Object>
+    <Object Type="Library" Language="binary" Description="The ArUnitText library provides function blocks to get unit text.">ArUnitText</Object>
+    <Object Type="Library" Language="binary" Description="User Role System">ArUser</Object>
+    <Object Type="Library" Language="binary" Description="With the AsANSL library, the application can read and write PVs from other controllers based on the Automation Network Service Link.">AsANSL</Object>
+    <Object Type="Library" Language="binary" Description="The AsArProf library is used to operate the AR Profiler from an application.">AsArProf</Object>
+    <Object Type="Library" Language="binary" Description="The AsArSdm library supports the System Diagnostics Manager">AsArSdm</Object>
+    <Object Type="Library" Language="binary" Description="This library integrates mathematical functions such as angle functions, rounding off, etc. into the program.">AsBrMath</Object>
+    <Object Type="Library" Language="binary" Description="The AsBrStr Library contains FBKs for memory and character string handling.">AsBrStr</Object>
+    <Object Type="Library" Language="binary" Description="The AsBrWStr library allows 8-bit character strings to be implemented for 16-bit WC (AsBrWStr) strings.">AsBrWStr</Object>
+    <Object Type="Library" Language="binary" Description="The AsCANopen library provides functions for integrating CANopen services.">AsCANopen</Object>
+    <Object Type="Library" Language="binary" Description="This library contains the function blocks for converting the values from 4 - 20mA IOs so that they can be used with 0 - 20mA IOs.">AsCont</Object>
+    <Object Type="Library" Language="binary" Description="This library contains FBKs to evaluate statistics and can be used for system generation device statistics.">AsETH</Object>
+    <Object Type="Library" Language="binary" Description="The AsEthIP library is a communication driver for CIP Ethernet/IP.">AsEthIP</Object>
+    <Object Type="Library" Language="binary" Description="This library contains FBKs for Fifo handling.">AsFifo</Object>
+    <Object Type="Library" Language="binary" Description="This library manages the communication with the flat stream mode">AsFltGen</Object>
+    <Object Type="Library" Language="binary" Description="The AsGuard library supports technology guarding functions.">AsGuard</Object>
+    <Object Type="Library" Language="binary" Description="This library put a hart command to a HART device">AsHart</Object>
+    <Object Type="Library" Language="binary" Description="These function blocks can be used to resolve both IP addresses and domain names.">AsHost</Object>
+    <Object Type="Library" Language="binary" Description="This library contains FBKs for exchanging and formatting data (message based) via HTTP (TCP).">AsHttp</Object>
+    <Object Type="Library" Language="binary" Description="Information about the respective target system can be read using the AsHW library.">AsHW</Object>
+    <Object Type="Library" Language="binary" Description="This library contains FBKs for pinging a station.">AsICMP</Object>
+    <Object Type="Library" Language="binary" Description="This library provides read and write access to non-cyclic I/O data points.">AsIOAcc</Object>
+    <Object Type="Library" Language="binary" Description="The AsIODiag library provides functions for creating and evaluating I/O module information.">AsIODiag</Object>
+    <Object Type="Library" Language="binary" Description="This library communicates with an IO-Link Master">AsIOLink</Object>
+    <Object Type="Library" Language="binary" Description="This library provides functions for enabling and disabling configuration or mapping modules.">AsIOMMan</Object>
+    <Object Type="Library" Language="Binary" Description="This library contains functions for reACTION IO modules.">AsIORTI</Object>
+    <Object Type="Library" Language="binary" Description="The AsIOTime library is used to generate time stamps based on system time of the I/O system.">AsIoTime</Object>
+    <Object Type="Library" Language="binary" Description="The AsIoTrc library provides functions for using the I/O trace driver.">AsIoTrc</Object>
+    <Object Type="Library" Language="binary" Description="This library allows to access data of CM4810 modules.">AsIOVib</Object>
+    <Object Type="Library" Language="binary" Description="This Library contains a function block for operating the Profibus DP slave modules.">AsL2DP</Object>
+    <Object Type="Library" Language="binary" Description="The AsMbTCP library is used to insert commands to the modbusTCP driver.">AsMbTCP</Object>
+    <Object Type="Library" Language="binary" Description="The AsMbTCPS library is used to read or write the buffer of modbusTCPSlave driver.">AsMbTCPS</Object>
+    <Object Type="Library" Language="binary" Description="This library contains function blocks for a digital cam switch functionality on the PLC.">ASMcDcs</Object>
+    <Object Type="Library" Language="binary" Description="The AsMem library makes it possible to manage memory blocks located in large memory areas (memory partitions).">AsMem</Object>
+    <Object Type="Library" Language="binary" Description="The AsNxAsiM library handles access to netX AS-Interface master.">AsNxAsiM</Object>
+    <Object Type="Library" Language="binary" Description="The AsNxCoM library handles access to netX CANopen stack master.">AsNxCoM</Object>
+    <Object Type="Library" Language="binary" Description="The AsNxCo library handles access to netX CANopen stack slave.">AsNxCoS</Object>
+    <Object Type="Library" Language="binary" Description="The AsNxDnM library handles access to netX Devicenet Master.">AsNxDnM</Object>
+    <Object Type="Library" Language="binary" Description="The AsNxDnS library handles access to netX Devicenet Slave.">AsNxDnS</Object>
+    <Object Type="Library" Language="binary" Description="The AsNxDpM library handles access to netX Profibus DP master.">AsNxDpM</Object>
+    <Object Type="Library" Language="binary" Description="The AsNxDpS library handles access to netX Profibus DP Slave.">AsNxDpS</Object>
+    <Object Type="Library" Language="binary" Description="Functionality to access SDO by using CoE (CANopen over EtherCAT)">AsNxEcM</Object>
+    <Object Type="Library" Language="binary" Description="The AsNxEcS library handles access to netX EtherCAT slave stack.">AsNxEcS</Object>
+    <Object Type="Library" Language="binary" Description="The AsNxEipA library handles access to netX EthernetIP adapter.">AsNxEipA</Object>
+    <Object Type="Library" Language="binary" Description="The AsNxEipS library handles access to netX EthernetIP scanner.">AsNxEipS</Object>
+    <Object Type="Library" Language="binary" Description="The AsNxPnM library handles access to netX Profinet Master.">AsNxPnM</Object>
+    <Object Type="Library" Language="binary" Description="The AsNxPnS library handles access to netX Profinet Slave.">AsNxPnS</Object>
+    <Object Type="Library" Language="binary" Description="The AsOpcUac library provides function blocks for communication with an OPC UA Server">AsOpcUac</Object>
+    <Object Type="Library" Language="binary" Description="The AsOpcUas library provides function blocks for handling OPC UA Server functionality">AsOpcUas</Object>
+    <Object Type="Library" Language="binary" Description="The AsPciStr Library contains FBKs for memory and character string handling.">AsPciStr</Object>
+    <Object Type="Library" Language="binary" Description="The AsPPP library is used to start and stop PPP devices.">AsPPP</Object>
+    <Object Type="Library" Language="binary" Description="Redundancy Library">AsRed</Object>
+    <Object Type="Library" Language="Binary" Description="The AsRfbExt library provides access to extended MP40/50 functions.">AsRfbExt</Object>
+    <Object Type="Library" Language="binary" Description="The AsRtCont library is used to download reACTION tasks to reACTION IO modules">AsRtCont</Object>
+    <Object Type="Library" Language="binary" Description="This library contains FBKs to use semaphores.">AsSem</Object>
+    <Object Type="Library" Language="binary" Description="This library contains FBKs for sending email over an SMTP (Simple Mail Transfer Protocol) server.">AsSMTP</Object>
+    <Object Type="Library" Language="binary" Description="This library contains FBKs for sending SNMP (Simple Network Management Protocol) packets.">AsSnmp</Object>
+    <Object Type="Library" Language="binary" Description="This library contains FBKs for exchanging data packets via datagram sockets (UDP).">AsUDP</Object>
+    <Object Type="Library" Language="binary" Description="This library contains function blocks for communicating with a UPS (uninterruptible power supply).">AsUPS</Object>
+    <Object Type="Library" Language="binary" Description="The DVFrame library and the frame driver can be used to exchange data with external devices.">dvframe</Object>
+    <Object Type="Library" Language="binary" Description="This library contains function blocks to handle USB devices on the target.">AsUSB</Object>
+    <Object Type="Library" Language="binary" Description="This library includes modules for using string gauge modules">AsWeigh</Object>
+    <Object Type="Library" Language="binary" Description="This library contains standard function blocks and functions for IEC 61131-3.">standard</Object>
+    <Object Type="Library" Language="binary" Description="The AsXml library supports reading and writing of XML files.">AsXml</Object>
+    <Object Type="Library" Language="binary" Description="Send and receive CAN frames ">CAN_Lib</Object>
+    <Object Type="Library" Language="Binary" Description="IEC 61850 communication protocol library">Cp61850</Object>
+    <Object Type="Library" Language="Binary" Description="DNP3 communication protocol library">CpDnp3</Object>
+    <Object Type="Library" Language="Binary" Description="ISO 11783/ISOBUS Protocol Stack Implementation developed under ISO 25119 Functional Safety.">CpIsobus</Object>
+    <Object Type="Library" Language="Binary" Description="This library provides the basic function blocks for implementing LIN bus communication with LIN slave devices.">CpLin</Object>
+    <Object Type="Library" Language="binary" Description="The DRV_3964 library provides the functions that allow a B&amp;R System 2000 to operate as a 3964R slave.">DRV_3964</Object>
+    <Object Type="Library" Language="binary" Description="The DRV_mbus library provides functions that allow a B&amp;R System to communicate via Modbus communication.">DRV_mbus</Object>
+    <Object Type="Library" Language="binary" Description="Using the DRV_mn library you can communicate via the B&amp;R MININET protocol.">DRV_mn</Object>
+    <Object Type="Library" Language="binary" Description="This library version is suited for use with Automation Studio only and provides functions for communicating with Allen-Bradley controller.">DRVABDF1</Object>
+    <Object Type="Library" Language="binary" Description="The Ethernet library establishes an efficient connection between the 2005 and 2010 systems and specific ethernet networks using TCP/IP and UDP. (obsolete)">ETHERNET</Object>
+    <Object Type="Library" Language="binary" Description="The EthSock library provides functions for using sockets. (obsolete)">ETHSOCK</Object>
+    <Object Type="Library" Language="binary" Description="[OpcUaFx] IEC library providing clock functionality and diagnostics">FxClock</Object>
+    <Object Type="Library" Language="binary" Description="[OpcUaFx] IEC library for device management">FxDevMgr</Object>
+    <Object Type="Library" Language="binary" Description="[OpcUaFx] IEC library for network configuration management">FxNetMgr</Object>
+    <Object Type="Library" Language="binary" Description="[OpcUaFx] IEC library providing functionality for PubSub control, configuration and diagnostics">FxPubSub</Object>
+    <Object Type="Library" Language="binary" Description="[OpcUaFx] IEC library providing functionality of the FX System">FxSystem</Object>
+    <Object Type="Library" Language="Binary" Description="This library contains control algorithms.">LoopConR</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] ACOPOS axis library">McAcpAx</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] PLCopen axis library">McAxis</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] ACOPOS parameter ID library">McAcpPar</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] Trak library">McAcpTrak</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] PLCopen axes group library">McAxGroup</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] DS402 axis library">McDS402Ax</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] Robotics and CNC path generator library">McPathGen</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] Program interpreter library">McProgInt</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] Purely virtual axis library">McPureVAx</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] Stepper axis library">McStpAx</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] Tracking Path library">McTrkPath</Object>
+    <Object Type="Library" Language="Binary" Description="Advanced alarm management">MpAlarmX</Object>
+    <Object Type="Library" Language="Binary" Description="Centralized event audit trail">MpAudit</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] Axis library">MpAxis</Object>
+    <Object Type="Library" Language="Binary" Description="mapp Backup Library">MpBackup</Object>
+    <Object Type="Library" Language="Binary" Description="Clamp control">MpClamp</Object>
+    <Object Type="Library" Language="Binary" Description="This mechatronics library contains basic control function blocks.">MTBasics</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] CNC library">MpCnc</Object>
+    <Object Type="Library" Language="Binary" Description="LD/ST-code interpreter">MpCodeBox</Object>
+    <Object Type="Library" Language="Binary" Description="mapp components diagnosis,hierarchy and unit handling">MpCom</Object>
+    <Object Type="Library" Language="Binary" Description="Core Pull control">MpCorePull</Object>
+    <Object Type="Library" Language="Binary" Description="Data recording and archiving">MpData</Object>
+    <Object Type="Library" Language="Binary" Description="Interface to SQL database">MpDatabase</Object>
+    <Object Type="Library" Language="Binary" Description="Ejector control">MpEjector</Object>
+    <Object Type="Library" Language="Binary" Description="File explorer for B+R file devices">MpFile</Object>
+    <Object Type="Library" Language="Binary" Description="HalfNut control">MpHalfNut</Object>
+    <Object Type="Library" Language="Binary" Description="Library for controlling hydraulic axes">MpHydAxis</Object>
+    <Object Type="Library" Language="Binary" Description="Hydraulic library for pump control">MpHydPump</Object>
+    <Object Type="Library" Language="Binary" Description="Injection and plastification control">MpInject</Object>
+    <Object Type="Library" Language="Binary" Description="Injection Unit control">MpInjUnit</Object>
+    <Object Type="Library" Language="Binary" Description="Hardware configuration during runtime">MpIO</Object>
+    <Object Type="Library" Language="Binary" Description="SAE J1939">MpJ1939</Object>
+    <Object Type="Library" Language="Binary" Description="Mold height control">MpMHeight</Object>
+    <Object Type="Library" Language="Binary" Description="OMAC PackML">MpPackML</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] Pick library">MpPick</Object>
+    <Object Type="Library" Language="Binary" Description="Generic pump control">MpPump</Object>
+    <Object Type="Library" Language="Binary" Description="This mechatronics library contains lookup table function blocks.">MTLookUp</Object>
+    <Object Type="Library" Language="Binary" Description="Recipe management">MpRecipe</Object>
+    <Object Type="Library" Language="Binary" Description="Registration mark Control">MpRegMark</Object>
+    <Object Type="Library" Language="Binary" Description="Report generation">MpReport</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] Robotics library">MpRobotics</Object>
+    <Object Type="Library" Language="Binary" Description="Safety Gate control">MpSafeGate</Object>
+    <Object Type="Library" Language="Binary" Description="Scaling functions">MpScale</Object>
+    <Object Type="Library" Language="Binary" Description="Programmable machine sequence">MpSequence</Object>
+    <Object Type="Library" Language="Binary" Description="Communication library for mappView widgets">MpServer</Object>
+    <Object Type="Library" Language="Binary" Description="Machine line visualisation">MpSkyline</Object>
+    <Object Type="Library" Language="Binary" Description="Temperature control">MpTemp</Object>
+    <Object Type="Library" Language="Binary" Description="mapp Tension Library">MpTension</Object>
+    <Object Type="Library" Language="Binary" Description="Tie Bar control">MpTieBar</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] Tool library">MpTool</Object>
+    <Object Type="Library" Language="Binary" Description="User management based on user role system">MpUserX</Object>
+    <Object Type="Library" Language="binary" Description="This mechatronics library contains advanced control function blocks.">MTAdvanced</Object>
+    <Object Type="Library" Language="Binary" Description="This mechatronics library contains function blocks for statistical data analysis.">MTData</Object>
+    <Object Type="Library" Language="Binary" Description="This mechatronics library contains function blocks for filtering and basic signal processing.">MTFilter</Object>
+    <Object Type="Library" Language="Binary" Description="This mechatronics library contains crane control function blocks.">MTGntCrane</Object>
+    <Object Type="Library" Language="Binary" Description="This mechatronics library contains function blocks for system identification.">MTIdentify</Object>
+    <Object Type="Library" Language="Binary" Description="This library is used to calculate matrices, vectors and systems of linear equations.">MTLinAlg</Object>
+    <Object Type="Library" Language="Binary" Description="This mechatronics library contains function blocks for profile generation.">MTProfile</Object>
+    <Object Type="Library" Language="Binary" Description="This mechatronics library contains skew control function blocks.">MTSkew</Object>
+    <Object Type="Library" Language="Binary" Description="The VcLib provides supplemental functions to the Visapi library. ">vclib</Object>
+    <Object Type="Library" Language="Binary" Description="The VcScrSht library provides function blocks for creating screenshots on SG4-Targets.">VcScrSht</Object>
+    <Object Type="Library" Language="Binary" Description="The Visapi library provides support to access and control visualizations at runtime.">visapi</Object>
+    <Object Type="Library" Language="binary" Description="mappVision module: ViAccess">ViAccess</Object>
+    <Object Type="Library" Language="Binary">vncserv</Object>
+  </Objects>
+</Package>

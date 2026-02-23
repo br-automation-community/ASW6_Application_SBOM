@@ -1,0 +1,63 @@
+
+VAR CONSTANT
+	nxdpmERR_INVALID_DEVICE					: UINT	:= 34700;		(*error invalid device*)
+	nxdpmERR_SEND_MESSAGE					: UINT	:= 34701;		(*error send message*)
+	nxdpmERR_TIMEOUT						: UINT	:= 34702;		(*error timeout*)
+	nxdpmERR_PROFIBUSDP_STACK				: UINT	:= 34703;		(*error receive message*)
+	nxdpmERR_PARAMETER						: UINT	:= 34704;		(*error invalid parameter*)
+	nxdpmERR_MEMORY							: UINT	:= 34705;		(*error less memory*)
+	nxdpmERR_SUBSCRIBE_LISTENER				: UINT	:= 34706;		(*error subscribe listener*)
+	nxdpmERR_NO_MORE_ENTRIES				: UINT	:= 34707;		(*error no more entries available*)
+	
+	nxdpmCMD_UNFREEZE						: UDINT	:= 4;			(*unfreeze command*)
+	nxdpmCMD_FREEZE							: UDINT	:= 8;			(*freeze command*)
+	nxdpmCMD_UNSYNC							: UDINT	:= 16;			(*unsync command*)
+	nxdpmCMD_SYNC							: UDINT	:= 32;			(*sync command*)
+	
+	nxdpmMODE_OFFLINE						: UDINT	:= 16#00000000;	(*mode offline*)
+	nxdpmMODE_STOP							: UDINT	:= 16#00000040;	(*mode stop*)
+	nxdpmMODE_CLEAR							: UDINT	:= 16#00000080;	(*mode clear*)
+	nxdpmMODE_OPERATE						: UDINT	:= 16#000000C0;	(*mode operate*)
+	
+	nxdpmFLAG_PEEK							: UDINT	:= 16#00000001;	(*node remains in diagnostic lists after request*)
+	nxdpmFLAG_QUERY							: UDINT	:= 16#00000002;	(*get diagnostic direct from slave*)
+	
+	nxdpmFLAG_STATION_NON_EXISTENT			: USINT	:= 16#01;		(*station non existent*)
+	nxdpmFLAG_STATION_NOT_READY				: USINT	:= 16#02;		(*station not ready*)
+	nxdpmFLAG_CFG_FAULT						: USINT	:= 16#04;		(*configuration fault*)
+	nxdpmFLAG_EXT_DIAG						: USINT	:= 16#08;		(*extended diagnostic*)
+	nxdpmFLAG_NOT_SUPPORTED					: USINT	:= 16#10;		(*not supported*)
+	nxdpmFLAG_INVALID_SLAVE_RESPONSE		: USINT	:= 16#20;		(*invalid slave response*)
+	nxdpmFLAG_PRM_FAULT						: USINT	:= 16#40;		(*parameter fault*)
+	nxdpmFLAG_MASTER_LOCK					: USINT	:= 16#80;		(*master lock*)
+	
+	nxdpmFLAG_PRM_REQUEST					: USINT	:= 16#01;		(*parameter request*)
+	nxdpmFLAG_STAT_DIAG						: USINT	:= 16#02;		(*statistical diagnosis*)
+	nxdpmFLAG_1								: USINT	:= 16#04;		(*this bit is always set to the value 1 indicating DP V1 operation*)
+	nxdpmFLAG_WD_ON							: USINT	:= 16#08;		(*watchdog activated*)
+	nxdpmFLAG_FREEZE_MODE					: USINT	:= 16#10;		(*freeze mode*)
+	nxdpmFLAG_SYNC_MODE						: USINT	:= 16#20;		(*sync mode*)
+	nxdpmFLAG_DEACTIVATED					: USINT	:= 16#80;		(*non projected slave*)
+	
+	nxdpmFLAG_EXT_DIAG_OVERFLOW				: USINT	:= 16#80;		(*this bit indicates that the slave has more diagnostic data available than it can send*)
+	
+	nxdpmLIFE_LIST_SIZE						: UDINT	:= 128;			(*size of life list*)
+	nxdpmNODE_NOT_PRESENT					: UDINT	:= 0;			(*not present*)
+	nxdpmNODE_SLAVE							: UDINT	:= 1;			(*slave*)
+	nxdpmNODE_MASTER						: UDINT	:= 3;			(*master*)
+
+	nxdpmACTIVATE							: UDINT	:= 1;			(*activate slave*)
+	nxdpmDEACTIVATE							: UDINT	:= 2;			(*deactivate slave*)
+	
+	nxdpmALARM_DIAGNOSTIC					: USINT	:= 1;			(*diagnostic alarm*)
+	nxdpmALARM_PROCESS						: USINT	:= 2;			(*process alarm*)
+	nxdpmALARM_PULL							: USINT	:= 3;			(*pull alarm*)
+	nxdpmALARM_PLUG							: USINT	:= 4;			(*plug alarm*)
+	nxdpmALARM_STATUS						: USINT	:= 5;			(*status alarm*)
+	nxdpmALARM_UPDATE						: USINT	:= 6;			(*update alarm*)
+
+	nxdpmALARM_SPEC_NO_DIFF					: USINT	:= 0;			(*no further differentiation*)
+	nxdpmALARM_SPEC_ERR_APP_SLOT_DIS		: USINT	:= 1;			(*error appears and slot disturbed*)
+	nxdpmALARM_SPEC_ERR_DIS_SLOT_OK			: USINT	:= 2;			(*error disappears and slot is ok*)
+	nxdpmALARM_SPEC_ERR_DIS_SLOT_DIS		: USINT	:= 3;			(*error disappears and slot is still disturbed*)
+END_VAR

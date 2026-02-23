@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="Read information about the project currently installed on the target" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>ArProject.fun</File>
+    <File>ArProject.typ</File>
+    <File>ArProject.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

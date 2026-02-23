@@ -1,0 +1,12 @@
+(*Error*)
+VAR CONSTANT
+	mtIDENTIFY_ERR_CYCLETIME_INVALID : DINT := -1058010184; (*Error: Cycle time of the FB is invalid.*)
+	mtIDENTIFY_ERR_PAR_INVALID : DINT := -1058010183; (*Error: Onbe or more identifcation parameters are invalid.*)
+END_VAR
+(*Warning*)
+VAR CONSTANT
+	mtIDENTIFY_WRN_PAR_INVALID : DINT := -2131752008; (*Error: Identifcation parameters not valid.*)
+	mtIDENTIFY_WRN_SYS_ORDER_INVALID : DINT := -2131752007; (*Error: System order not valid.*)
+	mtIDENTIFY_WRN_SYS_NOT_SETTLED : DINT := -2131752006; (*Warning: System is not settled down. Identification results maybe wrong.*)
+	mtIDENTIFY_WRN_DENOM_COEFF_NEG : DINT := -2131752005; (*Warning: One ore more identified coefficients of the denominator are negative. Identification results is maybe instable and wrong. Please manually check the identified parameters.*)
+END_VAR

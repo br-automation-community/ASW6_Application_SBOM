@@ -1,0 +1,21 @@
+
+VAR CONSTANT
+arTEXTSYS_ERR_OUT_OF_MEMORY 	: DINT := -1070585846;	(*fatal error: out of memory*)
+arTEXTSYS_ERR_INVALID_ARG		: DINT := -2144327669;	(*provided argument is invalid*)
+arTEXTSYS_ERR_FAILED			: DINT := -2144327668;	(*internal operation failure*)
+arTEXTSYS_ERR_ACCESS_DENIED 	: DINT := -2144327667;	(*resource-access denied*)
+arTEXTSYS_ERR_INVALID_HANDLE	: DINT := -2144327666;	(*invalid handle detected*)
+
+arTEXTSYS_ERR_CANT_OPEN_TEXTDB	: DINT := -2144327663;	(*opening of text-db failed*)
+arTEXTSYS_INF_ALREADY_OPENED	: DINT :=  1076897810;	(*text-db is open and ready*)
+arTEXTSYS_ERR_TEXTDB_SCHEMA 	: DINT := -2144327661;	(*unrecognised text-db schema or structure*)
+arTEXTSYS_ERR_TEXTDB_READER 	: DINT := -2144327660;	(*read of open text-db failed*)
+arTEXTSYS_ERR_TEXTDB_INTERNAL	: DINT := -2144327659;	(*other kind of text-db error*)
+arTEXTSYS_INF_NOT_SET_DURABLE	: DINT :=  1076897814;	(*configuration-change is not durable*)
+
+arTEXTSYS_ERR_NO_TEXT_FOUND 	: DINT := -2144327656;	(*no requested text found*)
+arTEXTSYS_INF_LANGUAGE_DIFFERS	: DINT :=  1076897818;	(*text-language differs; not in requested language*)
+arTEXTSYS_INF_SUBSTITUTE_TEXT	: DINT :=  1076897819;	(*no text found, but substitute-text provided*)
+arTEXTSYS_ERR_NOT_EXISTS		: DINT := -2144327652;	(*record not found; doesn't exist*)
+arTEXTSYS_ERR_END_REACHED		: DINT := -2144327651;	(*no further suitable entry found*)
+END_VAR

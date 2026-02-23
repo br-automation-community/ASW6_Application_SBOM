@@ -1,0 +1,15 @@
+VAR CONSTANT
+    fxDEVMGR_ERR_UNKNOWN : DINT :=              -1038011703; (*Error (Code: 13001): An unknown error occurred*)
+    fxDEVMGR_ERR_DEVICE_NOT_FOUND : DINT :=     -1038011702; (*Error (Code: 13002): The given device was not found*)
+    fxDEVMGR_ERR_DEVICE_ACQUIRE : DINT :=       -1038011701; (*Error (Code: 13003): Failed to acquire access to the device data*)
+    fxDEVMGR_ERR_DEVICE_RELEASE : DINT :=       -1038011700; (*Error (Code: 13004): Failed to release access to the device data*)
+    fxDEVMGR_ERR_DATA_SAVE : DINT :=            -1038011699; (*Error (Code: 13005): Failed to save device data*)
+    fxDEVMGR_WARN_COMMISSIONED : DINT :=        -2111753522; (*Error (Code: 13006): Device is already commissioned, data is only updated locally.*)
+    fxDEVMGR_ERR_NOT_SUPPORTED : DINT :=        -1038011697; (*Error (Code: 13007): Operation not supported.*)
+    fxDEVMGR_ERR_INVALID_PARAMETER : DINT :=    -1038011696; (*Error (Code: 13008): Illegal parameter.*)
+    fxDEVMGR_ERR_TIMEOUT : DINT :=              -1038011695; (*Error (Code: 13009): Operation timed out.*)
+    fxDEVMGR_ERR_AUTHENTICATION_FAIL : DINT :=  -1038011694; (*Error (Code: 13010): Authentication with the device failed.*)
+    fxDEVMGR_ERR_AUTHORIZATION_FAIL : DINT :=   -1038011693; (*Error (Code: 13011): Authorization to perform the operation was denied.*)
+    fxDEVMGR_ERR_ACCESS_DATA_MISSING : DINT :=  -1038011692; (*Error (Code: 13012): Access data missing for a device.*)
+    fxDEVMGR_ERR_EXECUTION_FAILED : DINT :=     -1038011691; (*Error (Code: 13013): Execution of the operation failed.*)
+END_VAR

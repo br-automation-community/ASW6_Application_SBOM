@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library Version="1.1.1" SubType="Binary" Description="This library provides the basic function blocks for implementing LIN bus communication with LIN slave devices." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>CpLin.fun</File>
+    <File>CpLin.typ</File>
+    <File>Errors.tmx</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="dvframe" />
+    <Dependency ObjectName="brsystem" />
+  </Dependencies>
+</Library>

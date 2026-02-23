@@ -1,0 +1,11 @@
+
+
+VAR CONSTANT
+	arUNITTEXT_ERR_NO_TEXT_FOUND		: DINT := -1070585646;			(*Text not found.*)
+	arUNITTEXT_ERR_INVALID_CC			: DINT := -1070585645;          (*Invalid common code.*)
+	arUNITTEXT_ERR_INVALID_PARAM		: DINT := -1070585644;          (*Invalid parameter.*)
+	arUNITTEXT_ERR_INTERNAL				: DINT := -1070585643;          (*An internal error has occurred. Please contact B+R support.*)
+	arUNITTEXT_OK_USER_TEXT				: DINT := 3156178;              (*Resulting text is from user namespace.*)
+	arUNITTEXT_OK_BR_TEXT				: DINT := 3156179;              (*Resulting text is from B+R default namespace.*)
+END_VAR                                                                 
+                                                                        

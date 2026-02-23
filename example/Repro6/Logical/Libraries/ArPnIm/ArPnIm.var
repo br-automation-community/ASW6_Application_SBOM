@@ -1,0 +1,18 @@
+VAR CONSTANT
+	arPNIM_ERR_DEVICE				: DINT := -1070583746;	(*Invalid device name*)
+	arPNIM_ERR_NO_ROOT				: DINT := -1070583745;	(*Invalid root device name*)
+	arPNIM_ERR_ASSET_ARRAY			: DINT := -1070583744;	(*Invalid asset array*)
+	arPNIM_ERR_DUPLICATE_ASSET		: DINT := -1070583743;	(*Duplicate asset found*)
+	arPNIM_ERR_FLOATING_ASSET		: DINT := -1070583742;	(*Floating asset found*)
+	arPNIM_ERR_INVALID_START		: DINT := -1070583741;	(*Asset loop found*)
+	arPNIM_ERR_ASSET_DEPTH			: DINT := -1070583740;	(*Asset depth*)
+	arPNIM_ERR_ASSET_NAME			: DINT := -1070583737;	(*Invalid asset name*)
+	arPNIM_ERR_VENDOR_ID			: DINT := -1070583736;	(*Invalid vendor id*)
+	arPNIM_ERR_SW_PREFIX			: DINT := -1070583735;	(*Invalid software prefix*)
+	arPNIM_ERR_IM_PARAMETER			: DINT := -1070583734;	(*Invalid IM parameter*)
+
+	arPNIM_INF_ARRAY_LEN			: DINT := 1076899952;	(*Array length is to short*)
+	
+	arPNIM_STRUCTURE_ID_LEVEL_TREE		: USINT := 1;
+	arPNIM_STRUCTURE_ID_SLOT_SUBSLOT	: USINT := 2;
+END_VAR

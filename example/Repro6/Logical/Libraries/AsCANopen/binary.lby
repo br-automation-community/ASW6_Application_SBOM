@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="binary" Description="The AsCANopen library provides functions for integrating CANopen services." xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>AsCANopen.fun</File>
+    <File>AsCANopen.typ</File>
+    <File>AsCANopen.var</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="runtime" />
+  </Dependencies>
+</Library>

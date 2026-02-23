@@ -1,0 +1,6 @@
+
+VAR CONSTANT
+	arPROJECT_ERR_DEVICE	 		: DINT := -1070584046;	(*Check device parameter - does the device exist?.*)
+	arPROJECT_ERR_FILE 				: DINT := -1070584045;	(*Check the file parameter - does the file exist?*)
+	arPROJECT_ERR_INVALID_PACKAGE	: DINT := -1070584044;	(*Invalid format or installation cannot be performed.*)
+END_VAR

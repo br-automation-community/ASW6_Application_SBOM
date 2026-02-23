@@ -1,0 +1,27 @@
+(********************************************************************
+ * COPYRIGHT -- Bernecker + Rainer
+ ********************************************************************
+ * Library: MTSystem
+ * File: MTSystem.var
+ * Author: B&R
+ * Created: August, 2013
+ ********************************************************************
+ * Constants of library XXTemplate
+ ********************************************************************)
+VAR CONSTANT
+	mtACD_ERR_DATA_NOT_AVAILABLE : DINT := -1058013183; (*Error: The data in the system reference is invalid.*)
+	mtACD_ERR_SYSTEM_TYPE_INVALID : DINT := -1058013182; (*Error: The system type specified in the system reference is invalid.*)
+	mtACD_ERR_DISCR_SAMPLE_TIME_NEG : DINT := -1058011184; (*Error: Sample time is negative.*)
+	mtACD_ERR_TF_ORDER_NOT_MINIMAL : DINT := -1058011183; (*Error: Order of transfer function not minimal.*)
+	mtACD_ERR_WRONG_TASK_CLASS : DINT := -1058011182; (*Error: Incorrect task class. Task cyclic time is not the same as sample time.*)
+	mtACD_ERR_DENOM_COEFF_INVALID : DINT := -1058011181; (*Error: Denominator coefficient Denominator[Order] is 0.*)
+	mtACD_ERR_FREQUENCY_INVALID : DINT := -1058011180; (*Error: Frequency is invalid.*)
+	mtACD_ERR_INVALID_SYSREF : DINT := -1058011179; (*Error: System referemce is invalid.*)
+	mtACD_ERR_NO_COMMON_FREQ_ZONE : DINT := -1058011178; (*Error: No common frequency zone is available.*)
+	mtACD_WRN_OTHER_FB_USES_SYSREF : DINT := -2131755008; (*Warning: Another function block is using the data for this system reference.*)
+	mtACD_WRN_DISCR_SAMPLE_TIME_NEG : DINT := -2131753008; (*Warning: SamplingTime is invalid. Retaining the last valid configuration.*)
+	mtACD_WRN_TF_ORDER_NOT_MINIMAL : DINT := -2131753007; (*Warning: Order is not minimal. Retaining the last valid configuration.*)
+	mtACD_WRN_TF_PRESET_INVALID : DINT := -2131753006; (*Warning: The preset output value is invalid.*)
+	mtACD_WRN_DENOM_COEFF_INVALID : DINT := -2131753005; (*Warning: Denominator coefficients are zero. Retaining the last valid configuration.*)
+	mtACD_WRN_FREQ_RANGE_INVALID : DINT := -2131753003; (*Warning: MaxFrequency is outside the permitted range (4 decades). The last value of the frequency domain will be used for MaxFrequency.*)
+END_VAR

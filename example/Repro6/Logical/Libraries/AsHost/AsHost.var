@@ -1,0 +1,11 @@
+                                                                      
+VAR CONSTANT
+	ERR_ASHOST_MANAGER		: UINT := 29750;		(*internal manager error*)
+	ERR_ASHOST_PARAM_ADDR	: UINT := 29751;		(*specified "address" parameter invalid*)
+	ERR_ASHOST_PARAM_BUFLNG : UINT := 29752;		(*specified buffer length too small*)
+	ERR_ASHOST_PARAM_NAME	: UINT := 29753;		(*specified "pName" parameter invalid*)
+	ERR_ASHOST_RESOLV_ADDR	: UINT := 29754;		(*IP address could not be resolved*)
+	ERR_ASHOST_RESOLV_NAME	: UINT := 29755;		(*name could not be resolved*)
+END_VAR
+
+

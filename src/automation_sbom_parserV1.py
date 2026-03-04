@@ -13,11 +13,14 @@ import hashlib
 import uuid
 import argparse  # Add argparse for command-line argument parsing
 
-TECHNOLOGY_PACKAGES_PATH = "AS6/AS/TechnologyPackages"
-AUTOMATION_RUNTIME_PATH = "AS6/AS/System"
-LIBRARY_2_PATH = "AS6/AS/Library_2"
-VC_FIRMWARE_PATH = "AS6/AS/VC/Firmware"
-HARDWARE_MODULES_PATH = "AS6/AS/Hardware/Modules"
+#TODO Set correct paths if installation directory is provided for AS4
+#TODO Create a alternative parsing method for AS4, since the structure in the installation directory is different to AS6
+#TODO Create alternative parsing for AS4 projects to deal with different version codes.
+TECHNOLOGY_PACKAGES_PATH = "AS/TechnologyPackages"
+AUTOMATION_RUNTIME_PATH = "AS/System"
+LIBRARY_2_PATH = "AS/Library_2"
+VC_FIRMWARE_PATH = "AS/VC/Firmware"
+HARDWARE_MODULES_PATH = "AS/Hardware/Modules"
 
 class AutomationStudioSBOMGenerator:
     def __init__(self, project_path: str, export_libraries: bool, installation_directory: str, customer_name: str):
@@ -351,7 +354,7 @@ class AutomationStudioSBOMGenerator:
     def CreateComponentsList(self):
         """Create the list of components for the SBOM based on the collected information."""
         # Components should be stored in a dictionary with the configuration name as key and a list of components as value, this will allow to create a separate SBOM for each configuration with the correct components
-        print("🛠️ Creating Components List... ")
+        print("🛠️  Creating Components List... ")
 
         self._parse_automation_runtime_libraries()  # Parse the automation runtime libraries once to have the information available for all configurations
         self._parse_libraries_in_logical()  # Parse the libraries in logical once to have the information available for all configurations
@@ -360,6 +363,7 @@ class AutomationStudioSBOMGenerator:
         self._parse_vc_libraries()  # Parse the VisualizationControl libraries once to have the information available for all configurations
 
         for config in self.configurations:
+            print(f"  🛠️  Processing configuration: {config}")
             self.components[config] = []  # Initialize the components list for the current configuration
 
              # Add AutomationRuntime component if version information is available
@@ -464,7 +468,7 @@ class AutomationStudioSBOMGenerator:
                     is_br_component=True,
                     description=f"B&R Automation Studio Version {version} (Working: {working_version})"
                 )
-                print(f"  ➕ AutomationStudio v{version} (Working: {working_version})")
+                #print(f"  ➕ AutomationStudio v{version} (Working: {working_version})")
 
             # Parse the rest of the file for TechnologyPackages
             tree = ET.parse(self.apj_file)
@@ -493,7 +497,7 @@ class AutomationStudioSBOMGenerator:
                     
                     # Store the package name and version in a dictionary
                     self.technology_packages[package_name] = package_version
-                    print(f"  ➕ TechnologyPackage-{package_name} v{package_version}")
+                    #print(f"  ➕ TechnologyPackage-{package_name} v{package_version}")
 
         except ET.ParseError:
             print(f"  ⚠️  XML parsing error in {self.apj_file}")
@@ -527,7 +531,7 @@ class AutomationStudioSBOMGenerator:
                     is_br_component=True,
                     description="B&R Automation Runtime Environment"
                 )
-                print(f"  ➕ AutomationRuntime v{runtime_version}")
+                #print(f"  ➕ AutomationRuntime v{runtime_version}")
 
             # Extract VisualizationControl
             vc_elem = root.find(".//{http://br-automation.co.at/AS/Cpu}Vc")
@@ -543,7 +547,7 @@ class AutomationStudioSBOMGenerator:
                         description="B&R VC 4"
                     )
                     self.vc_version = vc_version  # Store the version for the current configuration
-                    print(f"  ➕ VisualizationControl v{vc_version}")
+                    #print(f"  ➕ VisualizationControl v{vc_version}")
                 
         except ET.ParseError:
             print(f"  ⚠️  XML parsing error in {current_cpu_pkg}")
@@ -600,12 +604,12 @@ class AutomationStudioSBOMGenerator:
                                     for _version in versions:
                                         #find any charactect not matching x.y.z in _version and remove it for the comparison, this is to handle cases where the version in Library_2 folder has a suffix like -beta or -rc
                                         # Remove suffixes like -beta, V etc. for comparison
-                                        _version = ''.join(filter(lambda x: x.isdigit() or x == '.', _version))
-                                        if versionAttribute == _version:
-                                            version = versionAttribute  # Use the version from binary.lby if it matches one of the versions from Library_2
-                                            _is_br_component = True
-                                            _description = f"B&R Technology Library: {lib_name} {version}"
-                                            break
+                                            _version = ''.join(filter(lambda x: x.isdigit() or x == '.', _version))
+                                            if versionAttribute == _version:
+                                                version = versionAttribute  # Use the version from binary.lby if it matches one of the versions from Library_2
+                                                _is_br_component = True
+                                                _description = f"B&R Technology Library: {lib_name} {version}"
+                                                break
                                 elif lib_name_lower in self.technology_packages_libraries:
                                     if self.export_libraries:  # Only add technology package libraries if the switch is enabled                              
                                         versions = self.technology_packages_libraries[lib_name_lower]                                        
@@ -617,7 +621,7 @@ class AutomationStudioSBOMGenerator:
                                                 version = versionAttribute  # Use the version from binary.lby if it matches one of the versions from Library_2
                                                 _is_br_component = True
                                                 _description = f"B&R Technology Package Library: {lib_name} {version}"
-                                            break 
+                                                break 
                                 elif lib_name_lower in self.vc_libraries:
                                     if self.export_libraries:  # Only add technology package libraries if the switch is enabled                              
                                         version=self.vc_version
@@ -638,6 +642,9 @@ class AutomationStudioSBOMGenerator:
                             is_br_component=_is_br_component,
                             description=_description if _is_br_component else f"Software Library: {lib_name} TO BE CHECKED BY USER"
                         )                       
+
+                        if not _is_br_component:
+                            print(f"  ⚠️  {lib_name} (version: {version}) - User-defined library, not identified as B&R component")
 
             except ET.ParseError:
                 print(f"  ⚠️  XML parsing error in {sw_file_path}")
@@ -796,7 +803,7 @@ if __name__ == "__main__":
         "--export-libraries", action="store_true", help="Include libraries from technology packages and system libraries in the SBOM."
     )
     parser.add_argument(
-        "--installation-directory", default="C:/Program Files (x86)/BRAutomation/", help="Path to the Automation Studio installation directory. If not provided, the default path will be used."
+        "--installation-directory", default="C:/Program Files (x86)/BRAutomation/AS6", help="Path to the Automation Studio installation directory. If not provided, the default path will be used."
     )
     parser.add_argument(
         "--customer-name", default="UNKNOWN", help="Customer name to be used in the licence, supplier, description and CPE fields. If not provided, 'UNKNOWN' will be used."

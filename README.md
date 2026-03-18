@@ -1,7 +1,7 @@
 <!-- Stats badges -->
 <p align="center">
   <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">
-    <img src="[https://github.com/hilch/BandR-badges/blob/main/Made-For-BrAutomation.svg](https://img.shields.io/badge/License-MIT-yellow.svg)" alt="License: MIT"/>
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"/>
   </a>
     <a href="https://www.br-automation.com" target="_blank" rel="noopener noreferrer">
     <img src="https://github.com/hilch/BandR-badges/blob/main/Made-For-BrAutomation.svg" alt="Made for B&R"/>

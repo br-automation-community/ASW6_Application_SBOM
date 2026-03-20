@@ -6,12 +6,15 @@ Parses an Automation Studio directory and generates a project-specific SBOM.
 """
 
 import json
+from unicodedata import name
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from datetime import datetime, timezone
 import hashlib
 import uuid
 import argparse  # Add argparse for command-line argument parsing
+
+SCRIPT_VERSION = "1.1.0"
 
 #TODO Set correct paths if installation directory is provided for AS4
 #TODO Create a alternative parsing method for AS4, since the structure in the installation directory is different to AS6
@@ -417,7 +420,9 @@ class AutomationStudioSBOMGenerator:
                     lib_name_lower = lib_name.lower()
                     if lib_name_lower not in self.technology_packages_libraries:
                         self.technology_packages_libraries[lib_name_lower] = set()
-                    self.technology_packages_libraries[lib_name_lower].add(version)  # Store all versions found for this library
+                    #self.technology_packages_libraries[lib_name_lower].add(version)  # Store all versions found for this library
+                    #store the technology package name along with the name and version 
+                    self.technology_packages_libraries[lib_name_lower].add((tech_package_name, version))
 
     def _parse_technology_libraries(self):
         """Parse the technology libraries from the Library_2 folder to extract library information."""
@@ -563,7 +568,7 @@ class AutomationStudioSBOMGenerator:
             return
 
         # Use a namespace dictionary to avoid conflicts with 'http' package
-        ns = {'lib': 'http://br-automation.co.at/AS/SwConfiguration'}
+        ns = {'swcfg': 'http://br-automation.co.at/AS/SwConfiguration'}
 
         for sw_file_path in current_sw_file:
             try:
@@ -571,7 +576,7 @@ class AutomationStudioSBOMGenerator:
                 root = tree.getroot()
 
                 # Extract library components
-                for lib in root.findall(".//lib:LibraryObject", namespaces=ns):
+                for lib in root.findall(".//swcfg:LibraryObject", namespaces=ns):
                     lib_name = lib.get("Name", "unknown")
                     lib_name_lower = lib_name.lower()
                     
@@ -612,16 +617,19 @@ class AutomationStudioSBOMGenerator:
                                                 break
                                 elif lib_name_lower in self.technology_packages_libraries:
                                     if self.export_libraries:  # Only add technology package libraries if the switch is enabled                              
-                                        versions = self.technology_packages_libraries[lib_name_lower]                                        
-                                        for _version in versions:
-                                        #find any charactect not matching x.y.z in _version and remove it for the comparison, this is to handle cases where the version in Library_2 folder has a suffix like -beta or -rc
-                                        # Remove suffixes like -beta, V etc. for comparison
+                                        for tech_package_name, _version in self.technology_packages_libraries[lib_name_lower]:
+                                            #find any charactect not matching x.y.z in _version and remove it for the comparison, this is to handle cases where the version in Library_2 folder has a suffix like -beta or -rc
+                                            # Remove suffixes like -beta, V etc. for comparison
                                             _version = ''.join(filter(lambda x: x.isdigit() or x == '.', _version))
+                                            _is_br_component = True
                                             if versionAttribute == _version:
-                                                version = versionAttribute  # Use the version from binary.lby if it matches one of the versions from Library_2
-                                                _is_br_component = True
+                                                version = _version  # Use the version from installation directory if it matches
                                                 _description = f"B&R Technology Package Library: {lib_name} {version}"
-                                                break 
+                                                break
+                                            else:
+                                                version = versionAttribute  # If it is in the technology packages, but without a matching version, use the version from binary.lby
+                                                _description = f"B&R Technology Package Library (Version not found in installation directory): {lib_name} {version}"
+
                                 elif lib_name_lower in self.vc_libraries:
                                     if self.export_libraries:  # Only add technology package libraries if the switch is enabled                              
                                         version=self.vc_version
@@ -632,8 +640,21 @@ class AutomationStudioSBOMGenerator:
 
                             except ET.ParseError:
                                 print(f"  ⚠️  XML parsing error in {lby_file}")
+                        else:
+                            if lib_name_lower in self.technology_packages_libraries:
+                                _is_br_component = True
+                                #find lib_name in the technology_packages_libraries and get the technology package name and version for the description                                versions = self.technology_packages_libraries[lib_name_lower]
+                                for tech_package_name, tech_package_version in self.technology_packages_libraries[lib_name_lower]:
+                                    version = self.technology_packages[tech_package_name]
+                                    _description = f"B&R Technology Package Library: {lib_name} from {tech_package_name} v{tech_package_version}"
+                                    break
+                            
+                            elif lib_name_lower in self.vc_libraries:
+                                    version=self.vc_version
+                                    _is_br_component=True
+                                    _description=f"B&R VC4 Runtime Library: {lib_name} {version}"
+                                
 
-                        # Assign the found version to _add_component
                         self._add_component(
                             config=config,
                             name=lib_name,
@@ -645,6 +666,7 @@ class AutomationStudioSBOMGenerator:
 
                         if not _is_br_component:
                             print(f"  ⚠️  {lib_name} (version: {version}) - User-defined library, not identified as B&R component")
+
 
             except ET.ParseError:
                 print(f"  ⚠️  XML parsing error in {sw_file_path}")
@@ -731,16 +753,15 @@ class AutomationStudioSBOMGenerator:
             "licenses": [license_info]
         }
 
+        component["description"] = description
+        
         if is_br_component:        
             component["supplier"] = {"name": "B&R Industrial Automation GmbH"}
-            component["description"] = description or f"B&R {name}"
-
             # Add CPE and PURL 
             component["cpe"] = f"cpe:2.3:a:br-automation:{safe_name}:{version}:*:*:*:*:*:*:*"
             #component["purl"] = f"pkg:br-automation/{safe_name}@{version}"
         else:
             component["supplier"] = {"name": self.customer_name}
-            component["description"] = "UNKNOWN"
             # Add CPE and PURL 
             component["cpe"] = f"cpe:2.3:a:UNKNOWN:{safe_name}:{version}:*:*:*:*:*:*:*"
             # component["purl"] = f"pkg:UNKNOWN/{safe_name}@{version}"
@@ -763,9 +784,9 @@ class AutomationStudioSBOMGenerator:
                     "timestamp": datetime.now(timezone.utc).isoformat(),
                     "tools": [
                         {
-                            "vendor": "B&R Automation",
+                            "vendor": "B&R Community",
                             "name": "Automation Studio SBOM Generator",
-                            "version": "1.0"
+                            "version": SCRIPT_VERSION
                         }
                     ],
                     "component": {
@@ -798,6 +819,7 @@ class AutomationStudioSBOMGenerator:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate SBOM for Automation Studio projects.")
+    parser.add_argument("--version", action="version", version=f"%(prog)s {SCRIPT_VERSION}", help="Show script version and exit.")
     parser.add_argument("project_directory", help="Path to the Automation Studio project directory.")
     parser.add_argument(
         "--export-libraries", action="store_true", help="Include libraries from technology packages and system libraries in the SBOM."

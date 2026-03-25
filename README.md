@@ -46,7 +46,7 @@ No external Python packages are required (script uses standard library modules o
 Run from the repository root:
 
 ```bash
-python src/automation_sbom_parserV1.py <project_directory> [--export-libraries] [--installation-directory <path>] [--customer-name <name>]
+python src/automation_sbom_parserV1.py <project_directory> [--export-libraries] [--installation-directory <path>] [--customer-name <name>] [--output-directory <path>]
 ```
 
 ### Arguments
@@ -60,6 +60,8 @@ python src/automation_sbom_parserV1.py <project_directory> [--export-libraries] 
 - `--customer-name <name>` (optional)
    - Used as supplier value for non-B&R components.
    - Default: `UNKNOWN`
+- `--output-directory <path>` (optional)
+   - Path to the directory where to write the generated SBOM files. Falls back to the `<project_directory>` if omitted.
 
 ## Samples
 
@@ -78,13 +80,25 @@ python src/automation_sbom_parserV1.py example/Repro6 --export-libraries --custo
 python src/automation_sbom_parserV1.py example/Repro6 --installation-directory "D:/BRAutomation/AS6" --customer-name "Demo Customer"
 ```
 
+### Sample 4: Use a custom relative output directory (relative to the current working directory)
+This would create output files to the `./sbom` directory
+```bash
+python src/automation_sbom_parserV1.py example/Repro6 --installation-directory "D:/BRAutomation/AS6" --customer-name "Demo Customer" --output-directory sbom
+```
+
+### Sample 5: Use a custom absolute output directory
+This would create output fiels to the `D:/SBOM` directory
+```bash
+python src/automation_sbom_parserV1.py example/Repro6 --installation-directory "D:/BRAutomation/AS6" --customer-name "Demo Customer" --output-directory "D:/SBOM"
+```
+
 ### Windows absolute path sample
 ```bash
 python src/automation_sbom_parserV1.py "C:/Projects/MyAsProject" --installation-directory "C:/Program Files (x86)/BRAutomation/AS6" --export-libraries --customer-name "ACME"
 ```
 
 ## Output
-- The script creates one JSON file per configuration in the given project directory.
+- The script creates one JSON file per configuration in the given output directory or project directory if --output-directory is not provided.
 - Filename pattern:
    - `<ConfigurationName>_sbom.json`
 - Example outputs:

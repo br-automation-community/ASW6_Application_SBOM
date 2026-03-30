@@ -83,13 +83,13 @@ python src/automation_sbom_parserV1.py example/Repro6 --installation-directory "
 ### Sample 4: Use a custom relative output directory (relative to the current working directory)
 This would create output files to the `./sbom` directory
 ```bash
-python src/automation_sbom_parserV1.py example/Repro6 --installation-directory "D:/BRAutomation/AS6" --customer-name "Demo Customer" --output-directory sbom
+python src/automation_sbom_parserV1.py example/Repro6 --customer-name "Demo Customer" --output-directory sbom
 ```
 
 ### Sample 5: Use a custom absolute output directory
 This would create output fiels to the `D:/SBOM` directory
 ```bash
-python src/automation_sbom_parserV1.py example/Repro6 --installation-directory "D:/BRAutomation/AS6" --customer-name "Demo Customer" --output-directory "D:/SBOM"
+python src/automation_sbom_parserV1.py example/Repro6 --customer-name "Demo Customer" --output-directory "D:/SBOM"
 ```
 
 ### Windows absolute path sample

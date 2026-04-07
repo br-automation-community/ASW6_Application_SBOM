@@ -14,8 +14,8 @@ import hashlib
 import uuid
 import argparse  # Add argparse for command-line argument parsing
 
-SCRIPT_VERSION = "1.2.0"
-
+SCRIPT_VERSION = "1.2.1"
+#TODO Try fetching CVEs from B&R feed
 #TODO Set correct paths if installation directory is provided for AS4
 #TODO Create a alternative parsing method for AS4, since the structure in the installation directory is different to AS6
 #TODO Create alternative parsing for AS4 projects to deal with different version codes.
@@ -76,12 +76,10 @@ class AutomationStudioSBOMGenerator:
 
         for subfolder in logical_folder_path.rglob("*"):
             if subfolder.is_dir():
-                potential_lby_file = subfolder / "IEC.lby"
-                potential_binary_lby_file = subfolder / "binary.lby"
-                if potential_lby_file.exists():
+                potential_lby_file = next(subfolder.glob("*.lby"), None)
+
+                if potential_lby_file:
                     self.libraries_in_logical_files[subfolder.name] = potential_lby_file
-                elif potential_binary_lby_file.exists():
-                    self.libraries_in_logical_files[subfolder.name] = potential_binary_lby_file
 
     def _find_configurations(self):
         """Parse Physical.pkg to identify configurations."""
@@ -740,14 +738,14 @@ class AutomationStudioSBOMGenerator:
         if is_br_component:
             license_info = {
                 "license": {
-                    "id": "ABB_BR_Original",
+                    "name": "ABB_BR_Original",
                     "url": "https://www.br-automation.com/en/service/end-user-license-agreement-eula/"
                 }
             }
         else:
             license_info = {
                 "license": {
-                    "id": "UNKNOWN",
+                    "name": "UNKNOWN",
                     "url": "UNKNOWN"
                 }
             }
@@ -759,16 +757,16 @@ class AutomationStudioSBOMGenerator:
             "version": version,
             "licenses": [license_info]
         }
-
-        component["description"] = description
         
         if is_br_component:        
             component["supplier"] = {"name": "B&R Industrial Automation GmbH"}
+            component["description"] = description
             # Add CPE and PURL 
             component["cpe"] = f"cpe:2.3:a:br-automation:{safe_name}:{version}:*:*:*:*:*:*:*"
             #component["purl"] = f"pkg:br-automation/{safe_name}@{version}"
         else:
             component["supplier"] = {"name": self.customer_name}
+            component["description"] = description
             # Add CPE and PURL 
             component["cpe"] = f"cpe:2.3:a:UNKNOWN:{safe_name}:{version}:*:*:*:*:*:*:*"
             # component["purl"] = f"pkg:UNKNOWN/{safe_name}@{version}"

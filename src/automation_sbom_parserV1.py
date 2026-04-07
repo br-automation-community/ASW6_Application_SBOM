@@ -14,7 +14,7 @@ import hashlib
 import uuid
 import argparse  # Add argparse for command-line argument parsing
 
-SCRIPT_VERSION = "1.1.0"
+SCRIPT_VERSION = "1.2.0"
 
 #TODO Set correct paths if installation directory is provided for AS4
 #TODO Create a alternative parsing method for AS4, since the structure in the installation directory is different to AS6
@@ -26,11 +26,18 @@ VC_FIRMWARE_PATH = "AS/VC/Firmware"
 HARDWARE_MODULES_PATH = "AS/Hardware/Modules"
 
 class AutomationStudioSBOMGenerator:
-    def __init__(self, project_path: str, export_libraries: bool, installation_directory: str, customer_name: str):
+    def __init__(self, project_path: str, export_libraries: bool, installation_directory: str, customer_name: str, output_directory: str | None = None):
         self.project_path = Path(project_path)
         self.export_libraries = export_libraries  # Store the switch value
         self.installation_directory = Path(installation_directory)
         self.customer_name = customer_name
+        self.output_directory = Path(output_directory) if output_directory else self.project_path
+        if self.output_directory.exists():
+            if not self.output_directory.is_dir():
+                print(f" ⚠️  Output directory is not a directory: {self.output_directory}")
+                exit(-1)
+        else:
+            self.output_directory.mkdir(parents=True, exist_ok=True)
         self.components = {}  # Initialize as a dictionary to store components per configuration
 
     def CollectAutomationStudioProjectInformation(self):
@@ -810,7 +817,7 @@ class AutomationStudioSBOMGenerator:
             ]
             
             # Write the SBOM to a JSON file
-            output_path = self.project_path / f"{config}_{output_file}"
+            output_path = self.output_directory / f"{config}_{output_file}"
             with open(output_path, 'w') as f:
                 json.dump(sbom, f, indent=4)
             print(f"  ✅ SBOM generated for configuration '{config}' at: {output_path}")
@@ -830,8 +837,17 @@ if __name__ == "__main__":
     parser.add_argument(
         "--customer-name", default="UNKNOWN", help="Customer name to be used in the licence, supplier, description and CPE fields. If not provided, 'UNKNOWN' will be used."
     )
+    parser.add_argument(
+        "--output-directory", default=None, help="Directory to write the generated SBOM files. Defaults to the project directory."
+    )
     args = parser.parse_args()
 
-    generator = AutomationStudioSBOMGenerator(args.project_directory, args.export_libraries, args.installation_directory, args.customer_name)
+    generator = AutomationStudioSBOMGenerator(
+        args.project_directory,
+        args.export_libraries,
+        args.installation_directory,
+        args.customer_name,
+        args.output_directory,
+    )
     generator.generate_sbom()
 

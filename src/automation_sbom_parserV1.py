@@ -14,7 +14,7 @@ import hashlib
 import uuid
 import argparse  # Add argparse for command-line argument parsing
 
-SCRIPT_VERSION = "1.2.1"
+SCRIPT_VERSION = "1.2.2"
 #TODO Try fetching CVEs from B&R feed
 #TODO Set correct paths if installation directory is provided for AS4
 #TODO Create a alternative parsing method for AS4, since the structure in the installation directory is different to AS6
@@ -621,25 +621,23 @@ class AutomationStudioSBOMGenerator:
                                                 _description = f"B&R Technology Library: {lib_name} {version}"
                                                 break
                                 elif lib_name_lower in self.technology_packages_libraries:
-                                    if self.export_libraries:  # Only add technology package libraries if the switch is enabled                              
-                                        for tech_package_name, _version in self.technology_packages_libraries[lib_name_lower]:
-                                            #find any charactect not matching x.y.z in _version and remove it for the comparison, this is to handle cases where the version in Library_2 folder has a suffix like -beta or -rc
-                                            # Remove suffixes like -beta, V etc. for comparison
-                                            _version = ''.join(filter(lambda x: x.isdigit() or x == '.', _version))
-                                            _is_br_component = True
-                                            if versionAttribute == _version:
-                                                version = _version  # Use the version from installation directory if it matches
-                                                _description = f"B&R Technology Package Library: {lib_name} {version}"
-                                                break
-                                            else:
-                                                version = versionAttribute  # If it is in the technology packages, but without a matching version, use the version from binary.lby
-                                                _description = f"B&R Technology Package Library (Version not found in installation directory): {lib_name} {version}"
+                                    _is_br_component = True
+                                    for tech_package_name, _version in self.technology_packages_libraries[lib_name_lower]:
+                                        #find any charactect not matching x.y.z in _version and remove it for the comparison, this is to handle cases where the version in Library_2 folder has a suffix like -beta or -rc
+                                        # Remove suffixes like -beta, V etc. for comparison
+                                        _version = ''.join(filter(lambda x: x.isdigit() or x == '.', _version))
+                                        if versionAttribute == _version:
+                                            version = _version  # Use the version from installation directory if it matches
+                                            _description = f"B&R Technology Package Library: {lib_name} {version}"
+                                            break
+                                        else:
+                                            version = versionAttribute  # If it is in the technology packages, but without a matching version, use the version from binary.lby
+                                            _description = f"B&R Technology Package Library (Version not found in installation directory): {lib_name} {version}"
 
                                 elif lib_name_lower in self.vc_libraries:
-                                    if self.export_libraries:  # Only add technology package libraries if the switch is enabled                              
-                                        version=self.vc_version
-                                        _is_br_component=True
-                                        _description=f"B&R VC4 Runtime Library: {lib_name} {version}"
+                                    _is_br_component = True
+                                    version=self.vc_version
+                                    _description=f"B&R VC4 Runtime Library: {lib_name} {version}"
                                 else:
                                      version = versionAttribute  # If there is no match in the technology libraries, use the version from binary.lby, but still mark it as not a B&R component, because it is not found in the technology libraries from Library_2, which are the most likely source for B&R libraries, this is to avoid false positives where a library is marked as B&R library just because there is a library with the same name in the automation runtime or VisualizationControl folders, but in reality it is a user library that just happens to have the same name as a library in the automation runtime or VisualizationControl                                
 

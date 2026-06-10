@@ -41,7 +41,7 @@ class AutomationStudioSBOMGenerator:
         self.components = {}  # Initialize as a dictionary to store components per configuration
 
     def CollectAutomationStudioProjectInformation(self):
-        """ Collect all necessary information for the SBOMfrom the Automation Studio project directory. """
+        """ Collect all necessary information for the SBOM from the Automation Studio project directory. """
         print("🔍 Collecting Automation Studio project information...")
 
         self._find_apj_file() # information used in all configurations

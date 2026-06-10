@@ -831,7 +831,7 @@ if __name__ == "__main__":
         "--installation-directory", default="C:/Program Files (x86)/BRAutomation/AS6", help="Path to the Automation Studio installation directory. If not provided, the default path will be used."
     )
     parser.add_argument(
-        "--customer-name", default="UNKNOWN", help="Customer name to be used in the licence, supplier, description and CPE fields. If not provided, 'UNKNOWN' will be used."
+        "--customer-name", default="UNKNOWN", help="Customer name to be used in the license, supplier, description and CPE fields. If not provided, 'UNKNOWN' will be used."
     )
     parser.add_argument(
         "--output-directory", default=None, help="Directory to write the generated SBOM files. Defaults to the project directory."

@@ -170,7 +170,7 @@ class AutomationStudioSBOMGenerator:
                     # Find the ConfigurationID for the specified configuration
                     for configID in root.findall(".//{http://br-automation.co.at/AS/Hardware}Parameter"):
                         if configID.get("ID") == "ConfigurationID":
-                            self.configuration_ids[config] = configID.get("Value", "unkown")  # Store the configuration ID in the dictionary
+                            self.configuration_ids[config] = configID.get("Value", "unknown")  # Store the configuration ID in the dictionary
                 
                 except ET.ParseError:
                     print(f"  ⚠️  XML parsing error in {hw_file}")

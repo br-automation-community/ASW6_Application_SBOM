@@ -6,7 +6,6 @@ Parses an Automation Studio directory and generates a project-specific SBOM.
 """
 
 import json
-from unicodedata import name
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from datetime import datetime, timezone
@@ -41,7 +40,7 @@ class AutomationStudioSBOMGenerator:
         self.components = {}  # Initialize as a dictionary to store components per configuration
 
     def CollectAutomationStudioProjectInformation(self):
-        """ Collect all necessary information for the SBOMfrom the Automation Studio project directory. """
+        """ Collect all necessary information for the SBOM from the Automation Studio project directory. """
         print("🔍 Collecting Automation Studio project information...")
 
         self._find_apj_file() # information used in all configurations
@@ -170,7 +169,7 @@ class AutomationStudioSBOMGenerator:
                     # Find the ConfigurationID for the specified configuration
                     for configID in root.findall(".//{http://br-automation.co.at/AS/Hardware}Parameter"):
                         if configID.get("ID") == "ConfigurationID":
-                            self.configuration_ids[config] = configID.get("Value", "unkown")  # Store the configuration ID in the dictionary
+                            self.configuration_ids[config] = configID.get("Value", "unknown")  # Store the configuration ID in the dictionary
                 
                 except ET.ParseError:
                     print(f"  ⚠️  XML parsing error in {hw_file}")
@@ -198,7 +197,7 @@ class AutomationStudioSBOMGenerator:
         
 
     def CollectAutomationStudioInstallationInformation(self):
-        """ Collect the informaiton from the Automation Studio installation directory """
+        """ Collect the information from the Automation Studio installation directory """
         print("🔍 Collecting Automation Studio installation information...")
 
         self._find_technology_packages()
@@ -831,7 +830,7 @@ if __name__ == "__main__":
         "--installation-directory", default="C:/Program Files (x86)/BRAutomation/AS6", help="Path to the Automation Studio installation directory. If not provided, the default path will be used."
     )
     parser.add_argument(
-        "--customer-name", default="UNKNOWN", help="Customer name to be used in the licence, supplier, description and CPE fields. If not provided, 'UNKNOWN' will be used."
+        "--customer-name", default="UNKNOWN", help="Customer name to be used in the license, supplier, description and CPE fields. If not provided, 'UNKNOWN' will be used."
     )
     parser.add_argument(
         "--output-directory", default=None, help="Directory to write the generated SBOM files. Defaults to the project directory."

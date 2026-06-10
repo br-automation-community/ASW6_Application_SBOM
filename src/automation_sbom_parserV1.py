@@ -6,7 +6,6 @@ Parses an Automation Studio directory and generates a project-specific SBOM.
 """
 
 import json
-from unicodedata import name
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from datetime import datetime, timezone

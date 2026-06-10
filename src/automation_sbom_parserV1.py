@@ -198,7 +198,7 @@ class AutomationStudioSBOMGenerator:
         
 
     def CollectAutomationStudioInstallationInformation(self):
-        """ Collect the informaiton from the Automation Studio installation directory """
+        """ Collect the information from the Automation Studio installation directory """
         print("🔍 Collecting Automation Studio installation information...")
 
         self._find_technology_packages()

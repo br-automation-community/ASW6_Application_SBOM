@@ -1,6 +1,6 @@
 *.zip
 *.7z
-
+/.venv
 # Ignore AR versions as those are not considered part of the project
 /**/AS/System/
 

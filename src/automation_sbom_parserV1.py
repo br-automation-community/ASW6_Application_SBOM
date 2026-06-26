@@ -25,15 +25,21 @@ VC_FIRMWARE_PATH = "AS/VC/Firmware"
 HARDWARE_MODULES_PATH = "AS/Hardware/Modules"
 
 class AutomationStudioSBOMGenerator:
-    def __init__(self, project_path: str, export_libraries: bool, installation_directory: str, customer_name: str, output_directory: str | None = None):
+    def __init__(self, project_path: str, export_libraries: bool, installation_directory: str, customer_name: str, output_directory: str, no_fancy: bool , license_name: str , license_url: str):
         self.project_path = Path(project_path)
         self.export_libraries = export_libraries  # Store the switch value
         self.installation_directory = Path(installation_directory)
         self.customer_name = customer_name
+        self.license_name_default = license_name
+        self.license_url_default = license_url
         self.output_directory = Path(output_directory) if output_directory else self.project_path
+        self.warning = '⚠️' if not no_fancy else 'WARNING'
+        self.info = '🔍' if not no_fancy else 'INFO'
+        self.success = '✅' if not no_fancy else 'SUCCESS'
+        self.debug = '🛠️' if not no_fancy else 'DEBUG'
         if self.output_directory.exists():
             if not self.output_directory.is_dir():
-                print(f" ⚠️  Output directory is not a directory: {self.output_directory}")
+                print(f" {self.warning}  Output directory is not a directory: {self.output_directory}")
                 exit(-1)
         else:
             self.output_directory.mkdir(parents=True, exist_ok=True)
@@ -41,7 +47,7 @@ class AutomationStudioSBOMGenerator:
 
     def CollectAutomationStudioProjectInformation(self):
         """ Collect all necessary information for the SBOM from the Automation Studio project directory. """
-        print("🔍 Collecting Automation Studio project information...")
+        print(f"{self.info} Collecting Automation Studio project information...")
 
         self._find_apj_file() # information used in all configurations
         self._find_all_libraries_in_logical()
@@ -59,26 +65,56 @@ class AutomationStudioSBOMGenerator:
         apj_files = list(self.project_path.glob("*.apj"))
         if apj_files:
             self.apj_file = apj_files[0]  # Assuming there's only one .apj file
-            print(f"  ✅ Found APJ file: {self.apj_file}")
+            print(f"  {self.success} Found APJ file: {self.apj_file}")
         else:
-            print("  ⚠️  No APJ file found in the project directory.")
+            print(f"  {self.warning}  No APJ file found in the project directory.")
 
     def _find_all_libraries_in_logical(self):
         """List all libraries from the Logical folder of the project."""
         self.libraries_in_logical_files = {}
-
+        
         logical_folder_path = self.project_path / "Logical"
 
         if not logical_folder_path.exists():
-            print(f"  ⚠️  Logical folder path not found: {logical_folder_path}")
+            print(f"  {self.warning}  Logical folder path not found: {logical_folder_path}")
             return []
 
         for subfolder in logical_folder_path.rglob("*"):
             if subfolder.is_dir():
                 potential_lby_file = next(subfolder.glob("*.lby"), None)
-
                 if potential_lby_file:
                     self.libraries_in_logical_files[subfolder.name] = potential_lby_file
+
+        self._find_license_info_in_var_files(logical_folder_path)
+
+    def _find_license_info_in_var_files(self, logical_folder_path: str):
+        _variable_files_in_libraries = {}
+        self.licence_info = {} # "library_name": {"license_name": "name", "license_url": "url"}
+        for subfolder in logical_folder_path.rglob("*"):
+            if subfolder.is_dir():
+                variable_files = list(subfolder.glob("*.var"))
+                if variable_files:
+                    for var_file in variable_files:
+                        # file öffnen, und nach license_name und license_url suchen
+                        try:
+                            with open(var_file, "r", encoding="utf-8") as f:
+                                content = f.read()
+                                license_name = None
+                                license_url = None
+                                for line in content.splitlines():
+                                    if line.startswith('"License name":'):
+                                        license_name = line.split(": ")[1].strip('"')
+                                    elif line.startswith('"License URL":'):
+                                        license_url = line.split(": ")[1].strip('"')
+                                if license_name or license_url:
+                                    self.licence_info[subfolder.name] = {
+                                        "license_name": license_name,
+                                        "license_url": license_url
+                                    }
+                        except Exception as e:
+                            print(f"  {self.warning}  Error reading {var_file}: {e}")
+                            
+        print(f'Lizenzinfos in .var Dateien gefunden: {self.licence_info}')
 
     def _find_configurations(self):
         """Parse Physical.pkg to identify configurations."""
@@ -87,7 +123,7 @@ class AutomationStudioSBOMGenerator:
         physical_pkg_path = self.project_path / "Physical" / "Physical.pkg"
         
         if not physical_pkg_path.exists():
-            print("  ⚠️  Physical.pkg not found")
+            print(f"  {self.warning}  Physical.pkg not found")
             return []
 
         try:
@@ -97,10 +133,10 @@ class AutomationStudioSBOMGenerator:
             # Extract configurations
             self.configurations = [obj.text for obj in root.findall(".//{http://br-automation.co.at/AS/Physical}Object")
                               if obj.get("Type") == "Configuration"]
-            print(f"  🛠️  Found {len(self.configurations)} configurations: {self.configurations}")  # Debug output
+            print(f"  {self.debug}  Found {len(self.configurations)} configurations: {self.configurations}")  # Debug output
 
         except ET.ParseError:
-            print(f"  ⚠️  XML parsing error in {physical_pkg_path}")
+            print(f"  {self.warning}  XML parsing error in {physical_pkg_path}")
             return []
 
     def _find_cpu_pkg_files(self):
@@ -139,7 +175,7 @@ class AutomationStudioSBOMGenerator:
                             files_list.append(full_ref_path)  # Store the full path for later parsing
 
             except ET.ParseError:
-                print(f"  ⚠️  XML parsing error in {pkg_file}")
+                print(f"  {self.warning}  XML parsing error in {pkg_file}")
 
         return files_list
 
@@ -172,7 +208,7 @@ class AutomationStudioSBOMGenerator:
                             self.configuration_ids[config] = configID.get("Value", "unknown")  # Store the configuration ID in the dictionary
                 
                 except ET.ParseError:
-                    print(f"  ⚠️  XML parsing error in {hw_file}")
+                    print(f"  {self.warning}  XML parsing error in {hw_file}")
 
     def _get_configurationVersions(self):
         """Extract the ConfigurationVersion from *.hw files per configuration."""
@@ -190,7 +226,7 @@ class AutomationStudioSBOMGenerator:
                             self.configuration_versions[config] = configVersion.get("Value", "1.0.0")  # Store the configuration version in the dictionary
 
                 except ET.ParseError:
-                    print(f"  ⚠️  XML parsing error in {hw_file}")
+                    print(f"  {self.warning}  XML parsing error in {hw_file}")
             
             if not self.configuration_versions.get(config):
                 self.configuration_versions[config] = "1.0.0"  # If no version is found, default to 1.0.0
@@ -198,7 +234,7 @@ class AutomationStudioSBOMGenerator:
 
     def CollectAutomationStudioInstallationInformation(self):
         """ Collect the information from the Automation Studio installation directory """
-        print("🔍 Collecting Automation Studio installation information...")
+        print(f"{self.info} Collecting Automation Studio installation information...")
 
         self._find_technology_packages()
         self._find_automation_runtime_libraries()
@@ -213,7 +249,7 @@ class AutomationStudioSBOMGenerator:
         base_path = self.installation_directory / TECHNOLOGY_PACKAGES_PATH
 
         if not base_path.exists():
-            print(f"  ⚠️  Technology packages base path not found: {base_path}")
+            print(f"  {self.warning}  Technology packages base path not found: {base_path}")
 
         # interate through all subfolders of the technology package base path and look for .br files 
         # if a .br file is found, add it to the technology_package_files dictionary with the version of the technology package as value, the version can be extracted from the name of the subfolder, which is in the format 6.5.0  
@@ -244,7 +280,7 @@ class AutomationStudioSBOMGenerator:
         base_path = self.installation_directory / AUTOMATION_RUNTIME_PATH
         
         if not base_path.exists():
-            print(f"  ⚠️  Version path not found: {base_path}")
+            print(f"  {self.warning}  Version path not found: {base_path}")
             return []
         
         # interate through all subfolders of the base path
@@ -275,7 +311,7 @@ class AutomationStudioSBOMGenerator:
         library_2_path = self.installation_directory / LIBRARY_2_PATH
 
         if not library_2_path.exists():
-            print(f"  ⚠️  Library_2 path not found: {library_2_path}")
+            print(f"  {self.warning}  Library_2 path not found: {library_2_path}")
             return {}
 
         # interate through all subfolders of the Library_2 folder 
@@ -305,7 +341,7 @@ class AutomationStudioSBOMGenerator:
         base_path = self.installation_directory / VC_FIRMWARE_PATH
         
         if not base_path.exists():
-            print(f"  ⚠️  VisualizationControl path not found: {base_path}")
+            print(f"  {self.warning}  VisualizationControl path not found: {base_path}")
             return []
 
         # interate through all subfolders of the Firmware package base path and look for .br files 
@@ -334,7 +370,7 @@ class AutomationStudioSBOMGenerator:
         hardware_modules_path = self.installation_directory / HARDWARE_MODULES_PATH
 
         if not hardware_modules_path.exists():
-            print("  ⚠️  Hardware modules path not found.")
+            print(f"  {self.warning}  Hardware modules path not found.")
         
         # interate through all subfolders of the base path
         # the folder name is the base_path is the module_name. for example 0AC808.9-1
@@ -356,12 +392,12 @@ class AutomationStudioSBOMGenerator:
                             "description": description_en
                         }   
                     except ET.ParseError:  
-                        print(f"  ⚠️  XML parsing error in {module_path}")  
+                        print(f"  {self.warning}  XML parsing error in {module_path}")  
     
     def CreateComponentsList(self):
         """Create the list of components for the SBOM based on the collected information."""
         # Components should be stored in a dictionary with the configuration name as key and a list of components as value, this will allow to create a separate SBOM for each configuration with the correct components
-        print("🛠️  Creating Components List... ")
+        print(f"{self.debug}  Creating Components List... ")
 
         self._parse_automation_runtime_libraries()  # Parse the automation runtime libraries once to have the information available for all configurations
         self._parse_libraries_in_logical()  # Parse the libraries in logical once to have the information available for all configurations
@@ -370,7 +406,7 @@ class AutomationStudioSBOMGenerator:
         self._parse_vc_libraries()  # Parse the VisualizationControl libraries once to have the information available for all configurations
 
         for config in self.configurations:
-            print(f"  🛠️  Processing configuration: {config}")
+            print(f"  {self.debug}  Processing configuration: {config}")
             self.components[config] = []  # Initialize the components list for the current configuration
 
              # Add AutomationRuntime component if version information is available
@@ -405,12 +441,17 @@ class AutomationStudioSBOMGenerator:
                 tree = ET.parse(lib_path)
                 root = tree.getroot()
                 version = root.get("Version", "unknown")
+               # print(f'  ➕ Library in Logical: {lib_name} v{version}')
                 lib_name_lower = lib_name.lower()
+               # for tags in root:
+               #     if tags.tag == "{http://br-automation.co.at/AS/Library}Dependencies":
+               #         for dep in tags:
+               #             print(f'Abhängigkeit der Lib "{lib_name_lower}" --> {dep.attrib["ObjectName"]} Von Version: {dep.attrib.get("FromVersion", "unknown")} -> {dep.attrib.get("ToVersion", "unknown")}')
                 self.libraries_in_logical[lib_name_lower] = version  # Store library name and version
             except ET.ParseError:
-                print(f"  ⚠️  XML parsing error in {lib_path}")
+                print(f"  {self.warning}  XML parsing error in {lib_path}")
             except Exception as e:
-                print(f"  ⚠️  Error processing {lib_path}: {e}")
+                print(f"  {self.warning}  Error processing {lib_path}: {e}")
 
     def _parse_technology_packages(self):
         """Parse the technology package .br files to extract library information."""
@@ -509,9 +550,9 @@ class AutomationStudioSBOMGenerator:
                     #print(f"  ➕ TechnologyPackage-{package_name} v{package_version}")
 
         except ET.ParseError:
-            print(f"  ⚠️  XML parsing error in {self.apj_file}")
+            print(f"  {self.warning}  XML parsing error in {self.apj_file}")
         except Exception as e:
-            print(f"  ⚠️  Error processing {self.apj_file}: {e}")
+            print(f"  {self.warning}  Error processing {self.apj_file}: {e}")
 
     def _parse_cpu_pkg_file(self, config=None):
         """Parse a single cpu.pkg file for CPU information."""
@@ -520,7 +561,7 @@ class AutomationStudioSBOMGenerator:
         
         current_cpu_pkg = self.cpu_pkg_files.get(config)
         if not current_cpu_pkg: 
-            print(f"  ⚠️  No cpu.pkg file found for configuration '{config}'")
+            print(f"  {self.warning}  No cpu.pkg file found for configuration '{config}'")
             return
 
         try:
@@ -559,16 +600,16 @@ class AutomationStudioSBOMGenerator:
                     #print(f"  ➕ VisualizationControl v{vc_version}")
                 
         except ET.ParseError:
-            print(f"  ⚠️  XML parsing error in {current_cpu_pkg}")
+            print(f"  {self.warning}  XML parsing error in {current_cpu_pkg}")
         except Exception as e:
-            print(f"  ⚠️  Error processing {current_cpu_pkg}: {e}")
+            print(f"  {self.warning}  Error processing {current_cpu_pkg}: {e}")
 
     def _parse_sw_file(self, config=None):
         """Parse a single .sw file for software component information."""
         current_sw_file = self.sw_files.get(config)
         
         if not current_sw_file:
-            print(f"  ⚠️  No .sw file found for configuration '{config}'")
+            print(f"  {self.warning}  No .sw file found for configuration '{config}'")
             return
 
         # Use a namespace dictionary to avoid conflicts with 'http' package
@@ -641,7 +682,7 @@ class AutomationStudioSBOMGenerator:
                                      version = versionAttribute  # If there is no match in the technology libraries, use the version from binary.lby, but still mark it as not a B&R component, because it is not found in the technology libraries from Library_2, which are the most likely source for B&R libraries, this is to avoid false positives where a library is marked as B&R library just because there is a library with the same name in the automation runtime or VisualizationControl folders, but in reality it is a user library that just happens to have the same name as a library in the automation runtime or VisualizationControl                                
 
                             except ET.ParseError:
-                                print(f"  ⚠️  XML parsing error in {lby_file}")
+                                print(f"  {self.warning}  XML parsing error in {lby_file}")
                         else:
                             if lib_name_lower in self.technology_packages_libraries:
                                 _is_br_component = True
@@ -667,18 +708,17 @@ class AutomationStudioSBOMGenerator:
                         )                       
 
                         if not _is_br_component:
-                            print(f"  ⚠️  {lib_name} (version: {version}) - User-defined library, not identified as B&R component")
-
+                            print(f"  {self.warning}  {lib_name} (version: {version}) - User-defined library, not identified as B&R component")
 
             except ET.ParseError:
-                print(f"  ⚠️  XML parsing error in {sw_file_path}")
+                print(f"  {self.warning}  XML parsing error in {sw_file_path}")
 
     def _parse_hw_file(self, config=None):
         """Parse a single .hw file for hardware module information."""
         current_hw_file = self.hw_files.get(config)
         
         if not current_hw_file:
-            print(f"  ⚠️  No .hw file found for configuration '{config}'")
+            print(f"  {self.warning}  No .hw file found for configuration '{config}'")
             return
 
         # Use a namespace dictionary to avoid conflicts with 'http' package
@@ -725,7 +765,7 @@ class AutomationStudioSBOMGenerator:
                     added_modules.add(module_key)
 
             except ET.ParseError:
-                print(f"  ⚠️  XML parsing error in {hw_file_path}")
+                print(f"  {self.warning}  XML parsing error in {hw_file_path}")
   
     def _add_component(self, config=None, name=None, version=None, comp_type=None, is_br_component=False, description=None):
         """Add a component to the SBOM of the current configuration."""
@@ -740,12 +780,20 @@ class AutomationStudioSBOMGenerator:
                 }
             }
         else:
-            license_info = {
-                "license": {
-                    "name": "UNKNOWN",
-                    "url": "UNKNOWN"
+            if safe_name in self.licence_info:
+                license_info = {
+                    "license": {
+                        "name": self.licence_info[safe_name].get("license_name", self.license_name_default),
+                        "url": self.licence_info[safe_name].get("license_url", self.license_url_default)
+                    }
                 }
-            }
+            else:
+                license_info = {
+                    "license": {
+                        "name": self.license_name_default,
+                        "url": self.license_url_default
+                    }
+                }
 
         component = {
             "bom-ref": f"ref-{uuid.uuid4().hex[:8]}",
@@ -815,7 +863,7 @@ class AutomationStudioSBOMGenerator:
             output_path = self.output_directory / f"{config}_{output_file}"
             with open(output_path, 'w') as f:
                 json.dump(sbom, f, indent=4)
-            print(f"  ✅ SBOM generated for configuration '{config}' at: {output_path}")
+            print(f"  {self.success} SBOM generated for configuration '{config}' at: {output_path}")
 
 
 
@@ -835,6 +883,15 @@ if __name__ == "__main__":
     parser.add_argument(
         "--output-directory", default=None, help="Directory to write the generated SBOM files. Defaults to the project directory."
     )
+    parser.add_argument(
+        "--no-fancy",  action="store_true", help="Disable fancy output formatting."
+    )
+    parser.add_argument(
+        "--license-name", default="UNKNOWN", help="Name of the license to be used in the SBOM. If not provided, 'UNKNOWN' will be used."
+    )
+    parser.add_argument(
+        "--license-url", default="UNKNOWN", help="URL of the license to be used in the SBOM. If not provided, 'UNKNOWN' will be used."
+    )
     args = parser.parse_args()
 
     generator = AutomationStudioSBOMGenerator(
@@ -843,6 +900,9 @@ if __name__ == "__main__":
         args.installation_directory,
         args.customer_name,
         args.output_directory,
+        args.no_fancy,
+        args.license_name,
+        args.license_url
     )
     generator.generate_sbom()
 

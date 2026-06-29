@@ -441,12 +441,11 @@ class AutomationStudioSBOMGenerator:
                 tree = ET.parse(lib_path)
                 root = tree.getroot()
                 version = root.get("Version", "unknown")
-               # print(f'  ➕ Library in Logical: {lib_name} v{version}')
                 lib_name_lower = lib_name.lower()
-               # for tags in root:
-               #     if tags.tag == "{http://br-automation.co.at/AS/Library}Dependencies":
-               #         for dep in tags:
-               #             print(f'Abhängigkeit der Lib "{lib_name_lower}" --> {dep.attrib["ObjectName"]} Von Version: {dep.attrib.get("FromVersion", "unknown")} -> {dep.attrib.get("ToVersion", "unknown")}')
+                for tags in root:
+                    if tags.tag == "{http://br-automation.co.at/AS/Library}Dependencies":
+                        for dep in tags:
+                            print(f' {self.info} Abhängigkeit der Lib "{lib_name_lower}" --> {dep.attrib["ObjectName"]} Von Version: {dep.attrib.get("FromVersion", "unknown")} -> {dep.attrib.get("ToVersion", "unknown")}')
                 self.libraries_in_logical[lib_name_lower] = version  # Store library name and version
             except ET.ParseError:
                 print(f"  {self.warning}  XML parsing error in {lib_path}")

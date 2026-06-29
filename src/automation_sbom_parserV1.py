@@ -884,7 +884,7 @@ if __name__ == "__main__":
         "--output-directory", default=None, help="Directory to write the generated SBOM files. Defaults to the project directory."
     )
     parser.add_argument(
-        "--no-fancy",  action="store_true", help="Disable fancy output formatting."
+        "--no-icons",  action="store_true", help="Disable icon inclusion in the SBOM."
     )
     parser.add_argument(
         "--license-name", default="UNKNOWN", help="Name of the license to be used in the SBOM. If not provided, 'UNKNOWN' will be used."
@@ -900,7 +900,7 @@ if __name__ == "__main__":
         args.installation_directory,
         args.customer_name,
         args.output_directory,
-        args.no_fancy,
+        args.no_icons,
         args.license_name,
         args.license_url
     )

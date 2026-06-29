@@ -62,7 +62,7 @@ python src/automation_sbom_parserV1.py <project_directory> [--export-libraries] 
    - Default: `UNKNOWN`
 - `--output-directory <path>` (optional)
    - Path to the directory where to write the generated SBOM files. Falls back to the `<project_directory>` if omitted.
-- `--no-fancy` (optional)
+- `--no-icons` (optional)
   - replaces all '⚠️' with 'WARNING', '🔍' with 'INFO', '✅' with 'SUCCESS' and '🛠️' with 'DEBUG'
 - `--license-name <name>` (optional)
   - if set, this license name will be set for all non B&R libraries as licensename in the SBOM

@@ -25,7 +25,7 @@ VC_FIRMWARE_PATH = "AS/VC/Firmware"
 HARDWARE_MODULES_PATH = "AS/Hardware/Modules"
 
 class AutomationStudioSBOMGenerator:
-    def __init__(self, project_path: str, export_libraries: bool, installation_directory: str, customer_name: str, output_directory: str, no_fancy: bool , license_name: str , license_url: str):
+    def __init__(self, project_path: str, export_libraries: bool, installation_directory: str, customer_name: str, output_directory: str, no_icons: bool , license_name: str , license_url: str):
         self.project_path = Path(project_path)
         self.export_libraries = export_libraries  # Store the switch value
         self.installation_directory = Path(installation_directory)
@@ -33,10 +33,10 @@ class AutomationStudioSBOMGenerator:
         self.license_name_default = license_name
         self.license_url_default = license_url
         self.output_directory = Path(output_directory) if output_directory else self.project_path
-        self.warning = '⚠️' if not no_fancy else 'WARNING'
-        self.info = '🔍' if not no_fancy else 'INFO'
-        self.success = '✅' if not no_fancy else 'SUCCESS'
-        self.debug = '🛠️' if not no_fancy else 'DEBUG'
+        self.warning = '⚠️' if not no_icons else 'WARNING'
+        self.info = '🔍' if not no_icons else 'INFO'
+        self.success = '✅' if not no_icons else 'SUCCESS'
+        self.debug = '🛠️' if not no_icons else 'DEBUG'
         if self.output_directory.exists():
             if not self.output_directory.is_dir():
                 print(f" {self.warning}  Output directory is not a directory: {self.output_directory}")
@@ -442,10 +442,6 @@ class AutomationStudioSBOMGenerator:
                 root = tree.getroot()
                 version = root.get("Version", "unknown")
                 lib_name_lower = lib_name.lower()
-                for tags in root:
-                    if tags.tag == "{http://br-automation.co.at/AS/Library}Dependencies":
-                        for dep in tags:
-                            print(f' {self.info} Abhängigkeit der Lib "{lib_name_lower}" --> {dep.attrib["ObjectName"]} Von Version: {dep.attrib.get("FromVersion", "unknown")} -> {dep.attrib.get("ToVersion", "unknown")}')
                 self.libraries_in_logical[lib_name_lower] = version  # Store library name and version
             except ET.ParseError:
                 print(f"  {self.warning}  XML parsing error in {lib_path}")

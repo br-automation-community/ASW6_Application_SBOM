@@ -115,7 +115,6 @@ class AutomationStudioSBOMGenerator:
                         except Exception as e:
                             print(f"  {self.warning}  Error reading {var_file}: {e}")
                             
-        print(f'{self.info} Lizenzinfos in .var Dateien gefunden: {self.licence_info}')
 
     def _find_configurations(self):
         """Parse Physical.pkg to identify configurations."""
@@ -515,7 +514,6 @@ class AutomationStudioSBOMGenerator:
                     is_br_component=True,
                     description=f"B&R Automation Studio Version {version} (Working: {working_version})"
                 )
-                #print(f"  ➕ AutomationStudio v{version} (Working: {working_version})")
 
             # Parse the rest of the file for TechnologyPackages
             tree = ET.parse(self.apj_file)
@@ -544,7 +542,6 @@ class AutomationStudioSBOMGenerator:
                     
                     # Store the package name and version in a dictionary
                     self.technology_packages[package_name] = package_version
-                    #print(f"  ➕ TechnologyPackage-{package_name} v{package_version}")
 
         except ET.ParseError:
             print(f"  {self.warning}  XML parsing error in {self.apj_file}")
@@ -578,7 +575,6 @@ class AutomationStudioSBOMGenerator:
                     is_br_component=True,
                     description="B&R Automation Runtime Environment"
                 )
-                #print(f"  ➕ AutomationRuntime v{runtime_version}")
 
             # Extract VisualizationControl
             vc_elem = root.find(".//{http://br-automation.co.at/AS/Cpu}Vc")
@@ -594,7 +590,6 @@ class AutomationStudioSBOMGenerator:
                         description="B&R VC 4"
                     )
                     self.vc_version = vc_version  # Store the version for the current configuration
-                    #print(f"  ➕ VisualizationControl v{vc_version}")
                 
         except ET.ParseError:
             print(f"  {self.warning}  XML parsing error in {current_cpu_pkg}")
@@ -853,7 +848,6 @@ class AutomationStudioSBOMGenerator:
                 }
             }
         else:
-            print(f'Lizenzinfo schreiben: {safe_name}')
             if safe_name in self.licence_info:
                 license_info = {
                     "license": {

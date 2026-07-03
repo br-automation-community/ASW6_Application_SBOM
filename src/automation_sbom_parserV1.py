@@ -13,6 +13,7 @@ import hashlib
 import uuid
 import argparse  # Add argparse for command-line argument parsing
 
+
 SCRIPT_VERSION = "1.2.2"
 #TODO Try fetching CVEs from B&R feed
 #TODO Set correct paths if installation directory is provided for AS4
@@ -114,7 +115,7 @@ class AutomationStudioSBOMGenerator:
                         except Exception as e:
                             print(f"  {self.warning}  Error reading {var_file}: {e}")
                             
-        print(f'Lizenzinfos in .var Dateien gefunden: {self.licence_info}')
+        print(f'{self.info} Lizenzinfos in .var Dateien gefunden: {self.licence_info}')
 
     def _find_configurations(self):
         """Parse Physical.pkg to identify configurations."""
@@ -416,6 +417,7 @@ class AutomationStudioSBOMGenerator:
             self._parse_apj_file(config)  # Parse the .apj file to extract AutomationRuntime and VisualizationControl information for the current configuration
             self._parse_cpu_pkg_file(config)  # Parse the cpu.pkg file for the current configuration to extract CPU information and add it to the components list
             self._parse_sw_file(config)  # Parse the .sw files for the current configuration to extract software component information and add it to the components list
+            self._parse_sw_file_tasks(config)  # Parse the .sw files for the current configuration to extract software task information and add it to the components list
             self._parse_hw_file(config)  # Parse the .hw files for the current configuration to extract hardware module information and add it to the components list 
     
     def _parse_automation_runtime_libraries(self):
@@ -704,10 +706,86 @@ class AutomationStudioSBOMGenerator:
 
                         if not _is_br_component:
                             print(f"  {self.warning}  {lib_name} (version: {version}) - User-defined library, not identified as B&R component")
-
+                
             except ET.ParseError:
                 print(f"  {self.warning}  XML parsing error in {sw_file_path}")
 
+    def _parse_sw_file_tasks(self, config=None):
+        """Parse a single .sw file for software component information."""
+        current_sw_file = self.sw_files.get(config)
+        
+        if not current_sw_file:
+            print(f"  {self.warning}  No .sw file found for configuration '{config}'")
+            return
+
+        # Use a namespace dictionary to avoid conflicts with 'http' package
+        ns = {'swcfg': 'http://br-automation.co.at/AS/SwConfiguration'}
+
+        for sw_file_path in current_sw_file:
+            try:
+                tree = ET.parse(sw_file_path)
+                root = tree.getroot()
+
+                # Extract task components
+                for task in root.findall(".//swcfg:Task", namespaces=ns):
+                    task_name = task.get("Name", "unknown")
+                    _language = task.get("Language", "unknown")
+                    _is_disabled = task.get("Disabled", "false")
+                    _description = f"Software Task: '{task_name}'"
+                    _task_version = self._get_task_version(task.get("Source", "TO BE CHECKED BY USER"))
+                    if _is_disabled.lower() == "true":
+                        continue
+
+                    self._add_component(
+                            config=config,
+                            name=task_name,
+                            version=_task_version,
+                            comp_type=f"'{_language}'-task",
+                            is_br_component=False,
+                            description=_description 
+                        )      
+                    
+            except ET.ParseError:
+                print(f"  {self.warning}  XML parsing error in {sw_file_path}")
+                return None
+
+    def _get_task_version(self, task_path):
+        if not task_path.endswith(".prg"):
+            return None
+        
+        # Use a namespace dictionary to avoid conflicts with 'http' package
+        ns = {'swcfg': 'http://br-automation.co.at/AS/SwConfiguration'}
+
+        # den Filepath zusammensetzen aus self.project_path und task_path, um die Version der Task zu ermitteln
+        _task_path = task_path.replace(".prg", "")  # delete ".prg" from the end of the task_path
+        _task_path = _task_path.replace(".", "\\")  # Replace dots with backslashes to form a valid path
+        _logical_path = self.project_path / "Logical"
+        _path = _logical_path / _task_path
+        _prg_files = []
+        _task_version = "1.0.0"
+
+        #self._find_license_info_in_var_files(_path)  # Check for license information in the .var files of the task
+
+        # parse _path for files ending with ".prg" 
+        for file in Path(_path).rglob("*.prg"):
+            _prg_files.append(file.name)
+
+        
+        for _prg_file in _prg_files:
+            try:
+                _prg_file_path = _path / _prg_file
+                tree = ET.parse(_prg_file_path)
+                root = tree.getroot()
+                if "Version" in root.attrib:
+                    _task_version = root.attrib["Version"]
+                    break  # Stop after finding the first version, assuming all .prg files for the task have the same version 
+                    
+            except ET.ParseError:
+                print(f"  {self.warning}  XML parsing error in {_prg_file_path}")
+                return None
+            
+        return _task_version
+    
     def _parse_hw_file(self, config=None):
         """Parse a single .hw file for hardware module information."""
         current_hw_file = self.hw_files.get(config)
@@ -775,6 +853,7 @@ class AutomationStudioSBOMGenerator:
                 }
             }
         else:
+            print(f'Lizenzinfo schreiben: {safe_name}')
             if safe_name in self.licence_info:
                 license_info = {
                     "license": {

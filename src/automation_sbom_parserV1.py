@@ -164,8 +164,10 @@ class AutomationStudioSBOMGenerator:
                 root = tree.getroot()
 
                 # Find all referenced files
-                for namespace in ["cfg", "pkg"]:
-                    referenced_files = root.findall(f".//{namespace}:Object[@Reference='true']", namespaces={namespace: "http://br-automation.co.at/AS/Configuration"})
+                #for namespace in ["cfg", "pkg"]:
+                for namespace in [{"cfg":"http://br-automation.co.at/AS/Configuration"}, {"pkg":"http://br-automation.co.at/AS/Package"}, {"cpu": "http://br-automation.co.at/AS/Cpu"}]:
+                    key = next(iter(namespace))  # Get the first key from the dictionary
+                    referenced_files = root.findall(f".//{key}:Object[@Reference='true']", namespaces=namespace)
                     for ref in referenced_files:
                         ref_file_path = ref.text.replace("\\", "/")  # Normalize path separators
                         ref_file_path = ref_file_path.lstrip("/")  # Remove leading slash if present

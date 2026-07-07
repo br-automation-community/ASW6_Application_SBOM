@@ -90,7 +90,6 @@ class AutomationStudioSBOMGenerator:
         self._find_license_info_in_var_files(logical_folder_path)
 
     def _find_license_info_in_var_files(self, logical_folder_path: str):
-        _variable_files_in_libraries = {}
         self.licence_info = {} # "library_name": {"license_name": "name", "license_url": "url"}
         _var_files = self._find_logical_files_by_extension(".var")
         
@@ -115,9 +114,7 @@ class AutomationStudioSBOMGenerator:
                                 "license_url": license_url
                             }
                 except Exception as e:
-                    print(f"  {self.warning}  Error reading {var_file}: {e}")
-        
-        print(f"Found license information in .var files: {self.licence_info}")                    
+                    print(f"  {self.warning}  Error reading {var_file}: {e}")                  
 
     def _find_configurations(self):
         """Parse Physical.pkg to identify configurations."""
@@ -754,8 +751,9 @@ class AutomationStudioSBOMGenerator:
                             description=_description if _is_br_component else f"Software Library: {lib_name} TO BE CHECKED BY USER"
                         )                       
 
-                        if not _is_br_component:
-                            print(f"  {self.warning}  {lib_name} (version: {version}) - User-defined library, not identified as B&R component")
+                        #Show warning, only if there is not default user-licence set
+                        if not _is_br_component and self.license_name_default == 'UNKNOWN':
+                            print(f"  {self.warning} {lib_name} (version: {version}) - User-defined library, not identified as B&R component")
                 
             except ET.ParseError:
                 print(f"  {self.warning}  XML parsing error in {sw_file_path}")

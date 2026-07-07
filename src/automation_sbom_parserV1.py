@@ -5,9 +5,10 @@ Automation Studio SBOM Generator
 Parses an Automation Studio directory and generates a project-specific SBOM.
 """
 
+from importlib.resources import files
 import json
 import xml.etree.ElementTree as ET
-from pathlib import Path
+from pathlib import Path, WindowsPath
 from datetime import datetime, timezone
 import hashlib
 import uuid
@@ -91,30 +92,32 @@ class AutomationStudioSBOMGenerator:
     def _find_license_info_in_var_files(self, logical_folder_path: str):
         _variable_files_in_libraries = {}
         self.licence_info = {} # "library_name": {"license_name": "name", "license_url": "url"}
-        for subfolder in logical_folder_path.rglob("*"):
-            if subfolder.is_dir():
-                variable_files = list(subfolder.glob("*.var"))
-                if variable_files:
-                    for var_file in variable_files:
-                        # file öffnen, und nach license_name und license_url suchen
-                        try:
-                            with open(var_file, "r", encoding="utf-8") as f:
-                                content = f.read()
-                                license_name = None
-                                license_url = None
-                                for line in content.splitlines():
-                                    if line.startswith('"License name":'):
-                                        license_name = line.split(": ")[1].strip('"')
-                                    elif line.startswith('"License URL":'):
-                                        license_url = line.split(": ")[1].strip('"')
-                                if license_name or license_url:
-                                    self.licence_info[subfolder.name] = {
-                                        "license_name": license_name,
-                                        "license_url": license_url
-                                    }
-                        except Exception as e:
-                            print(f"  {self.warning}  Error reading {var_file}: {e}")
-                            
+        _var_files = self._find_logical_files_by_extension(".var")
+        
+        for var_file in _var_files:
+            #print(f'Var-File: {var_file}')
+            # file öffnen, und nach license_name und license_url suchen
+            #print(f'Var-Files: {var_file} -> {_var_files[var_file]}')
+            for file in _var_files[var_file]:
+                try:
+                    with open(file, "r", encoding="utf-8") as f:
+                        content = f.read()
+                        license_name = None
+                        license_url = None
+                        for line in content.splitlines():
+                            if line.startswith('"License name":'):
+                                license_name = line.split(": ")[1].strip('"')
+                            elif line.startswith('"License URL":'):
+                                license_url = line.split(": ")[1].strip('"')
+                        if license_name or license_url:
+                            self.licence_info[var_file] = {
+                                "license_name": license_name,
+                                "license_url": license_url
+                            }
+                except Exception as e:
+                    print(f"  {self.warning}  Error reading {var_file}: {e}")
+        
+        print(f"Found license information in .var files: {self.licence_info}")                    
 
     def _find_configurations(self):
         """Parse Physical.pkg to identify configurations."""
@@ -148,50 +151,100 @@ class AutomationStudioSBOMGenerator:
             if cpu_pkg:
                 self.cpu_pkg_files[config] = cpu_pkg[0]  # Assuming there's only one Cpu.pkg file
 
-    def _find_files_by_extension(self, extension: str, config: str):
+    def _find_physical_files_by_extension(self, extension: str, config: str) -> list:
         """ Generic method to find files with a specific extension for each configuration. """
         files_list = []
         config_path = self.project_path / "Physical" / config
+        # Look for file references in all .pkg files
+        pkg_files = list(config_path.rglob("*.pkg"))
 
         # Look for files with the given extension in the configuration folder
         files_list.extend(config_path.rglob(f"*{extension}"))
-
-        # Look for file references in all .pkg files
-        pkg_files = list(config_path.rglob("*.pkg"))
         for pkg_file in pkg_files:
+
             try:
                 tree = ET.parse(pkg_file)
                 root = tree.getroot()
-
+                namespace_uri = root.tag.split("}")[0].strip("{")
+                ns = {'ns': namespace_uri}  # Extract namespace from the root tag
                 # Find all referenced files
-                #for namespace in ["cfg", "pkg"]:
-                for namespace in [{"cfg":"http://br-automation.co.at/AS/Configuration"}, {"pkg":"http://br-automation.co.at/AS/Package"}, {"cpu": "http://br-automation.co.at/AS/Cpu"}]:
-                    key = next(iter(namespace))  # Get the first key from the dictionary
-                    referenced_files = root.findall(f".//{key}:Object[@Reference='true']", namespaces=namespace)
-                    for ref in referenced_files:
-                        ref_file_path = ref.text.replace("\\", "/")  # Normalize path separators
-                        ref_file_path = ref_file_path.lstrip("/")  # Remove leading slash if present
-                        full_ref_path = self.project_path / ref_file_path
+                referenced_files = root.findall(f".//ns:Object[@Reference='true']", namespaces=ns)
 
-                        if full_ref_path.suffix == extension:
-                            files_list.append(full_ref_path)  # Store the full path for later parsing
+                for ref in referenced_files:
+                    ref_file_path = ref.text.replace("\\", "/")  # Normalize path separators
+                    ref_file_path = ref_file_path.lstrip("/")  # Remove leading slash if present
+                    #If the referenced file path is relative, prepend the project path to get the full path, if not, use the referenced file path as is
+                    if not (ref_file_path[1] == ":"):
+                        full_ref_path = self.project_path / ref_file_path
+                    else:
+                        full_ref_path = Path(ref_file_path)
+
+                    if full_ref_path.suffix == extension:
+                        files_list.append(full_ref_path)  # Store the full path for later parsing
 
             except ET.ParseError:
                 print(f"  {self.warning}  XML parsing error in {pkg_file}")
 
         return files_list
 
+    def _find_logical_files_by_extension(self, extension: str) -> list:
+        """ Generic method to find files with a specific extension for each configuration. """
+        file_dict = {}
+        config_path = self.project_path / 'Logical'  # If no config is specified, search in the base path
+        # Look for file references in all .prg files
+        prg_files = list(config_path.rglob("*.prg"))
+        # Look for files with the given extension in the configuration folder
+        file_list = list(config_path.rglob(f"*{extension}"))
+
+        for file in file_list:
+            task_name = file.parts[-2]  # Get the task name from the .prg file name
+            if task_name not in file_dict:
+                file_dict[task_name] = [file]
+                continue
+            file_dict[task_name].append(file)
+
+        for prg_file in prg_files:
+
+            try:
+                tree = ET.parse(prg_file)
+                root = tree.getroot()
+                namespace_uri = root.tag.split("}")[0].strip("{")
+                ns = {'ns': namespace_uri}  # Extract namespace from the root tag
+
+                # Find all referenced files
+                referenced_files = root.findall(f".//ns:File[@Reference='true']", namespaces=ns)
+                for ref in referenced_files:
+                    ref_file_path = ref.text.replace("\\", "/")  # Normalize path separators
+                    ref_file_path = ref_file_path.lstrip("/")  # Remove leading slash if present
+                    #If the referenced file path is relative, prepend the project path to get the full path, if not, use the referenced file path as is
+                    if not (ref_file_path[1] == ":"):
+                        full_ref_path = self.project_path / ref_file_path
+                    else:
+                        full_ref_path = Path(ref_file_path)
+
+                    if full_ref_path.suffix == extension:
+                        task_name = prg_file.parts[-2]  # Get the task name from the .prg file name
+                        if task_name not in file_dict:
+                            file_dict[task_name] = [full_ref_path]
+                            continue
+                        file_dict[task_name].append(full_ref_path)
+
+            except ET.ParseError:
+                print(f"  {self.warning}  XML parsing error in {prg_file}")
+
+        return file_dict
+
     def _find_all_sw_files(self):
         """ Find all *.sw files for each configuration. """
         self.sw_files = {}
         for config in self.configurations:
-            self.sw_files[config] = self._find_files_by_extension(".sw", config)
+            self.sw_files[config] = self._find_physical_files_by_extension(".sw", config)
 
     def _find_all_hw_files(self):
         """ Find all *.hw files for each configuration. """
         self.hw_files = {}
         for config in self.configurations:
-            self.hw_files[config] = self._find_files_by_extension(".hw", config)
+            self.hw_files[config] = self._find_physical_files_by_extension(".hw", config)
 
     def _get_configurationIDs(self):
         """Extract the ConfigurationID from *.hw files per configuration."""
@@ -760,8 +813,6 @@ class AutomationStudioSBOMGenerator:
         _path = _logical_path / _task_path
         _prg_files = []
         _task_version = "1.0.0"
-
-        #self._find_license_info_in_var_files(_path)  # Check for license information in the .var files of the task
 
         # parse _path for files ending with ".prg" 
         for file in Path(_path).rglob("*.prg"):

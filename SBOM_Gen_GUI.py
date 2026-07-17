@@ -64,7 +64,7 @@ class SBOMParserGUI:
         # Installation Directory
         ttk.Label(
             self.root,
-            text="Installation Directory"
+            text="Automation Studio Installation Directory"
         ).grid(row=5, column=0, sticky="w", **padding)
 
         ttk.Label(
@@ -186,6 +186,18 @@ class SBOMParserGUI:
 
     def run_parser(self):
         project_dir = self.project_dir_var.get().strip()
+
+        # Prüfen, ob der Parser vorhanden ist
+        gui_dir = Path(__file__).resolve().parent
+        required_file = gui_dir / "src" / "automation_sbom_parserV1.py"
+
+        if not required_file.exists():
+            messagebox.showerror(
+                "Installation Error",
+                "The file 'src/automation_sbom_parserV1.py' could not be found.\n\n"
+                "Please make sure that the GUI is located in the  'ASW6_Application_SBOM' directory!\n"
+             )
+            return
 
         if not project_dir:
             messagebox.showerror(

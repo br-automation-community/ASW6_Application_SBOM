@@ -5,17 +5,15 @@ Automation Studio SBOM Generator
 Parses an Automation Studio directory and generates a project-specific SBOM.
 """
 
-from importlib.resources import files
 import json
 import xml.etree.ElementTree as ET
-from pathlib import Path, WindowsPath
+from pathlib import Path
 from datetime import datetime, timezone
-import hashlib
 import uuid
 import argparse  # Add argparse for command-line argument parsing
 
 
-SCRIPT_VERSION = "1.2.2"
+SCRIPT_VERSION = "1.3.0"
 #TODO Try fetching CVEs from B&R feed
 #TODO Set correct paths if installation directory is provided for AS4
 #TODO Create a alternative parsing method for AS4, since the structure in the installation directory is different to AS6
@@ -94,9 +92,7 @@ class AutomationStudioSBOMGenerator:
         _var_files = self._find_logical_files_by_extension(".var")
         
         for var_file in _var_files:
-            #print(f'Var-File: {var_file}')
-            # file öffnen, und nach license_name und license_url suchen
-            #print(f'Var-Files: {var_file} -> {_var_files[var_file]}')
+            # open file , and search for license_name and license_url 
             for file in _var_files[var_file]:
                 try:
                     with open(file, "r", encoding="utf-8") as f:

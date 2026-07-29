@@ -6,6 +6,22 @@ import os
 from pathlib import Path
 
 
+def get_application_dir():
+    """
+    Liefert das Verzeichnis der Anwendung.
+
+    Python-Skript:
+        Verzeichnis der .py-Datei
+
+    PyInstaller EXE:
+        Verzeichnis der .exe-Datei
+    """
+    if getattr(sys, "frozen", False):
+        return Path(sys.executable).resolve().parent
+
+    return Path(__file__).resolve().parent
+
+
 class SBOMParserGUI:
     def __init__(self, root):
         self.root = root
@@ -16,7 +32,6 @@ class SBOMParserGUI:
 
     def create_widgets(self):
         padding = {"padx": 10, "pady": 5}
-
 
         # Project Directory
         ttk.Label(
@@ -41,9 +56,10 @@ class SBOMParserGUI:
         ttk.Button(
             self.root,
             text="Browse",
-            command=lambda: self.browse_directory(self.project_dir_var)
+            command=lambda: self.browse_directory(
+                self.project_dir_var
+            )
         ).grid(row=2, column=2, sticky="w", **padding)
-
 
         # Export Libraries
         self.export_libraries_var = tk.BooleanVar()
@@ -59,7 +75,6 @@ class SBOMParserGUI:
             text="Includes technology package and system runtime libraries in the SBOM.",
             foreground="gray"
         ).grid(row=4, column=0, columnspan=3, sticky="w", padx=10)
-
 
         # Installation Directory
         ttk.Label(
@@ -89,7 +104,6 @@ class SBOMParserGUI:
             )
         ).grid(row=7, column=2, sticky="w", **padding)
 
-
         # Customer Name
         ttk.Label(
             self.root,
@@ -109,7 +123,6 @@ class SBOMParserGUI:
             textvariable=self.customer_name_var,
             width=80
         ).grid(row=10, column=0, columnspan=2, sticky="ew", **padding)
-
 
         # Output Directory
         ttk.Label(
@@ -139,7 +152,6 @@ class SBOMParserGUI:
             )
         ).grid(row=13, column=2, sticky="w", **padding)
 
-
         # Run Button
         ttk.Button(
             self.root,
@@ -147,13 +159,11 @@ class SBOMParserGUI:
             command=self.run_parser
         ).grid(row=14, column=0, columnspan=3, pady=20)
 
-
         # Output Label
         ttk.Label(
             self.root,
             text="Output"
         ).grid(row=15, column=0, sticky="w", **padding)
-
 
         # Output Text
         self.output_text = tk.Text(
@@ -176,9 +186,6 @@ class SBOMParserGUI:
         self.root.grid_columnconfigure(2, weight=0)
         self.root.grid_rowconfigure(16, weight=1)
 
-        self.root.grid_columnconfigure(1, weight=1)
-        self.root.grid_rowconfigure(6, weight=1)
-
     def browse_directory(self, variable):
         directory = filedialog.askdirectory()
         if directory:
@@ -187,16 +194,20 @@ class SBOMParserGUI:
     def run_parser(self):
         project_dir = self.project_dir_var.get().strip()
 
-        # Prüfen, ob der Parser vorhanden ist
-        gui_dir = Path(__file__).resolve().parent
-        required_file = gui_dir / "src" / "automation_sbom_parserV1.py"
+        gui_dir = get_application_dir()
+
+        required_file = (
+            gui_dir / "src" / "automation_sbom_parserV1.py"
+        )
 
         if not required_file.exists():
             messagebox.showerror(
                 "Installation Error",
-                "The file 'src/automation_sbom_parserV1.py' could not be found.\n\n"
-                "Please make sure that the GUI is located in the  'ASW6_Application_SBOM' directory!\n"
-             )
+                f"The file 'src/automation_sbom_parserV1.py' could not be found.\n\n"
+                f"Expected path:\n{required_file}\n\n"
+                f"Please make sure that the GUI is located in the "
+                f"'ASW6_Application_SBOM' directory."
+            )
             return
 
         if not project_dir:
@@ -207,9 +218,7 @@ class SBOMParserGUI:
             return
 
         script_path = (
-            Path(__file__).resolve().parent
-            / "src"
-            / "automation_sbom_parserV1.py"
+            gui_dir / "src" / "automation_sbom_parserV1.py"
         )
 
         if not script_path.exists():
@@ -219,11 +228,15 @@ class SBOMParserGUI:
             )
             return
 
-        # Falls GUI mit pythonw.exe läuft:
-        python_executable = sys.executable.replace(
-            "pythonw.exe",
-            "python.exe"
-        )
+        # Bei EXE Python aus PATH verwenden,
+        # bei .py die aktuelle Python-Installation
+        if getattr(sys, "frozen", False):
+            python_executable = "python"
+        else:
+            python_executable = sys.executable.replace(
+                "pythonw.exe",
+                "python.exe"
+            )
 
         command = [
             python_executable,
@@ -259,8 +272,14 @@ class SBOMParserGUI:
 
         self.output_text.insert(
             tk.END,
+            f"Application Directory:\n{gui_dir}\n\n"
+        )
+
+        self.output_text.insert(
+            tk.END,
             "Executing:\n"
         )
+
         self.output_text.insert(
             tk.END,
             " ".join(command) + "\n\n"
@@ -274,6 +293,8 @@ class SBOMParserGUI:
                 command,
                 capture_output=True,
                 text=True,
+                encoding="utf-8",
+                errors="ignore",
                 check=False,
                 env=env
             )

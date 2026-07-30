@@ -25,8 +25,9 @@ VC_FIRMWARE_PATH = "AS/VC/Firmware"
 HARDWARE_MODULES_PATH = "AS/Hardware/Modules"
 
 class AutomationStudioSBOMGenerator:
-    def __init__(self, project_path: str, export_libraries: bool, installation_directory: str, customer_name: str, output_directory: str, no_icons: bool , license_name: str , license_url: str):
+    def __init__(self, project_path: str, export_libraries: bool, installation_directory: str, customer_name: str, output_directory: str, no_icons: bool , license_name: str , license_url: str, include_tasks: bool):
         self.project_path = Path(project_path)
+        self.include_tasks = include_tasks
         self.export_libraries = export_libraries  # Store the switch value
         self.installation_directory = Path(installation_directory)
         self.customer_name = customer_name
@@ -72,7 +73,7 @@ class AutomationStudioSBOMGenerator:
     def _find_all_libraries_in_logical(self):
         """List all libraries from the Logical folder of the project."""
         self.libraries_in_logical_files = {}
-        
+        self.licence_info = {} # "library_name": {"license_name": "name", "license_url": "url"}
         logical_folder_path = self.project_path / "Logical"
 
         if not logical_folder_path.exists():
@@ -88,7 +89,6 @@ class AutomationStudioSBOMGenerator:
         self._find_license_info_in_var_files(logical_folder_path)
 
     def _find_license_info_in_var_files(self, logical_folder_path: str):
-        self.licence_info = {} # "library_name": {"license_name": "name", "license_url": "url"}
         _var_files = self._find_logical_files_by_extension(".var")
         
         for var_file in _var_files:
@@ -464,7 +464,9 @@ class AutomationStudioSBOMGenerator:
             self._parse_apj_file(config)  # Parse the .apj file to extract AutomationRuntime and VisualizationControl information for the current configuration
             self._parse_cpu_pkg_file(config)  # Parse the cpu.pkg file for the current configuration to extract CPU information and add it to the components list
             self._parse_sw_file(config)  # Parse the .sw files for the current configuration to extract software component information and add it to the components list
-            self._parse_sw_file_tasks(config)  # Parse the .sw files for the current configuration to extract software task information and add it to the components list
+            if self.include_tasks:
+                print(f'Create Tasks: {self.include_tasks}')
+                self._parse_sw_file_tasks(config)  # Parse the .sw files for the current configuration to extract software task information and add it to the components list
             self._parse_hw_file(config)  # Parse the .hw files for the current configuration to extract hardware module information and add it to the components list 
     
     def _parse_automation_runtime_libraries(self):
@@ -800,7 +802,7 @@ class AutomationStudioSBOMGenerator:
         # Use a namespace dictionary to avoid conflicts with 'http' package
         ns = {'swcfg': 'http://br-automation.co.at/AS/SwConfiguration'}
 
-        # den Filepath zusammensetzen aus self.project_path und task_path, um die Version der Task zu ermitteln
+        # create the file path from self.project and task_path, to get the task version
         _task_path = task_path.replace(".prg", "")  # delete ".prg" from the end of the task_path
         _task_path = _task_path.replace(".", "\\")  # Replace dots with backslashes to form a valid path
         _logical_path = self.project_path / "Logical"
@@ -1007,6 +1009,9 @@ if __name__ == "__main__":
     parser.add_argument(
         "--license-url", default="UNKNOWN", help="URL of the license to be used in the SBOM. If not provided, 'UNKNOWN' will be used."
     )
+    parser.add_argument(
+        "--include-tasks", action="store_true", help="Include tasks in the SBOM."
+    )
     args = parser.parse_args()
 
     generator = AutomationStudioSBOMGenerator(
@@ -1017,7 +1022,8 @@ if __name__ == "__main__":
         args.output_directory,
         args.no_icons,
         args.license_name,
-        args.license_url
+        args.license_url,
+        args.include_tasks
     )
     generator.generate_sbom()
 

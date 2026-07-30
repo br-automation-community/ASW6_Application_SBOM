@@ -68,6 +68,8 @@ python src/automation_sbom_parserV1.py <project_directory> [--export-libraries] 
   - if set, this license name will be set for all non B&R libraries as licensename in the SBOM
 - `--license-url <url>` (optional)
   - if set, this license url will be set for all non B&R libraries as licenseurl in the SBOM
+- `--include-tasks` (optional)
+  - if set, all tasks are included in the SBOM the same way a user library is
 
 ## Samples
 
@@ -103,9 +105,14 @@ python src/automation_sbom_parserV1.py example/Repro6 --customer-name "Demo Cust
 python src/automation_sbom_parserV1.py "C:/Projects/MyAsProject" --installation-directory "C:/Program Files (x86)/BRAutomation/AS6" --export-libraries --customer-name "ACME"
 ```
 
-### Sample 7: default license for non B&R Libraries and Tasks
+### Sample 7: default license for non B&R Libraries, no Tasks
 ```bash
 python src/automation_sbom_parserV1.py "C:/Projects/MyAsProject" --output-directory "D:/SBOM" --export-libraries --customer-name "UniCon Team" --license-name "default-license" --license-url "www.default-license.com"
+```
+
+### Sample 8: default license for non B&R Libraries and Tasks
+```bash
+python src/automation_sbom_parserV1.py "C:/Projects/MyAsProject" --output-directory "D:/SBOM" --export-libraries --customer-name "UniCon Team" --license-name "default-license" --license-url "www.default-license.com" --include-tasks
 ```
 
 ## License information in .var File

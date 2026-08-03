@@ -62,6 +62,14 @@ python src/automation_sbom_parserV1.py <project_directory> [--export-libraries] 
    - Default: `UNKNOWN`
 - `--output-directory <path>` (optional)
    - Path to the directory where to write the generated SBOM files. Falls back to the `<project_directory>` if omitted.
+- `--no-icons` (optional)
+  - replaces all '⚠️' with 'WARNING', '🔍' with 'INFO', '✅' with 'SUCCESS' and '🛠️' with 'DEBUG'
+- `--license-name <name>` (optional)
+  - if set, this license name will be set for all non B&R libraries as licensename in the SBOM
+- `--license-url <url>` (optional)
+  - if set, this license url will be set for all non B&R libraries as licenseurl in the SBOM
+- `--include-tasks` (optional)
+  - if set, all tasks are included in the SBOM the same way a user library is
 
 ## Samples
 
@@ -92,10 +100,31 @@ This would create output fiels to the `D:/SBOM` directory
 python src/automation_sbom_parserV1.py example/Repro6 --customer-name "Demo Customer" --output-directory "D:/SBOM"
 ```
 
-### Windows absolute path sample
+### Sample 6: Windows absolute path sample
 ```bash
 python src/automation_sbom_parserV1.py "C:/Projects/MyAsProject" --installation-directory "C:/Program Files (x86)/BRAutomation/AS6" --export-libraries --customer-name "ACME"
 ```
+
+### Sample 7: default license for non B&R Libraries, no Tasks
+```bash
+python src/automation_sbom_parserV1.py "C:/Projects/MyAsProject" --output-directory "D:/SBOM" --export-libraries --customer-name "UniCon Team" --license-name "default-license" --license-url "www.default-license.com"
+```
+
+### Sample 8: default license for non B&R Libraries and Tasks
+```bash
+python src/automation_sbom_parserV1.py "C:/Projects/MyAsProject" --output-directory "D:/SBOM" --export-libraries --customer-name "UniCon Team" --license-name "default-license" --license-url "www.default-license.com" --include-tasks
+```
+
+## License information in .var File
+open a local .var File as text and insert the following comment:
+```
+(*
+"License name": "$name$"
+"License URL": "$url$"
+*)
+```
+can also be used to create a Code snippet in AS
+"Variable Decleration Snippets"
 
 ## Output
 - The script creates one JSON file per configuration in the given output directory or project directory if --output-directory is not provided.

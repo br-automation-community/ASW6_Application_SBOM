@@ -12,8 +12,23 @@ from datetime import datetime, timezone
 import uuid
 import argparse  # Add argparse for command-line argument parsing
 
+COMP_TYPES = {
+    "application": "application",
+    "library": "library",
+    "framework": "framework",
+    "container": "container",
+    "operating-system": "operating-system",
+    "device": "device",
+    "firmware": "firmware",
+    "file": "file",
+    "device-driver": "device-driver",
+    "machine-learning-model": "machine-learning-model",
+    "data": "data",
+    "cryptographic-asset": "cryptographic-asset",
+    "platform": "platform",
+}
 
-SCRIPT_VERSION = "1.3.0"
+SCRIPT_VERSION = "1.4.0"
 #TODO Try fetching CVEs from B&R feed
 #TODO Set correct paths if installation directory is provided for AS4
 #TODO Create a alternative parsing method for AS4, since the structure in the installation directory is different to AS6
@@ -560,7 +575,7 @@ class AutomationStudioSBOMGenerator:
                     config=config,
                     name="automation_studio",
                     version=f"{version}",
-                    comp_type="application",
+                    comp_type=COMP_TYPES["library"],
                     is_br_component=True,
                     description=f"B&R Automation Studio Version {version} (Working: {working_version})"
                 )
@@ -585,7 +600,7 @@ class AutomationStudioSBOMGenerator:
                         config=config,
                         name=f"{package_name}",
                         version=package_version,
-                        comp_type="application",
+                        comp_type=COMP_TYPES["library"],
                         is_br_component=True,
                         description=f"B&R Technology Package: {package_name}"
                     )
@@ -621,7 +636,7 @@ class AutomationStudioSBOMGenerator:
                     config=config,
                     name="automation_runtime",
                     version=runtime_version,
-                    comp_type="application",
+                    comp_type=COMP_TYPES["library"],
                     is_br_component=True,
                     description="B&R Automation Runtime Environment"
                 )
@@ -635,7 +650,7 @@ class AutomationStudioSBOMGenerator:
                         config=config,
                         name="vc4",
                         version=vc_version,
-                        comp_type="application",
+                        comp_type=COMP_TYPES["library"],
                         is_br_component=True,
                         description="B&R VC 4"
                     )
@@ -673,7 +688,7 @@ class AutomationStudioSBOMGenerator:
                                 config=config,
                                 name=lib_name,  # Keep original case for the name
                                 version=self.automation_runtime_version,
-                                comp_type="application",
+                                comp_type=COMP_TYPES["library"],
                                 is_br_component=True,
                                 description=f"B&R Automation Runtime Library: {lib_name} "
                             )
@@ -744,7 +759,7 @@ class AutomationStudioSBOMGenerator:
                             config=config,
                             name=lib_name,
                             version=version,
-                            comp_type="application",
+                            comp_type=COMP_TYPES["library"],
                             is_br_component=_is_br_component,
                             description=_description if _is_br_component else f"Software Library: {lib_name} TO BE CHECKED BY USER"
                         )                       
@@ -786,7 +801,7 @@ class AutomationStudioSBOMGenerator:
                             config=config,
                             name=task_name,
                             version=_task_version,
-                            comp_type=f"'{_language}'-task",
+                            comp_type=COMP_TYPES["application"],
                             is_br_component=False,
                             description=_description 
                         )      
@@ -796,8 +811,9 @@ class AutomationStudioSBOMGenerator:
                 return None
 
     def _get_task_version(self, task_path):
+        _task_version = "TO BE CHECKED BY USER"
         if not task_path.endswith(".prg"):
-            return None
+            return _task_version
         
         # Use a namespace dictionary to avoid conflicts with 'http' package
         ns = {'swcfg': 'http://br-automation.co.at/AS/SwConfiguration'}
@@ -808,7 +824,7 @@ class AutomationStudioSBOMGenerator:
         _logical_path = self.project_path / "Logical"
         _path = _logical_path / _task_path
         _prg_files = []
-        _task_version = "1.0.0"
+        
 
         # parse _path for files ending with ".prg" 
         for file in Path(_path).rglob("*.prg"):
@@ -959,7 +975,7 @@ class AutomationStudioSBOMGenerator:
                     "component": {
                         "bom-ref": f"ref-{config}",
                         "name": self.configuration_ids.get(config, "unknown"),
-                        "type": "application",
+                        "type": COMP_TYPES["library"],
                         "version": self.configuration_versions.get(config, "1.0.0")
                     },                    
                 },

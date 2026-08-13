@@ -575,7 +575,7 @@ class AutomationStudioSBOMGenerator:
                     config=config,
                     name="automation_studio",
                     version=f"{version}",
-                    comp_type=COMP_TYPES["library"],
+                    comp_type=COMP_TYPES["application"],
                     is_br_component=True,
                     description=f"B&R Automation Studio Version {version} (Working: {working_version})"
                 )
@@ -600,7 +600,7 @@ class AutomationStudioSBOMGenerator:
                         config=config,
                         name=f"{package_name}",
                         version=package_version,
-                        comp_type=COMP_TYPES["library"],
+                        comp_type=COMP_TYPES["framework"],
                         is_br_component=True,
                         description=f"B&R Technology Package: {package_name}"
                     )
@@ -636,7 +636,7 @@ class AutomationStudioSBOMGenerator:
                     config=config,
                     name="automation_runtime",
                     version=runtime_version,
-                    comp_type=COMP_TYPES["library"],
+                    comp_type=COMP_TYPES["operating_system"],
                     is_br_component=True,
                     description="B&R Automation Runtime Environment"
                 )
@@ -650,7 +650,7 @@ class AutomationStudioSBOMGenerator:
                         config=config,
                         name="vc4",
                         version=vc_version,
-                        comp_type=COMP_TYPES["library"],
+                        comp_type=COMP_TYPES["framework"],
                         is_br_component=True,
                         description="B&R VC 4"
                     )
@@ -975,7 +975,7 @@ class AutomationStudioSBOMGenerator:
                     "component": {
                         "bom-ref": f"ref-{config}",
                         "name": self.configuration_ids.get(config, "unknown"),
-                        "type": COMP_TYPES["library"],
+                        "type": COMP_TYPES["application"],
                         "version": self.configuration_versions.get(config, "1.0.0")
                     },                    
                 },

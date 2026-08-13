@@ -8,13 +8,13 @@ from pathlib import Path
 
 def get_application_dir():
     """
-    Liefert das Verzeichnis der Anwendung.
+    Returns the application directory.
 
-    Python-Skript:
-        Verzeichnis der .py-Datei
+    Python script:
+        Directory of the .py file
 
     PyInstaller EXE:
-        Verzeichnis der .exe-Datei
+        Directory of the .exe file
     """
     if getattr(sys, "frozen", False):
         return Path(sys.executable).resolve().parent
@@ -180,7 +180,7 @@ class SBOMParserGUI:
             pady=10
         )
 
-        # Grid-Konfiguration
+        # Grid-Configuration
         self.root.grid_columnconfigure(0, weight=0)
         self.root.grid_columnconfigure(1, weight=1)
         self.root.grid_columnconfigure(2, weight=0)
@@ -228,8 +228,8 @@ class SBOMParserGUI:
             )
             return
 
-        # Bei EXE Python aus PATH verwenden,
-        # bei .py die aktuelle Python-Installation
+        # When using EXE, use Python from PATH,
+        # when using .py, use the current Python installation
         if getattr(sys, "frozen", False):
             python_executable = "python"
         else:

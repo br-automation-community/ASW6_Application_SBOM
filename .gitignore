@@ -28,3 +28,7 @@
 # Ignore .zip files, for the moment
 /**/*.zip
 
+MakeItExe.bat
+/build
+/dist
+SBOM_Gen_GUI.spec

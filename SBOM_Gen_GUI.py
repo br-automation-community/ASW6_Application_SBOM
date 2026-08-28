@@ -27,13 +27,7 @@ class SBOMParserGUI:
         self.root = root
         self.root.title("SBOM Generator GUI")
         self.root.geometry("900x700")
-        if getattr(sys, "frozen", False):
-            # EXE
-            self.script_path = Path(sys.executable).resolve().parent / "src" / "automation_sbom_parserV1.py"
-        else:
-            # Python-Skript
-            self.script_path = Path(__file__).resolve().parent / "src" / "automation_sbom_parserV1.py"
-        print(f'Scriptpath: {self.script_path}')
+
         self.create_widgets()
 
     def create_widgets(self):
@@ -227,10 +221,10 @@ class SBOMParserGUI:
             gui_dir / "src" / "automation_sbom_parserV1.py"
         )
 
-        if not self.script_path.exists():
+        if not script_path.exists():
             messagebox.showerror(
                 "Error",
-                f"Script not found:\n{self.script_path}"
+                f"Script not found:\n{script_path}"
             )
             return
 
@@ -246,7 +240,7 @@ class SBOMParserGUI:
 
         command = [
             python_executable,
-            str(self.script_path),
+            str(script_path),
             project_dir
         ]
 

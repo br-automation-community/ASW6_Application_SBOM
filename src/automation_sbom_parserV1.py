@@ -28,7 +28,7 @@ COMP_TYPES = {
     "platform": "platform",
 }
 
-SCRIPT_VERSION = "1.4.0"
+SCRIPT_VERSION = "1.4.1"
 #TODO Try fetching CVEs from B&R feed
 #TODO Set correct paths if installation directory is provided for AS4
 #TODO Create a alternative parsing method for AS4, since the structure in the installation directory is different to AS6
@@ -38,6 +38,7 @@ AUTOMATION_RUNTIME_PATH = "AS/System"
 LIBRARY_2_PATH = "AS/Library_2"
 VC_FIRMWARE_PATH = "AS/VC/Firmware"
 HARDWARE_MODULES_PATH = "AS/Hardware/Modules"
+DEFAULT_VERSION_NUMBER = "1.0.0"
 
 class AutomationStudioSBOMGenerator:
     def __init__(self, project_path: str, export_libraries: bool, installation_directory: str, customer_name: str, output_directory: str, no_icons: bool , license_name: str , license_url: str, include_tasks: bool):
@@ -286,13 +287,13 @@ class AutomationStudioSBOMGenerator:
                     # Find the ConfigurationID for the specified configuration
                     for configVersion in root.findall(".//{http://br-automation.co.at/AS/Hardware}Parameter"):
                         if configVersion.get("ID") == "ConfigVersion":
-                            self.configuration_versions[config] = configVersion.get("Value", "1.0.0")  # Store the configuration version in the dictionary
+                            self.configuration_versions[config] = configVersion.get("Value", DEFAULT_VERSION_NUMBER)  # Store the configuration version in the dictionary
 
                 except ET.ParseError:
                     print(f"  {self.warning}  XML parsing error in {hw_file}")
             
             if not self.configuration_versions.get(config):
-                self.configuration_versions[config] = "1.0.0"  # If no version is found, default to 1.0.0
+                self.configuration_versions[config] = DEFAULT_VERSION_NUMBER  # If no version is found, default to 1.0.0
         
 
     def CollectAutomationStudioInstallationInformation(self):
@@ -704,7 +705,7 @@ class AutomationStudioSBOMGenerator:
                                 # Parse the .lby file
                                 tree = ET.parse(lby_file)
                                 root = tree.getroot()
-                                versionAttribute = root.get("Version", "1.0.0")
+                                versionAttribute = root.get("Version", DEFAULT_VERSION_NUMBER)
                                 #check the found version with the versions from the set of technology libraries from Library_2 folder, if there is a match assign the version from the set instead of the one from the binary.lby file
                                 if lib_name_lower in self.technology_libraries:
                                     versions = self.technology_libraries[lib_name_lower]
@@ -976,7 +977,7 @@ class AutomationStudioSBOMGenerator:
                         "bom-ref": f"ref-{config}",
                         "name": self.configuration_ids.get(config, "unknown"),
                         "type": COMP_TYPES["application"],
-                        "version": self.configuration_versions.get(config, "1.0.0")
+                        "version": self.configuration_versions.get(config, DEFAULT_VERSION_NUMBER)
                     },                    
                 },
                 "components": self.components.get(config, []),  # This should be populated with the actual components collected from the project

@@ -642,7 +642,7 @@ class AutomationStudioSBOMGenerator:
                     config=config,
                     name="automation_runtime",
                     version=runtime_version,
-                    comp_type=COMP_TYPES["operating_system"],
+                    comp_type=COMP_TYPES["operating-system"],
                     is_br_component=True,
                     description="B&R Automation Runtime Environment"
                 )

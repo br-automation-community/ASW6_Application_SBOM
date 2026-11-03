@@ -58,7 +58,7 @@ python src/automation_sbom_parserV1.py <project_directory> [--export-libraries] 
    - Path to Automation Studio installation.
    - Default: `C:/Program Files (x86)/BRAutomation/AS6`
 - `--customer-name <name>` (optional)
-   - Used as supplier value for non-B&R components.
+   - Used as supplier value (and CPE vendor) for non-B&R components without a `"Supplier"` entry in their .var file.
    - Default: `UNKNOWN`
 - `--output-directory <path>` (optional)
    - Path to the directory where to write the generated SBOM files. Falls back to the `<project_directory>` if omitted.
@@ -115,16 +115,20 @@ python src/automation_sbom_parserV1.py "C:/Projects/MyAsProject" --output-direct
 python src/automation_sbom_parserV1.py "C:/Projects/MyAsProject" --output-directory "D:/SBOM" --export-libraries --customer-name "UniCon Team" --license-name "default-license" --license-url "www.default-license.com" --include-tasks
 ```
 
-## License information in .var File
+## Supplier and license information in .var File
 open a local .var File as text and insert the following comment:
 ```
 (*
+"Supplier": "$supplier$"
 "License name": "$name$"
 "License URL": "$url$"
 *)
 ```
 can also be used to create a Code snippet in AS
 "Variable Decleration Snippets"
+
+The supplier is used as `supplier` and as vendor in the `cpe` of the library and has priority over `--customer-name`.
+User libraries that contain this comment are considered verified by their supplier: their description is taken from the `Description` attribute of the `.lby` file instead of being marked with `TO BE CHECKED BY USER`.
 
 ## Output
 - The script creates one JSON file per configuration in the given output directory or project directory if --output-directory is not provided.

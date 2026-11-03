@@ -6,6 +6,7 @@ Parses an Automation Studio directory and generates a project-specific SBOM.
 """
 
 import json
+import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from datetime import datetime, timezone
@@ -28,7 +29,7 @@ COMP_TYPES = {
     "platform": "platform",
 }
 
-SCRIPT_VERSION = "1.4.1"
+SCRIPT_VERSION = "1.4.2"
 #TODO Try fetching CVEs from B&R feed
 #TODO Set correct paths if installation directory is provided for AS4
 #TODO Create a alternative parsing method for AS4, since the structure in the installation directory is different to AS6
@@ -108,20 +109,24 @@ class AutomationStudioSBOMGenerator:
         _var_files = self._find_logical_files_by_extension(".var")
         
         for var_file in _var_files:
-            # open file , and search for license_name and license_url 
+            # open file , and search for supplier, license_name and license_url
             for file in _var_files[var_file]:
                 try:
                     with open(file, "r", encoding="utf-8") as f:
                         content = f.read()
+                        supplier = None
                         license_name = None
                         license_url = None
                         for line in content.splitlines():
-                            if line.startswith('"License name":'):
+                            if line.startswith('"Supplier":'):
+                                supplier = line.split(": ")[1].strip('"')
+                            elif line.startswith('"License name":'):
                                 license_name = line.split(": ")[1].strip('"')
                             elif line.startswith('"License URL":'):
                                 license_url = line.split(": ")[1].strip('"')
-                        if license_name or license_url:
+                        if supplier or license_name or license_url:
                             self.licence_info[var_file] = {
+                                "supplier": supplier,
                                 "license_name": license_name,
                                 "license_url": license_url
                             }
@@ -698,14 +703,16 @@ class AutomationStudioSBOMGenerator:
                         lby_file = self.libraries_in_logical_files.get(lib_name)
                         _is_br_component = False
                         _description = f"Software Library: {lib_name} TO BE CHECKED BY USER"
-                        version = "TO BE CHECKED BY USER"   
-                       
+                        version = "TO BE CHECKED BY USER"
+                        lby_description = None
+
                         if lby_file: 
                             try:
                                 # Parse the .lby file
                                 tree = ET.parse(lby_file)
                                 root = tree.getroot()
                                 versionAttribute = root.get("Version", DEFAULT_VERSION_NUMBER)
+                                lby_description = root.get("Description")
                                 #check the found version with the versions from the set of technology libraries from Library_2 folder, if there is a match assign the version from the set instead of the one from the binary.lby file
                                 if lib_name_lower in self.technology_libraries:
                                     versions = self.technology_libraries[lib_name_lower]
@@ -756,14 +763,23 @@ class AutomationStudioSBOMGenerator:
                                     _description=f"B&R VC4 Runtime Library: {lib_name} {version}"
                                 
 
+                        if not _is_br_component:
+                            # A user library that declares its supplier/license in a .var file is considered verified by its supplier
+                            if lby_file and lib_name.replace(" ", "_").replace("/", "-") in self.licence_info:
+                                _description = f"Software Library: {lib_name} {version}"
+                                if lby_description:
+                                    _description += f" - {lby_description}"
+                            else:
+                                _description = f"Software Library: {lib_name} TO BE CHECKED BY USER"
+
                         self._add_component(
                             config=config,
                             name=lib_name,
                             version=version,
                             comp_type=COMP_TYPES["library"],
                             is_br_component=_is_br_component,
-                            description=_description if _is_br_component else f"Software Library: {lib_name} TO BE CHECKED BY USER"
-                        )                       
+                            description=_description
+                        )
 
                         #Show warning, only if there is not default user-licence set
                         if not _is_br_component and self.license_name_default == 'UNKNOWN':
@@ -901,6 +917,15 @@ class AutomationStudioSBOMGenerator:
             except ET.ParseError:
                 print(f"  {self.warning}  XML parsing error in {hw_file_path}")
   
+    @staticmethod
+    def _cpe_vendor(supplier: str) -> str:
+        """Convert a supplier name into a CPE vendor value (lowercase, spaces as '_', only a-z, 0-9, '_', '-', '.')."""
+        if supplier == "UNKNOWN":
+            return "UNKNOWN"
+        vendor = re.sub(r"\s+", "_", supplier.strip().lower())
+        vendor = re.sub(r"[^a-z0-9_.\-]", "", vendor)
+        return vendor or "UNKNOWN"
+
     def _add_component(self, config=None, name=None, version=None, comp_type=None, is_br_component=False, description=None):
         """Add a component to the SBOM of the current configuration."""
         
@@ -917,8 +942,8 @@ class AutomationStudioSBOMGenerator:
             if safe_name in self.licence_info:
                 license_info = {
                     "license": {
-                        "name": self.licence_info[safe_name].get("license_name", self.license_name_default),
-                        "url": self.licence_info[safe_name].get("license_url", self.license_url_default)
+                        "name": self.licence_info[safe_name].get("license_name") or self.license_name_default,
+                        "url": self.licence_info[safe_name].get("license_url") or self.license_url_default
                     }
                 }
             else:
@@ -944,10 +969,12 @@ class AutomationStudioSBOMGenerator:
             component["cpe"] = f"cpe:2.3:a:br-automation:{safe_name}:{version}:*:*:*:*:*:*:*"
             #component["purl"] = f"pkg:br-automation/{safe_name}@{version}"
         else:
-            component["supplier"] = {"name": self.customer_name}
+            # Supplier declared in the library (.var file) has priority over --customer-name
+            supplier = self.licence_info.get(safe_name, {}).get("supplier") or self.customer_name
+            component["supplier"] = {"name": supplier}
             component["description"] = description
-            # Add CPE and PURL 
-            component["cpe"] = f"cpe:2.3:a:UNKNOWN:{safe_name}:{version}:*:*:*:*:*:*:*"
+            # Add CPE and PURL
+            component["cpe"] = f"cpe:2.3:a:{self._cpe_vendor(supplier)}:{safe_name}:{version}:*:*:*:*:*:*:*"
             # component["purl"] = f"pkg:UNKNOWN/{safe_name}@{version}"
 
         self.components[config].append(component)
